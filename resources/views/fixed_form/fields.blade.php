@@ -28,6 +28,7 @@
             </select>
 
     </div>
+    /*
     @if($data->count())
 
     <div class="col-md-6 col-6">
@@ -57,7 +58,7 @@
     </div>
     @endif
     @if($data->count()==0)
-
+*/
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="city-column">Patient Number-PRN</label>
@@ -70,7 +71,7 @@
             <input type="text" id="PName" class="form-control" name="p_name" placeholder="Patient Name" value=""/>
         </div>
     </div>
-    @endif
+  /*  @endif */
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="company-column">Tooth number</label>
