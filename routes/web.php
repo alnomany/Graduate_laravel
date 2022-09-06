@@ -23,6 +23,8 @@ use App\Http\Controllers\FixedFormController;
     Route::post('/fixedform/store', [FixedFormController::class, 'store'])->name('store');
 
 Route::get('/fixedform/edit/{id}', [FixedFormController::class, 'edit'])->name('fixform.edit');
+Route::get('/fixedform/delete/{id}', [FixedFormController::class, 'delete'])->name('fixform.delete');
+
 
 
 

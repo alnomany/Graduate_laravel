@@ -5,6 +5,8 @@
             <label for="Student Number">Student Number</label>
 
             <select id="student-number" class="select2 form-control form-control-lg" name="student_number" @if(Auth::user()->type == null) disabled="true" @endif>
+                <option value="null">Select student number </option>
+
                 @foreach ($students_users as $student)
 
                 <option value="{{ $student->student_number }}" @if($record->student_number == $student->student_number) selected='selected' @endif >{{ $student->student_number }}</option>
@@ -20,20 +22,44 @@
 
     <div class="form-group col-sm-6">
         <label for="">Student Name</label>
+        {{--
         <input type="text" name="student_name" value="{{$record->student_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
+        --}}
+        <select id="student-name" class="select2 form-control form-control-lg id_100" name="student_name" @if(Auth::user()->type == null) disabled="true" @endif>
+        </select>
+
+
     </div>
+
+
+
+
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="city-column">Patient Number-PRN</label>
-            <input type="text" id="PRN" class="form-control" placeholder="PRN" name="p_rn" value="{{$record->p_rn}}" @if(Auth::user()->type == null) readonly @endif/>
+            <label for="pation Number">Patient Number-PRN </label>
+
+            <select id="pation-number-create" class="select2 form-control form-control-lg" name="p_rn" @if(Auth::user()->type == null) disabled="true" @endif>
+                <option value="null">Select Patient Number-PRN </option>
+
+                @foreach ($recordall as $patient)
+
+                <option value="{{ $patient->p_rn }}"  @if($record->p_rn == $patient->p_rn) selected='selected' @endif >{{ $patient->p_rn }}</option>
+                @endforeach
+
+            </select>
         </div>
+
     </div>
+
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="PName">Patient Name</label>
-            <input type="text" id="PName" class="form-control" name="p_name" placeholder="Patient Name" value="{{$record->p_name}}" @if(Auth::user()->type == null) readonly @endif/>
+            <input type="text" id="pation-name-create" name="p_name"  class="form-control" @if(Auth::user()->type == null) readonly @endif>
+
+
         </div>
     </div>
+
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="company-column">Tooth number</label>
@@ -101,7 +127,7 @@
     <div class="col-md-4 col-4">
                     <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">FM1-Dx & Tx Mark </label>
+            <label for="basicSelect">FM1-Tooth Preparation Mark </label>
             <input type="text" id="fm" class="form-control fm fm1" placeholder="N.A." value="{{ $record->fm1 }}" name="fm1" />
 
         </div>
@@ -306,7 +332,14 @@
         </div>
     </div>
     <div class="col-12">
-        {!! Form::submit('save', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+   @if(Auth::user()->type == "admin")
+
+        <a href="{{ route('fixform.delete', collect($record)->first() ) }}" class="btn btn-danger" style="float:right;">
+            Delete
+        </a>
+        @endif
+
 
     </div>
 </div>

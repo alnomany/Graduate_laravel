@@ -22,7 +22,7 @@
                             <button type="button" class="btn btn-primary">Removable</button>
                             <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                             <a href="{{ route('fill') }}">
-                            <button type="button" class="btn btn-primary">Fill Form</button>
+                            <button type="button" class="btn btn-primary">Edit Form</button>
                             </a>
                             <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                             <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />

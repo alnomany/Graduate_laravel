@@ -139,7 +139,7 @@
     <div class="col-md-4 col-4">
                     <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">FM1-Dx & Tx Mark </label>
+            <label for="basicSelect">FM1-Tooth Preparation Mark </label>
             <input type="text" id="fm" class="form-control fm fm1" placeholder="N.A." value="" name="fm1" />
 
         </div>

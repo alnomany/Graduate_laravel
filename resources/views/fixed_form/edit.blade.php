@@ -35,12 +35,12 @@
                     <div class="col-8">
                         <div class="card">
                             @if (\Session::has('success'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-danger">
                                 <ul>
                                     <li>{!! \Session::get('success') !!}</li>
                                 </ul>
                             </div>
-                        @endif
+                            @endif
                             <div class="card-header">
                                 <h4 class="card-title"></h4>
                             </div>

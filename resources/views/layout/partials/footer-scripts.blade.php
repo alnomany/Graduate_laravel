@@ -139,19 +139,24 @@
             },
             dataType: 'json',
             success: function (result) {
-                $('#student-name').html('<option value="">-- Select name --</option>');
+
                 $.each(result.studentnames, function (key, value) {
                     $("#student-name").append('<option value="' + value
                         .student_name + '">' + value.student_name + '</option>');
+                        $('.id_100 option[value="' + value
+                        .student_name + '"]').attr('selected','selected');
+
                 });
+
 
             }
         });
 
     });
     $('#pation-number-create').on('change', function () {
+        $("#pation-name-create").value("ahmed");
+
         var pationnum = this.value;
-        $("#pation-name-create").html('');
         $.ajax({
             url: "{{url('fixedform/fetch-name-pation-create')}}",
             type: "POST",
@@ -161,11 +166,10 @@
             },
             dataType: 'json',
             success: function (result) {
-                $('#pation-name-create').html('<option value="">-- Patient Name chose--</option>');
-                $.each(result.pationnames, function (key, value) {
-                    $("#pation-name-create").append('<option value="' + value
-                        .p_name + '">' + value.p_name + '</option>');
-                });
+                alert("hi");
+                $("#pation-name-create").value("ahmed");
+
+
 
             }
         });

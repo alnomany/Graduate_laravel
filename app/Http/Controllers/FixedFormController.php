@@ -18,6 +18,13 @@ class FixedFormController extends Controller
         foreach ($words as $w) {
           $name .= mb_substr($w, 0, 3);
         }
+        if(Auth::user()->type == "admin")
+        {
+            $name ="Admin1";
+
+
+        }
+
         $arr = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48'];
         $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
         $students_users=StudentUser::get();
@@ -27,6 +34,7 @@ class FixedFormController extends Controller
  public function edit(Request $request,$id){
      $students_users=FixForm::select('student_number')->distinct()->get();
      $record = FixForm::find($id);
+     $recordall =FixForm::all();
      $arr = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48'];
      $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
 
@@ -36,7 +44,13 @@ class FixedFormController extends Controller
     foreach ($words as $w) {
       $name .= mb_substr($w, 0, 3);
     }
-    return view('fixed_form.edit', compact('name','students_users','record','arr','arr_rest_type'));
+    if(Auth::user()->type == "admin")
+    {
+        $name ="Admin1";
+
+
+    }
+    return view('fixed_form.edit', compact('name','students_users','record','recordall','arr','arr_rest_type'));
  }
 
 public function fill(){
@@ -44,6 +58,12 @@ public function fill(){
     $name = "";
     foreach ($words as $w) {
       $name .= mb_substr($w, 0, 3);
+    }
+    if(Auth::user()->type == "admin")
+    {
+        $name ="Admin1";
+
+
     }
     $data=[];
      $students_users=FixForm::select('student_number')->distinct()->get();
@@ -68,6 +88,7 @@ public function fill(){
  }
 
 
+
  public function fetchname(Request $request)
  {
      $data['studentnames'] = StudentUser::where("student_number", $request->stunum)
@@ -76,8 +97,8 @@ public function fill(){
  }
  public function fetchpation(Request $request)
  {
-    $data['pationnames'] = FixForm::where("p_rn", $request->pationnum)
-    ->get(["p_name", "p_rn"]);
+    $data = FixForm::where("p_rn", $request->pationnum)
+    ->distinct("p_rn")->get("p_name");
 return response()->json($data);
  }
 
@@ -125,6 +146,13 @@ public function fetchprn(Request $request){
 
      return redirect()->back();
     }
+    public function delete($id){
+
+        FixForm::where('id', $id)->delete();
+        return redirect('/fixedform/fill')->with('success', 'delete successfully');
+
+
+     }
 
 
  public function export()

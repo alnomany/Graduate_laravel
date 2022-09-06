@@ -11,12 +11,12 @@
             <div class="content-header-left col-md-12 col-12 mb-2">
                 <div class="row breadcrumbs-top">
                     <div class="col-12">
-                        <h2 class="content-header-title float-left mb-0">filling existing Fixed Forms </h2>
+                        <h2 class="content-header-title float-left mb-0">Editing existing Fixed Forms </h2>
                         <div class="breadcrumb-wrapper">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('home')}}"> Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"><a href="#">filling existing Fixed Forms</a>
+                                <li class="breadcrumb-item active"><a href="#">Editing existing Fixed Forms</a>
                                 </li>
 
                             </ol>
@@ -34,6 +34,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
+                            @if (\Session::has('success'))
+                            <div class="alert alert-danger">
+                                <ul>
+                                    <li>{!! \Session::get('success') !!}</li>
+                                </ul>
+                            </div>
+                            @endif
                             <div class="card-header">
                                 <h4 class="card-title"></h4>
                             </div>

@@ -5,24 +5,32 @@
         <th>StuName</th>
         <th>PRN</th>
         <th>Patient Name</th>
-        <th>preparation plan mark</th>
 
-        <th>Tooth </th>
+        <th>preparation plan mark</th>
+        <th>Sign</th>
+
+
+        <th>Tooth Num</th>
         <th>Restoration type</th>
 
-        <th>Examination and Tx Planning</th>
+        <th>Tooth Preparation</th>
         <th>Sign</th>
+
         <th>Provisional</th>
         <th>Sign</th>
 
         <th>Final impression/ resin pattern</th>
         <th>Sign</th>
+
         <th>Prefab post cementation core build-up</th>
         <th>Sign</th>
+
         <th>Try-in</th>
         <th>Sign</th>
+
         <th>Cementation</th>
         <th>Sign</th>
+
         <th>Average</th>
 
 
@@ -40,9 +48,12 @@
             <td>{{ $data->student_name }}</td>
             <td>{{ $data->p_rn }}</td>
             <td>{{ $data->p_name }}</td>
-            <td>{{ $data->p_rn }}</td>
-            <td>{{ $data->p_name }}</td>
+
             <td>{{ $data->fm0 }}</td>
+            <td>{{ $data->fm0_sig }}</td>
+
+
+
 
             <td>{{ $data->tooth_number }}</td>
             <td>{{ $data->rest_type }}</td>
