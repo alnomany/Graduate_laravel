@@ -95,11 +95,17 @@ public function fill(){
                              ->get(["student_name", "student_number"]);
      return response()->json($data);
  }
+ public function fetch_name_student_edit(Request $request){
+
+    $data = StudentUser::where("student_number", $request->studentnum)
+    ->distinct("student_name")->get(["student_name"]);
+     return response()->json($data);
+ }
  public function fetchpation(Request $request)
  {
     $data = FixForm::where("p_rn", $request->pationnum)
-    ->distinct("p_rn")->get("p_name");
-return response()->json($data);
+    ->distinct("p_name")->get("p_name");
+    return response()->json($data);
  }
 
 

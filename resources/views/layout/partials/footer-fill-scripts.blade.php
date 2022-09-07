@@ -1,5 +1,81 @@
 
     <script>
+        //fetch-name
+
+    $('#student-number').on('change', function () {
+        var stunum = this.value;
+        $("#student-name").html('');
+        $.ajax({
+            url: "{{url('fixedform/fetch-name')}}",
+            type: "POST",
+            data: {
+                stunum: stunum,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function (result) {
+
+                $.each(result.studentnames, function (key, value) {
+                    $("#student-name").append('<option value="' + value
+                        .student_name + '">' + value.student_name + '</option>');
+
+
+                });
+
+
+            }
+        });
+        //
+        function SelectedValue(e) {
+            document.getElementById("myText").value = e.target.value
+        }
+
+    });
+    //change name in edit pation
+    $('#pation-number-edit').on('change', function () {
+        var pationnum = this.value;
+      //  var selected_option_value = $(this).find(":selected").val();
+
+        $.ajax({
+            url: "{{url('fixedform/fetch-name-pation-edit')}}",
+            type: "POST",
+            data: {
+                pationnum: pationnum,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function (result) {
+                document.getElementById("pation-name-edit").value = result[0].p_name;
+
+            }
+        });
+
+    });
+    $('#student-number-edit').on('change', function () {
+        var studentnum = this.value;
+      //  var selected_option_value = $(this).find(":selected").val();
+
+        $.ajax({
+            url: "{{url('fixedform/fetch-name-student-edit')}}",
+            type: "POST",
+            data: {
+                studentnum: studentnum,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function (result) {
+
+
+                document.getElementById("student-name-edit").value = result[0].student_name;
+
+
+
+
+            }
+        });
+
+    });
+
 
 
     $('#student-number').on('change', function () {

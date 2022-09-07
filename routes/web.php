@@ -32,14 +32,17 @@ Route::get('/fixedform/delete/{id}', [FixedFormController::class, 'delete'])->na
 Route::get('/fixedform', [FixedFormController::class, 'index']);
 
 });
-
+//pationt
 Route::post('/fixedform/fetch-prn',[FixedFormController::class,'fetchprn'])->name('fetchprn');
 Route::post('/fixedform/fetch-tooth',[FixedFormController::class,'fetchtooth'])->name('fetchtooth');
-Route::post('/fixedform/fetch-name-pation-create',[FixedFormController::class,'fetchpation'])->name('fetchpation');
+Route::post('/fixedform/fetch-name-pation-edit',[FixedFormController::class,'fetchpation'])->name('fetchpation');
 
 
+//student
 
 Route::post('fixedform/fetch-name', [FixedFormController::class, 'fetchname']);
+Route::post('fixedform/fetch-name-student-edit', [FixedFormController::class, 'fetch_name_student_edit']);
+
 Route::get('fixedform/record', [FixedFormController::class, 'record'])->name('fixedform.get-more-record');
 
 
