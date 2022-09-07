@@ -143,14 +143,16 @@
                 $.each(result.studentnames, function (key, value) {
                     $("#student-name").append('<option value="' + value
                         .student_name + '">' + value.student_name + '</option>');
-                        $('.id_100 option[value="' + value
-                        .student_name + '"]').attr('selected','selected');
+
 
                 });
 
 
             }
         });
+        function SelectedValue(e) {
+            document.getElementById("myText").value = e.target.value
+        }
 
     });
     $('#pation-number-create').on('change', function () {

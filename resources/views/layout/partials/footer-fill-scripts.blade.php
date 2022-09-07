@@ -2,7 +2,8 @@
     <script>
 
 
-    $('#student-name').on('change', function () {
+    $('#student-number').on('change', function () {
+
         var stunum = this.value;
         var studentnumber = $('#student-number').val();
 

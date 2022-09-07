@@ -22,11 +22,15 @@
 
     <div class="form-group col-sm-6">
         <label for="">Student Name</label>
-        {{--
-        <input type="text" name="student_name" value="{{$record->student_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
-        --}}
+
+      {{--   <input id="myText" type="text" value="colors">--}}
+
+    <input type="text" name="student_name" value="{{$record->student_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
+{{--
         <select id="student-name" class="select2 form-control form-control-lg id_100" name="student_name" @if(Auth::user()->type == null) disabled="true" @endif>
         </select>
+         --}}
+
 
 
     </div>
@@ -54,7 +58,7 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="PName">Patient Name</label>
-            <input type="text" id="pation-name-create" name="p_name"  class="form-control" @if(Auth::user()->type == null) readonly @endif>
+            <input type="text" id="pation-name-create" name="p_name" value="{{$record->p_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
 
 
         </div>
