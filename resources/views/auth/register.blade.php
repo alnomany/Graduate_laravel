@@ -1,6 +1,11 @@
-@extends('layouts.app')
+@extends('layout.app-main')
 
 @section('content')
+
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -42,7 +47,7 @@
                             <label for="Phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="Phone" type="Phone" class="form-control @error('Phone') is-invalid @enderror" name="phone" required autocomplete="new-password">
+                                <input id="Phone" type="Phone" class="form-control @error('Phone') is-invalid @enderror" name="phone" required autocomplete="phone">
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -86,5 +91,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection

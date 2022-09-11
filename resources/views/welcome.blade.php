@@ -1,14 +1,18 @@
-@extends('layouts.app')
+@extends('layout.app-main')
 
 @section('content')
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
 <div class="container">
     {{--
     <div class="row justify-content-center">
         --}}
         <section id="dashboard-ecommerce">
-            <div class="row match-height">
+            <div class="row">
                 <!-- Medal Card -->
-                <div class="col-xl-8 col-md-8 col-8">
+                <div class="col-xl-8 col-md-12 col-12">
                     <div class="card card-congratulation-medal">
                         <div class="card-body">
                             <h5>welcome 🎉
@@ -24,13 +28,15 @@
                             <a href="{{ route('fill') }}">
                             <button type="button" class="btn btn-primary">Fill Form</button>
                             </a>
-                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                             <a href="{{ route('fill.export') }}">
 
-                            <button type="button" class="btn btn-primary">Report</button>
-                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                            </a>
+                                <button type="button" class="btn btn-primary">Full Report</button>
+                                <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                                </a>
+                                <a href="{{ route('fill.export.student') }}">
+                                    <button type="button" class="btn btn-primary">Single Student Report</button>
+
+                                </a>
                         </div>
                     </div>
                 </div>
@@ -56,6 +62,8 @@
             </div>
         </div>
     --}}
+</div>
+   {{--  </div>--}}
     </div>
-{{--  </div>--}}
+</div>
 @endsection

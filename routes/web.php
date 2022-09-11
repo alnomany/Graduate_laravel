@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthOtpController;
 use App\Http\Controllers\FixedFormController;
 
 /*
@@ -16,6 +18,10 @@ use App\Http\Controllers\FixedFormController;
     Route::middleware('auth')->group(function() {
     Route::get('/fixedform/create', [FixedFormController::class, 'create'])->name('create');
     Route::get('fixedform/export/', [FixedFormController::class, 'export'])->name('fill.export');
+    Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');
+    Route::get('fixedform/export/student/excel', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student');
+
+
 
     Route::get('/fixedform/fill', [FixedFormController::class, 'fill'])->name('fill');
     Route::put('/fixedform/fill/{update}', [FixedFormController::class, 'update'])->name('fill.update');
@@ -53,4 +59,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::controller(AuthOtpController::class)->group(function(){
+    Route::get('/otp/login', 'login')->name('otp.login');
+    Route::post('/otp/generate', 'generate')->name('otp.generate');
+    Route::get('/otp/verification/{user_id}', 'verification')->name('otp.verification');
+    Route::post('/otp/login', 'loginWithOtp')->name('otp.getlogin');
+});
+Route::post('/login/phone', 'AuthController@create')->name('register-phone');
+Route::post('/verify/phone', 'AuthController@verify')->name('verify-phone');
+Route::controller(AuthController::class)->group(function(){
+    Route::post('/login/phone', 'create')->name('register-phone');
+    Route::post('/verify/phone', 'verify')->name('verify-phone');
 });

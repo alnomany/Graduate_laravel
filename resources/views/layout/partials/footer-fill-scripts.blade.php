@@ -98,7 +98,7 @@
                 $.each(result.prnlist, function (key, value) {
 
                     $("#PRN").append('<option value="' + value
-                        .p_rn + '">' + value.p_rn + value.p_name +'</option>');
+                        .p_rn + '">' + value.p_rn + " / "+ value.p_name +'</option>');
                 });
 
                 getMoreRecord();

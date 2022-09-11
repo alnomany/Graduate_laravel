@@ -35,13 +35,7 @@
     <script>
 
 
-        function valueGetDate(){
-            var d = new Date();
 
-            var month = d.getMonth()+1;
-            alert(month);
-
-        }
         function valueChangedFM()
         {
             if($('.fm1_sig').is(":checked"))
@@ -72,59 +66,61 @@
     });
     $(document).on("change", ".fm1", function() {
         var str = $("#fm1_name").val();
-        var date =new Date().toLocaleDateString();
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm1_date").value = current_date;
        // alert(date);
 
 
         $(".fm1_sig").val(str);
-        $(".date-fm1").val(date);
 
 
     });
     $(document).on("change", ".fm2", function() {
         var str = $("#fm2_name").val();
-        var date =new Date().toLocaleDateString();
-       // alert(date);
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm2_date").value = current_date;
 
 
         $(".fm2_sig").val(str);
-        $(".date-fm2").val(date);
 
 
     });
     $(document).on("change", ".fm3", function() {
         var str = $("#fm3_name").val();
-        var date =new Date().toLocaleDateString();
-       // alert(date);
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm3_date").value = current_date;
         $(".fm3_sig").val(str);
-        $(".date-fm3").val(date);
     });
     $(document).on("change", ".fm4", function() {
         var str = $("#fm3_name").val();
-        var date =new Date().toLocaleDateString();
-       // alert(date);
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm4_date").value = current_date;
         $(".fm4_sig").val(str);
-        $(".date-fm4").val(date);
     });
     $(document).on("change", ".fm5", function() {
         var str = $("#fm3_name").val();
-        var date =new Date().toLocaleDateString();
-       // alert(date);
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm5_date").value = current_date;
         $(".fm5_sig").val(str);
-        $(".date-fm5").val(date);
     });
     $(document).on("change", ".fm6", function() {
         var str = $("#fm3_name").val();
-        var date =new Date().toLocaleDateString();
        // alert(date);
         $(".fm6_sig").val(str);
-        $(".date-fm6").val(date);
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours() + ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm6_date").value = current_date;
     });
     $(document).on("change", ".fm0", function() {
         var str = $("#fm3_name").val();
-        var date =new Date().toLocaleDateString();
-       // alert(date);
-        $(".fm0_sig").val(str);
-        $(".date-fm0").val(date);
+          $(".fm0_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("fm0_date").value = current_date;
     });
 </script>

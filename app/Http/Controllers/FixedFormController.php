@@ -165,6 +165,21 @@ public function fetchprn(Request $request){
  {
      return Excel::download(new FixFormExport, 'report.xlsx');
  }
+ public function exportexcelstudent(Request $request)
+ {
+    return Excel::download(new FixFormExport($request->student_number), $request->student_number.'Fixed_Report.xlsx');
+   // return Excel::download(new MttRegistrationsExport($request->id), 'MttRegistrations.xlsx');
+
+
+ }
+ public function exportstudent(){
+    $students_users=StudentUser::get();
+
+    return view('exports.student',compact('students_users'));
+
+
+
+ }
 
  public function index(){
     $data=FixForm::all();

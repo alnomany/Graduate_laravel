@@ -25,7 +25,7 @@
     </div>
         <div class="col-md-4 col-sm-4 col-4">
             <div class="form-group">
-                <label for="PRN">Patient Number-PRN</label>
+                <label for="PRN">Patient Number-PRN / Patient Name</label>
                 <select id="PRN" class="select2 form-control form-control-lg" name="p_rn">
 
             </div>

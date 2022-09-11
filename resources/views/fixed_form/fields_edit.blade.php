@@ -122,8 +122,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm0" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd      hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm0_date" name="fm0_date" class="date-fm0" value="{{ $record->fm0_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -154,8 +154,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm1" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm1_date" name="fm1_date" class="date-fm1" value="{{ $record->fm1_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -191,8 +191,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm1" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm2_date" name="fm2_date" class="date-fm1" value="{{ $record->fm2_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -232,8 +232,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm3" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm3_date" name="fm3_date" class="date-fm3" value="{{ $record->fm3_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -262,8 +262,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm4" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm4_date" name="fm4_date" class="date-fm4" value="{{ $record->fm4_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -289,8 +289,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm5" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm5_date" name="fm5_date" class="date-fm5" value="{{ $record->fm5_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -316,8 +316,8 @@
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
-                    <label class="" for="date">Date entered  </label>
-                    <input type="date" style="margin-top: .5rem;" id="start" name="trip-start" class="date-fm6" value="2022-07-22" min="2022-01-01" max="2025-12-31">
+                    <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
+                    <input type="text" style="margin-top: .5rem;" id="fm6_date" name="fm6_date" class="date-fm6" value="{{ $record->fm6_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
