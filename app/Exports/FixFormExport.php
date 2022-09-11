@@ -10,19 +10,15 @@ use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class FixFormExport implements FromQuery
+class FixFormExport implements FromView
 
 {
 
-    protected $student_number;
 
-    function __construct($student_number) {
-           $this->student_number = $student_number;
-    }
-    /*
+
     public function collection()
     {
-        return FixForm::where('student_number',$this->student_number)->get();
+        return FixForm::get();
     }
 
 
@@ -33,11 +29,8 @@ class FixFormExport implements FromQuery
             'fixform' => FixForm::get()
         ]);
     }
-    */
-    public function query()
-    {
-        return FixForm::query()->where('student_number', $this->student_number);
-    }
+
+
     /*
     public function map($fixform): array
     {
