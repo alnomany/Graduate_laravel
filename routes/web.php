@@ -51,7 +51,7 @@ use App\Http\Controllers\RemFormController;
     Route::get('/fixedform/fill', [FixedFormController::class, 'fill'])->name('fill');
     Route::put('/fixedform/fill/{update}', [FixedFormController::class, 'update'])->name('fill.update');
     Route::patch('/fixedform/fill/{update}',[FixedFormController::class, 'update'])->name('fill.update');
-    Route::post('/fixedform/store', [FixedFormController::class, 'store'])->name('store');
+    Route::post('/fixedform/store', [FixedFormController::class, 'store'])->name('fixedform.store');
 
 Route::get('/fixedform/edit/{id}', [FixedFormController::class, 'edit'])->name('fixform.edit');
 Route::get('/fixedform/delete/{id}', [FixedFormController::class, 'delete'])->name('fixform.delete');

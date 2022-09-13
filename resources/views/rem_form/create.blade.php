@@ -9,7 +9,7 @@
     <div class="content-wrapper container-xxl p-0">
         <div class="content-header row">
             <div class="content-header-left col-md-9 col-12 mb-2">
-                <div class="row breadcrumbs-top" id="breadcrumbs-top">
+                <div class="row breadcrumbs-top sticky" id="breadcrumbs-top" >
                     <div class="col-12">
                         <h2 class="content-header-title float-left mb-0">Create New Removable Forms </h2>
                         <div class="breadcrumb-wrapper">

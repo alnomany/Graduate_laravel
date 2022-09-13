@@ -36,14 +36,82 @@
 
 
 
-        function valueChangedFM()
-        {
-            if($('.fm1_sig').is(":checked"))
-            alert('show');
-                $(".name").hide();
-        //    else
-          //      $(".name").show();
-        }
+            //fetch-name
+
+        $('#student-number').on('change', function () {
+            var stunum = this.value;
+            $("#student-name").html('');
+            $.ajax({
+                url: "{{url('fixedform/fetch-name')}}",
+                type: "POST",
+                data: {
+                    stunum: stunum,
+                    _token: '{{csrf_token()}}'
+                },
+                dataType: 'json',
+                success: function (result) {
+
+                    $.each(result.studentnames, function (key, value) {
+                        $("#student-name").append('<option value="' + value
+                            .student_name + '">' + value.student_name + '</option>');
+
+
+                    });
+
+
+                }
+            });
+            //
+            function SelectedValue(e) {
+                document.getElementById("myText").value = e.target.value
+            }
+
+        });
+         //change name in edit pation
+    $('#pation-number-edit').on('change', function () {
+        var pationnum = this.value;
+      //  var selected_option_value = $(this).find(":selected").val();
+
+        $.ajax({
+            url: "{{url('fixedform/fetch-name-pation-edit')}}",
+            type: "POST",
+            data: {
+                pationnum: pationnum,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function (result) {
+                document.getElementById("pation-name-edit").value = result[0].p_name;
+
+            }
+        });
+
+    });
+    $('#student-number-edit').on('change', function () {
+        var studentnum = this.value;
+      //  var selected_option_value = $(this).find(":selected").val();
+
+        $.ajax({
+            url: "{{url('fixedform/fetch-name-student-edit')}}",
+            type: "POST",
+            data: {
+                studentnum: studentnum,
+                _token: '{{csrf_token()}}'
+            },
+            dataType: 'json',
+            success: function (result) {
+
+
+                document.getElementById("student-name-edit").value = result[0].student_name;
+
+
+
+
+            }
+        });
+
+    });
+
 
     $(document).on("change", ".fm", function() {
 
@@ -65,59 +133,117 @@
 
     });
     $(document).on("change", ".fm1", function() {
-        var str = $("#fm1_name").val();
+        var str = $("#sig_name").val();
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm1_date").value = current_date;
        // alert(date);
-
 
         $(".fm1_sig").val(str);
 
 
     });
     $(document).on("change", ".fm2", function() {
-        var str = $("#fm2_name").val();
+        var str = $("#sig_name").val();
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm2_date").value = current_date;
-
 
         $(".fm2_sig").val(str);
 
 
     });
+    $(document).on("change", ".fm8", function() {
+        var str = $("#sig_name").val();
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("fm8_date").value = current_date;
+
+
+        $(".fm8_sig").val(str);
+
+
+    });
     $(document).on("change", ".fm3", function() {
-        var str = $("#fm3_name").val();
+        var str = $("#sig_name").val();
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm3_date").value = current_date;
         $(".fm3_sig").val(str);
     });
     $(document).on("change", ".fm4", function() {
-        var str = $("#fm3_name").val();
+        var str = $("#sig_name").val();
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm4_date").value = current_date;
         $(".fm4_sig").val(str);
     });
     $(document).on("change", ".fm5", function() {
-        var str = $("#fm3_name").val();
+        var str = $("#sig_name").val();
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm5_date").value = current_date;
         $(".fm5_sig").val(str);
     });
     $(document).on("change", ".fm6", function() {
-        var str = $("#fm3_name").val();
+        var str = $("#sig_name").val();
        // alert(date);
         $(".fm6_sig").val(str);
         var date = new Date();
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours() + ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm6_date").value = current_date;
     });
+    $(document).on("change", ".rm7", function() {
+        var str = $("#sig_name").val();
+        var date = new Date();
+        var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+        document.getElementById("rm7_date").value = current_date;
+        $(".rm7_sig").val(str);
+    });
+    $(document).on("change", ".rm8", function() {
+        var str = $("#sig_name").val();
+          $(".rm8_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm8_date").value = current_date;
+    });
+    $(document).on("change", ".rm9", function() {
+        var str = $("#sig_name").val();
+          $(".rm9_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm9_date").value = current_date;
+    });
+    $(document).on("change", ".rm10", function() {
+        var str = $("#sig_name").val();
+          $(".rm10_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm10_date").value = current_date;
+    });
+    $(document).on("change", ".rm11", function() {
+        var str = $("#sig_name").val();
+          $(".rm11_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm11_date").value = current_date;
+    });
+    $(document).on("change", ".rm12", function() {
+        var str = $("#sig_name").val();
+          $(".rm12_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm12_date").value = current_date;
+    });
+    $(document).on("change", ".rm13", function() {
+        var str = $("#sig_name").val();
+          $(".rm13_sig").val(str);
+          var date = new Date();
+          var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();
+          document.getElementById("rm13_date").value = current_date;
+    });
     $(document).on("change", ".fm0", function() {
-        var str = $("#fm3_name").val();
+        var str = $("#sig_name").val();
           $(".fm0_sig").val(str);
           var date = new Date();
           var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours()+ ":" +date.getMinutes()+ ":" +date.getSeconds();

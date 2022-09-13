@@ -180,7 +180,7 @@
                     <label for="basicSelect">RM3 sig<span class="name">
                        </label>
 
-                        <input type="text" id="fm3_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="rm3_name" id="fm3_name" onchange=""/>
+                        <input type="text"  class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="rm3_name" id="sig_name" onchange=""/>
 
                     <input type="text" id="fm3_sig" class="form-control fm3_sig" placeholder=""  value="{{ $record->rm3_sig }}" name="rm3_sig" onchange=""/>
 
@@ -285,7 +285,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM7 -Try-in Framework Mark</label>
-            <input type="text" id="fm" class="form-control fm fm6" placeholder="N.A." value="{{ $record->rm7 }}" name="rm6" />
+            <input type="text" id="fm" class="form-control fm fm7" placeholder="N.A." value="{{ $record->rm7 }}" name="rm7" />
 
 
         </div>
@@ -295,14 +295,14 @@
         <div class="form-group">
                     <label for="basicSelect">RM7 sig<span class="name">
                        </label>
-                    <input type="text" id="fm6_sig" class="form-control fm6_sig" placeholder="" value="{{ $record->rm7_sig }}" name="rm6_sig" onchange=""/>
+                    <input type="text" id="fm7_sig" class="form-control fm7_sig" placeholder="" value="{{ $record->rm7_sig }}" name="rm7_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="fm6_date" name="rm7_date" class="date-fm6" value="{{ $record->rm7_date }}" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm7_date" name="rm7_date" class="date-fm6" value="{{ $record->rm7_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>

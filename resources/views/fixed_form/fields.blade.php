@@ -153,7 +153,7 @@
                     <label for="basicSelect">FM1 sig <span class="name">
                        </label>
 
-                        <input type="text" id="fm1_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm1_name" id="fm1_name" onchange=""/>
+                        <input type="text" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm1_name" id="sig_name" onchange=""/>
 
                     <input type="text" id="fm1_sig" class="form-control fm1_sig" placeholder="" value="" name="fm1_sig" onchange=""/>
 
@@ -190,7 +190,7 @@
                     <label for="basicSelect">FM2 sig<span class="name">
                        </label>
 
-                        <input type="text" id="fm2_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm2_name" id="fm2_name" onchange=""/>
+                        <input type="text" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm2_name" id="sig_name" onchange=""/>
 
                     <input type="text" id="fm2_sig" class="form-control fm2_sig" placeholder="" value="" name="fm2_sig" onchange=""/>
 
@@ -231,7 +231,7 @@
                     <label for="basicSelect">FM3 sig<span class="name">
                        </label>
 
-                        <input type="text" id="fm3_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm3_name" id="fm3_name" onchange=""/>
+                        <input type="text"  class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="sig_name" id="sig_name" onchange=""/>
 
                     <input type="text" id="fm3_sig" class="form-control fm3_sig" placeholder=""  value="" name="fm3_sig" onchange=""/>
 

@@ -149,7 +149,7 @@ public function fetchremprn(Request $request){
 
  public function store(Request $request){
    // $fixform = new FixForm($request->except('fm1'));
-   $fixform = new FixForm($request->all());
+    $fixform = new FixForm($request->all());
    //return avg($request->fm1+$request->fm2+$request->fm3);
    //average($request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6);
     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();

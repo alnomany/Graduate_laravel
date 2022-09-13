@@ -143,7 +143,7 @@
                     <label for="basicSelect">FM1 sig <span class="name">
                        </label>
 
-                        <input type="text" id="fm1_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm1_name" id="fm1_name" onchange=""/>
+                        <input type="text" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm1_name" id="sig_name" onchange=""/>
 
                     <input type="text" id="fm1_sig" class="form-control fm1_sig" placeholder="" value="{{ $record->fm1_sig }}" name="fm1_sig" onchange=""/>
 

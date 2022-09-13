@@ -14,11 +14,7 @@ class RemForm extends Model
         'p_name',
         'p_rn',
         'arch_type',
-        'tooth_number',
 
-        'rm0',
-        'rm0_sig',
-        'rm0_date',
 
         'rm1',
         'rm1_sig',

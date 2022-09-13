@@ -30,6 +30,7 @@
     .sticky {
         position: fixed !important;
         position: fixed;
+        z-index: -1;
 
         width: 100%;
         background-color: white;

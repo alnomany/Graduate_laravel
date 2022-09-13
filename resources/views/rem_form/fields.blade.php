@@ -115,8 +115,8 @@
     <div class="col-md-4 col-4">
                     <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">RM1-Tooth Preparation Mark </label>
-            <input type="text" id="fm" class="form-control fm rm1" placeholder="N.A." value="" name="RM1" />
+            <label for="basicSelect">RM1-Dx & Tx Planning Mark </label>
+            <input type="text" id="fm" class="form-control fm rm1 fm1" placeholder="N.A." value="" name="rm1" />
 
         </div>
 
@@ -127,9 +127,9 @@
                     <label for="basicSelect">RM1 sig <span class="name">
                        </label>
 
-                        <input type="text" id="sig_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="RM1_name" id="RM1_name" onchange=""/>
+                        <input type="text"  class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="fm1_name" id="sig_name" onchange=""/>
 
-                    <input type="text" id="rm1_sig" class="form-control rm1_sig" placeholder="" value="" name="rm1_sig" onchange=""/>
+                    <input type="text" id="fm1_sig" class="form-control rm1_sig fm1_sig" placeholder="" value="" name="rm1_sig" onchange=""/>
 
 
 
@@ -139,7 +139,7 @@
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm1_date" name="rm1_date" class="RM1_date" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm1_date" name="rm1_date" class="RM1_date" value="" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -154,7 +154,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM2-Primary Impression Mark </label>
-            <input type="text" id="rm" class="form-control fm rm2" placeholder="N.A." value="" name="rm2" />
+            <input type="text" id="rm" class="form-control fm rm2 fm2" placeholder="N.A." value="" name="rm2" />
         </div>
 
     </div>
@@ -164,9 +164,9 @@
                     <label for="basicSelect">RM2 sig<span class="name">
                        </label>
 
-                        <input type="text" id="sig_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="RM2_name" id="rm2_name" onchange=""/>
+                        <input type="text" id="sig_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="RM2_name"  onchange=""/>
 
-                    <input type="text" id="rm2_sig" class="form-control rm2_sig" placeholder="" value="" name="rm2_sig" onchange=""/>
+                    <input type="text" id="fm2_sig" class="form-control rm2_sig fm2_sig" placeholder="" value="" name="rm2_sig" onchange=""/>
 
 
 
@@ -176,7 +176,7 @@
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm2_date" name="rm2_date" class="date-RM1" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm2_date" name="rm2_date" class="date-RM1" value="" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -193,7 +193,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM3 -Survey &  Design Mark </label>
-            <input type="text" id="fm" class="form-control fm rm3" placeholder="N.A." value="" name="rm3" />
+            <input type="text" id="fm" class="form-control fm rm3 fm3" placeholder="N.A." value="" name="rm3" />
 
 
         </div>
@@ -205,9 +205,9 @@
                     <label for="basicSelect">RM3 sig<span class="name">
                        </label>
 
-                        <input type="text" id="rm3_name" class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="rm3_name" id="rm3_name" onchange=""/>
+                        <input type="text"  class="form-control name" placeholder="{{ $name }}" value="{{ $name }}" style="display:none;" name="rm3_name" id="sig_name" onchange=""/>
 
-                    <input type="text" id="rm3_sig" class="form-control rm3_sig" placeholder=""  value="" name="rm3_sig" onchange=""/>
+                    <input type="text" id="rm3_sig" class="form-control rm3_sig fm3_sig" placeholder=""  value="" name="rm3_sig" onchange=""/>
 
 
 
@@ -217,7 +217,7 @@
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm3_date" name="rm3_date" class="date-rm3" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm3_date" name="rm3_date" class="date-rm3" value="" min="2022-01-01" max="2025-12-31">
                 </div>
 
 
@@ -231,7 +231,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM4 -Mouth Preparation Mark </label>
-            <input type="text" id="fm" class="form-control fm rm4" placeholder="N.A." name="rm4"  value="" />
+            <input type="text" id="fm" class="form-control fm rm4 fm4" placeholder="N.A." name="rm4"  value="" />
 
         </div>
 
@@ -240,14 +240,14 @@
         <div class="form-group">
                     <label for="basicSelect">RM4 sig<span class="name">
                        </label>
-                    <input type="text" id="rm4_sig" class="form-control rm4_sig" placeholder="" value="" name="rm4_sig" onchange=""/>
+                    <input type="text" id="rm4_sig" class="form-control rm4_sig fm4_sig" placeholder="" value="" name="rm4_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm4_date" name="rm4_date" class="date-rm4" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm4_date" name="rm4_date" class="date-rm4" value="" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -257,7 +257,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM5-Border Molding Mark </label>
-            <input type="text" id="fm" class="form-control fm rm5" placeholder="N.A." name="rm5" value="" />
+            <input type="text" id="fm" class="form-control fm rm5 fm5" placeholder="N.A." name="rm5" value="" />
 
 
         </div>
@@ -267,14 +267,14 @@
         <div class="form-group">
                     <label for="basicSelect">RM5 sig<span class="name">
                        </label>
-                    <input type="text" id="rm5_sig" class="form-control rm5_sig" placeholder="" value="" name="rm5_sig" onchange=""/>
+                    <input type="text" id="rm5_sig" class="form-control rm5_sig fm5_sig" placeholder="" value="" name="rm5_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm5_date" name="rm5_date" class="date-rm5" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm5_date" name="rm5_date" class="date-rm5" value="" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -284,7 +284,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM6 -Final Impression Mark </label>
-            <input type="text" id="fm" class="form-control fm rm6" placeholder="N.A." name="rm6" />
+            <input type="text" id="fm" class="form-control fm rm6 fm6" placeholder="N.A." name="rm6" />
 
 
         </div>
@@ -294,14 +294,14 @@
         <div class="form-group">
                     <label for="basicSelect">RM6 sig<span class="name">
                        </label>
-                    <input type="text" id="rm6_sig" class="form-control rm6_sig" placeholder="" value="" name="rm6_sig" onchange=""/>
+                    <input type="text" id="rm6_sig" class="form-control rm6_sig fm6_sig" placeholder="" value="" name="rm6_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm6_date" name="rm6_date" class="date-rm6" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm6_date" name="rm6_date" class="date-rm6" value="" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -310,7 +310,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM7 -Try-in Framework Mark </label>
-            <input type="text" id="fm" class="form-control fm rm7" placeholder="N.A." name="rm7" />
+            <input type="text" id="fm" class="form-control fm rm7 fm7" placeholder="N.A." name="rm7" />
 
 
         </div>
@@ -320,7 +320,7 @@
         <div class="form-group">
                     <label for="basicSelect">RM7 sig<span class="name">
                        </label>
-                    <input type="text" id="rm7_sig" class="form-control rm7_sig" placeholder="" value="" name="rm7_sig" onchange=""/>
+                    <input type="text" id="rm7_sig" class="form-control rm7_sig fm7_sig" placeholder="" value="" name="rm7_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
@@ -338,7 +338,7 @@
     <!-- Basic Select -->
     <div class="form-group">
         <label for="basicSelect">RM8 -Functional Impression (Altered Cast) Mark </label>
-        <input type="text" id="fm" class="form-control fm rm8" placeholder="N.A." name="rm8" />
+        <input type="text" id="fm" class="form-control fm fm8" placeholder="N.A." name="rm8" />
 
 
     </div>
@@ -348,14 +348,14 @@
     <div class="form-group">
                 <label for="basicSelect">RM8 sig<span class="name">
                    </label>
-                <input type="text" id="rm8_sig" class="form-control rm8_sig" placeholder="" value="" name="rm8_sig" onchange=""/>
+                <input type="text" id="rm8_sig" class="form-control fm8_sig" placeholder="" value="" name="rm8_sig" onchange=""/>
     </div>
 </div>
 <div class="col-md-4 col-4">
     <div class="form-group">
             <div class="custom-control demo-inline-spacin">
                 <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                <input type="text" style="margin-top: .5rem;" id="rm8_date" name="rm8_date" class="date-rm8" value="" min="2022-01-01" max="2025-12-31">
+                <input type="text" style="margin-top: .5rem;" id="fm8_date" name="rm8_date" class="date-rm8" value="" min="2022-01-01" max="2025-12-31">
             </div>
     </div>
 </div>
@@ -366,7 +366,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM9 -Max. Man. Jaw relation Mark</label>
-            <input type="text" id="fm" class="form-control fm rm9" placeholder="N.A." name="rm9" />
+            <input type="text" id="fm" class="form-control fm rm9 fm9" placeholder="N.A." name="rm9" />
 
 
         </div>

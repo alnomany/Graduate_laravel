@@ -28,10 +28,9 @@ class RemFormController extends Controller
  }
  public function store(Request $request){
     $remform = new RemForm($request->all());
-     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();
-     "the average is " .$average;
+
      $remform->save();
-     $data=FixForm::all();
+     $data=RemForm::all();
      return redirect()->back()->with('success', 'Saved successfully');
   }
   public function update(Request $request,$id){
