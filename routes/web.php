@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthOtpController;
 use App\Http\Controllers\FixedFormController;
+use App\Http\Controllers\RemFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,30 @@ use App\Http\Controllers\FixedFormController;
 |
 */
     Route::middleware('auth')->group(function() {
+            //removable
+
+    Route::get('/remform/create', [RemFormController::class, 'create'])->name('remform.create');
+    Route::post('/remform/store', [RemFormController::class, 'store'])->name('remform.store');
+    Route::get('/remform/edit/{id}', [RemFormController::class, 'edit'])->name('remform.edit');
+    Route::put('/remform/fill/{update}', [RemFormController::class, 'update'])->name('remform.fill.update');
+    Route::patch('/remform/fill/{update}',[RemFormController::class, 'update'])->name('remform.fill.update');
+    Route::get('/remform/delete/{id}', [RemFormController::class, 'delete'])->name('remform.delete');
+
+
+    Route::get('/remform/fill', [RemFormController::class, 'fill'])->name('remform.fill');
+    //fech student removable
+    Route::post('remform/fetch-name-rem', [RemFormController::class, 'fetchname']);
+    //fech patint
+    Route::post('/remform/fetch-prn-rem',[RemFormController::class,'fetchprn'])->name('remform.fetchprn');
+   //get records
+   Route::get('remform/record', [RemFormController::class, 'record'])->name('remform.get-more-record');
+
+
+
+
+
+
+
     Route::get('/fixedform/create', [FixedFormController::class, 'create'])->name('create');
     Route::get('fixedform/export/', [FixedFormController::class, 'export'])->name('fill.export');
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');

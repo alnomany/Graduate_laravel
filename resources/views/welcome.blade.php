@@ -9,7 +9,7 @@
     {{--
     <div class="row justify-content-center">
         --}}
-        <section id="dashboard-ecommerce">
+        <section id="">
             <div class="row">
                 <!-- Medal Card -->
                 <div class="col-xl-8 col-md-12 col-12">
@@ -23,8 +23,10 @@
                             </a>
                             <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
 
-                            <button type="button" class="btn btn-primary">Removable</button>
-                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                            <a href="{{ route('remform.create') }}">
+
+                                <button type="button" class="btn btn-primary">Removable</button>
+                                </a>                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                             <a href="{{ route('fill') }}">
                             <button type="button" class="btn btn-primary">Fill Form</button>
                             </a>

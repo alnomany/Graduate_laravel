@@ -26,3 +26,12 @@
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
 <!-- END: Custom CSS-->
+<style>
+    .sticky {
+        position: fixed !important;
+        position: fixed;
+
+        width: 100%;
+        background-color: white;
+      }
+</style>

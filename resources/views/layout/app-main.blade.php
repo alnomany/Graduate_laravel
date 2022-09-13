@@ -20,7 +20,13 @@
 @include('layout.partials.footer')
 
 @include('layout.partials.footer-scripts')
-@include('layout.partials.footer-fill-scripts')
+@stack('footer-fill-scripts')
+@stack('footer-fill-rem-scripts')
+
+
+
+
+
 
 
  </body>

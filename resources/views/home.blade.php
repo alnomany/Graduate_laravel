@@ -23,10 +23,17 @@
                                     </a>
                                     <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
 
+                                    <a href="{{ route('remform.create') }}">
+
                                     <button type="button" class="btn btn-primary">Removable</button>
+                                    </a>
+                                    <a href="{{ route('remform.fill') }}">
+                                        <button type="button" class="btn btn-primary">Edit Removable Form</button>
+                                        </a>
+
                                     <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                                     <a href="{{ route('fill') }}">
-                                    <button type="button" class="btn btn-primary">Edit Form</button>
+                                    <button type="button" class="btn btn-primary">Edit Fixed Form</button>
                                     </a>
                                     <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                                     <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />

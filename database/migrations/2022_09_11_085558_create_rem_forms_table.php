@@ -19,7 +19,8 @@ class CreateRemFormsTable extends Migration
             $table->string('student_name')->nullable();
             $table->string('p_name')->nullable();
             $table->string('p_rn')->nullable();
-            $table->string('rest_type')->nullable();
+            $table->string('arch_type')->nullable();
+
             $table->string('tooth_number');
 
             $table->string('rm0')->nullable();
@@ -85,7 +86,6 @@ class CreateRemFormsTable extends Migration
 
             $table->string('status')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->timestamps();
             $table->timestamps();
         });
     }

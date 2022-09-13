@@ -127,6 +127,25 @@ public function fetchprn(Request $request){
    return  response()->json($data);
 
 }
+public function fetchremprn(Request $request){
+      $data['prnlist'] =FixForm::where("student_number",$request->studentnumber)->get([
+     'student_number',
+     'student_name',
+     'p_name',
+     'p_rn',
+     'rest_type',
+     'tooth_number',
+     'avg',
+     'note',
+     'total_avg',
+     'status',
+     'fm0',
+     'fm0_sig']);
+
+    return  response()->json($data);
+
+ }
+
 
  public function store(Request $request){
    // $fixform = new FixForm($request->except('fm1'));

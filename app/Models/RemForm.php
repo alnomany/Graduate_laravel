@@ -13,7 +13,7 @@ class RemForm extends Model
         'student_name',
         'p_name',
         'p_rn',
-        'rest_type',
+        'arch_type',
         'tooth_number',
 
         'rm0',
