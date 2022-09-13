@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
+use Carbon\Carbon;
 use App\Models\FixForm;
+use Carbon\Traits\Date;
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\FixFormExport;
@@ -182,7 +185,9 @@ public function fetchremprn(Request $request){
 
  public function export()
  {
-     return Excel::download(new FixFormExport, 'report.xlsx');
+
+        $currentTime = Carbon::now();
+         return Excel::download(new FixFormExport,  $currentTime.'report.xlsx');
  }
  public function exportexcelstudent(Request $request)
  {

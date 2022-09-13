@@ -43,6 +43,9 @@ use App\Http\Controllers\RemFormController;
 
     Route::get('/fixedform/create', [FixedFormController::class, 'create'])->name('create');
     Route::get('fixedform/export/', [FixedFormController::class, 'export'])->name('fill.export');
+
+    Route::get('remform/export/', [RemFormController::class, 'export'])->name('fill.export.rem');
+
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');
     Route::get('fixedform/export/student/excel', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student');
 

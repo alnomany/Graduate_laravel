@@ -517,6 +517,9 @@
     </div>
     <div class="col-12">
         {!! Form::submit('save', ['class' => 'btn btn-primary']) !!}
+        <a href="../" class="btn btn-danger" style="float:right;">
+            Exit without saving
+        </a>
 
     </div>
 </div>

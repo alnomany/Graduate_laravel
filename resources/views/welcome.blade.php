@@ -15,7 +15,7 @@
                 <div class="col-xl-8 col-md-12 col-12">
                     <div class="card card-congratulation-medal">
                         <div class="card-body">
-                            <h5>welcome 🎉
+                            <h5>welcome 🎉                                     {{ Auth::user()->name }}
                             </h5>
                             <p class="card-text font-small-3">chose one</p>
                             <a href="{{ route('create') }}">
@@ -25,20 +25,27 @@
 
                             <a href="{{ route('remform.create') }}">
 
-                                <button type="button" class="btn btn-primary">Removable</button>
-                                </a>                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                            <a href="{{ route('fill') }}">
-                            <button type="button" class="btn btn-primary">Fill Form</button>
+                            <button type="button" class="btn btn-primary">Removable</button>
                             </a>
+                            <a href="{{ route('remform.fill') }}">
+                                <button type="button" class="btn btn-primary">Edit Removable Form</button>
+                                </a>
+
+                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                            <a href="{{ route('fill') }}">
+                            <button type="button" class="btn btn-primary">Edit Fixed Form</button>
+                            </a>
+                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
                             <a href="{{ route('fill.export') }}">
 
-                                <button type="button" class="btn btn-primary">Full Report</button>
-                                <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                                </a>
-                                <a href="{{ route('fill.export.student') }}">
-                                    <button type="button" class="btn btn-primary">Single Student Report</button>
+                            <button type="button" class="btn btn-primary">Full Report</button>
+                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                            </a>
+                            <a href="{{ route('fill.export.student') }}">
+                                <button type="button" class="btn btn-primary">Single Student Report</button>
 
-                                </a>
+                            </a>
                         </div>
                     </div>
                 </div>

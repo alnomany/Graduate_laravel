@@ -35,4 +35,22 @@
         width: 100%;
         background-color: white;
       }
+      .btn-primary{
+        margin-left:2px;
+      }
+      .pink{
+        background-color:  #ffb3e6 !important;
+        border-color:  #ffb3e6 !important;
+
+      }
+      .pink:hover{
+        background-color:  #ffb3e6 !important;
+        border-color:  #ffb3e6 !important;
+
+      }
+      .pink:focus{
+        background-color:  #ffb3e6 !important;
+        border-color:  #ffb3e6 !important;
+
+      }
 </style>

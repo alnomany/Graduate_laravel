@@ -18,34 +18,49 @@
                                     <h5>welcome 🎉                                     {{ Auth::user()->name }}
                                     </h5>
                                     <p class="card-text font-small-3">chose one</p>
-                                    <a href="{{ route('create') }}">
-                                    <button type="button" class="btn btn-primary">Fixed</button>
-                                    </a>
-                                    <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-
-                                    <a href="{{ route('remform.create') }}">
-
-                                    <button type="button" class="btn btn-primary">Removable</button>
-                                    </a>
-                                    <a href="{{ route('remform.fill') }}">
-                                        <button type="button" class="btn btn-primary">Edit Removable Form</button>
+                                    <div class="row">
+                                        <a href="{{ route('create') }}">
+                                            <button type="button" class="btn btn-primary">Create Fixed Form</button>
                                         </a>
 
-                                    <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                                    <a href="{{ route('fill') }}">
-                                    <button type="button" class="btn btn-primary">Edit Fixed Form</button>
-                                    </a>
-                                    <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                                    <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                                    <a href="{{ route('fill.export') }}">
+                                        <a href="{{ route('fill') }}">
+                                            <button type="button" class="btn btn-primary">Edit Fixed Form</button>
+                                        </a>
 
-                                    <button type="button" class="btn btn-primary">Full Report</button>
-                                    <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
-                                    </a>
-                                    <a href="{{ route('fill.export.student') }}">
-                                        <button type="button" class="btn btn-primary">Single Student Report</button>
+                                        <a href="{{ route('fill.export') }}">
 
-                                    </a>
+                                            <button type="button" class="btn btn-primary">Full Fixed Report</button>
+                                            <img src="../../../app-assets/images/illustration/badge.sv" class="congratulation-medal" alt="" />
+                                        </a>
+                                        <a href="{{ route('fill.export.student') }}">
+                                                <button type="button" class="btn btn-primary">Single Student Fixed Report</button>
+
+                                        </a>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+
+                                        <a href="{{ route('remform.create') }}">
+
+                                        <button type="button" class="btn btn-primary pink">Create Removable Form</button>
+                                        </a>
+                                        <a href="{{ route('remform.fill') }}">
+                                            <button type="button" class="btn btn-primary pink">Edit Removable Form</button>
+                                        </a>
+
+                                        <a href="{{ route('fill.export.rem') }}">
+
+                                            <button type="button" class="btn btn-primary pink">Full Removable Report</button>
+                                            </a>
+                                            <a href="{{}}">
+                                                <button type="button" class="btn  btn-primary pink">Single Student Removable Report</button>
+                                            </a>
+
+                                    </div>
+
+
+
+
                                 </div>
                             </div>
                         </div>

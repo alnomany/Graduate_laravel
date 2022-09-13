@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\FixForm;
 use App\Models\RemForm;
+
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
+use App\Exports\RemFormExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RemFormController extends Controller
 {
@@ -25,6 +29,12 @@ class RemFormController extends Controller
         $students_users=StudentUser::get();
          $data=RemForm::get();
         return view('rem_form.create', compact('name','students_users','arr_rest_type','data'));
+ }
+ public function export()
+ {
+
+        $currentTime = Carbon::now();
+         return Excel::download(new RemFormExport,  $currentTime.'removable-report.xlsx');
  }
  public function store(Request $request){
     $remform = new RemForm($request->all());
