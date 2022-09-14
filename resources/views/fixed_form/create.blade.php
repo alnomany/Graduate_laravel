@@ -45,11 +45,14 @@
                                 <h4 class="card-title"></h4>
                             </div>
                             <div class="card-body">
+
                                 {!! Form::open(['route' => 'fixedform.store', 'files'=> true , 'id' => 'form']) !!}
 
                                 @include('fixed_form.fields')
 
                                 {!! Form::close() !!}
+
+
 
                             </div>
                         </div>
@@ -66,3 +69,4 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 @endsection
+
