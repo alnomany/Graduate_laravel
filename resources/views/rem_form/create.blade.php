@@ -41,10 +41,10 @@
                                     </ul>
                                 </div>
                             @endif
-                            <div class="card-header" style="background:  #ffb3e6;">
+                            <div class="card-header pink" >
                                 <h4 class="card-title"></h4>
                             </div>
-                            <div class="card-body" style="background:  #ffb3e6;">
+                            <div class="card-body pink" >
                                 {!! Form::open(['route' => 'remform.store', 'files'=> true , 'id' => 'form']) !!}
 
                                 @include('rem_form.fields')

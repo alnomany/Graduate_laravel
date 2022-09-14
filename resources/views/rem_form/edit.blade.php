@@ -41,10 +41,10 @@
                                 </ul>
                             </div>
                             @endif
-                            <div class="card-header">
+                            <div class="card-header pink">
                                 <h4 class="card-title"></h4>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pink">
                                 {!! Form::model($record, ['route' => ['remform.fill.update', collect($record)->first() ], 'method' => 'patch', 'files'=> true]) !!}
 
 

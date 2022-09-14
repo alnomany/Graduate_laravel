@@ -52,7 +52,7 @@
 
                                     <button type="button" class="btn btn-primary pink">Full Removable Report</button>
                                     </a>
-                                    <a href="{{}}">
+                                    <a href="{{route('fill.remform.export.student')}}">
                                         <button type="button" class="btn  btn-primary pink">Single Student Removable Report</button>
                                     </a>
 

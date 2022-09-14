@@ -36,6 +36,7 @@ use App\Http\Controllers\RemFormController;
    Route::get('remform/record', [RemFormController::class, 'record'])->name('remform.get-more-record');
 
 
+   Route::get('/fixedform/updatepassword', [FixedFormController::class, 'updatePassword']);
 
 
 
@@ -45,6 +46,9 @@ use App\Http\Controllers\RemFormController;
     Route::get('fixedform/export/', [FixedFormController::class, 'export'])->name('fill.export');
 
     Route::get('remform/export/', [RemFormController::class, 'export'])->name('fill.export.rem');
+    Route::get('remform/export/student', [RemFormController::class, 'exportstudent'])->name('fill.remform.export.student');
+    Route::get('remform/export/student/excel', [RemFormController::class, 'exportexcelstudent'])->name('fill.rem.export.Excel.student');
+
 
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');
     Route::get('fixedform/export/student/excel', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student');

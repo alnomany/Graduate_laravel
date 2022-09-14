@@ -14,13 +14,13 @@ class RemFormExport implements FromView
     */
     public function collection()
     {
-        return RemForm::all();
+        return RemForm::get();
     }
     public function view(): View
     {
 
         return view('exports.remform', [
-            'fixform' => RemForm::get()
+            'remform' => RemForm::get()
         ]);
     }
 }

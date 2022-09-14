@@ -5,31 +5,49 @@
         <th>StuName</th>
         <th>PRN</th>
         <th>Patient Name</th>
+        <th>Arch/Type</th>
 
-        <th>preparation plan mark</th>
+        <th>Dx  Tx Planning Mark</th>
+        <th>Sign</th>
+
+        <th>Primary Impression Mark</th>
         <th>Sign</th>
 
 
-        <th>Tooth Num</th>
-        <th>Restoration type</th>
-
-        <th>Tooth Preparation</th>
+        <th>Survey Design Mark</th>
         <th>Sign</th>
 
-        <th>Provisional</th>
+        <th>Mouth Preparation Mark</th>
         <th>Sign</th>
 
-        <th>Final impression/ resin pattern</th>
+        <th>Border Molding Mark</th>
         <th>Sign</th>
 
-        <th>Prefab post cementation core build-up</th>
+        <th>Final Impression Mark</th>
         <th>Sign</th>
 
-        <th>Try-in</th>
+        <th>Try-in Framework Mark</th>
         <th>Sign</th>
 
-        <th>Cementation</th>
+        <th>Functional Impression Altered Cast Mark</th>
         <th>Sign</th>
+
+        <th>Max. Man. Jaw relation Mark</th>
+        <th>Sign</th>
+
+        <th>Try-in Trial Denture Mark</th>
+        <th>Sign</th>
+
+        <th> Prosthesis Placement Mark</th>
+        <th>Sign</th>
+
+        <th>Post-Placement Mark</th>
+        <th>Sign</th>
+
+        <th>Other Procedures Mark</th>
+        <th>Sign</th>
+
+
 
         <th>Average</th>
 
@@ -41,77 +59,159 @@
 
     </thead>
     <tbody>
-    @foreach($fixform as $data)
+    @foreach($remform as $data)
         <tr>
 
             <td>{{ $data->student_number }}</td>
             <td>{{ $data->student_name }}</td>
             <td>{{ $data->p_rn }}</td>
             <td>{{ $data->p_name }}</td>
+            <td>{{ $data->arch_type }}</td>
 
-            <td>{{ $data->fm0 }}</td>
-            <td>{{ $data->fm0_sig }}</td>
-
-
-
-
-            <td>{{ $data->tooth_number }}</td>
-            <td>{{ $data->rest_type }}</td>
-
-            <td>{{ $data->fm1 }}</td>
-            <td>{{ $data->fm1_sig }}</td>
-            <td>{{ $data->fm2 }}</td>
-            <td>{{ $data->fm2_sig }}</td>
+            <td>{{ $data->rm1 }}</td>
+            <td>{{ $data->rm1_sig }}</td>
+            <td>{{ $data->rm2 }}</td>
+            <td>{{ $data->rm2_sig }}</td>
 
             <td>
-                @if(empty($data->fm3))
+                @if(empty($data->rm3))
                 N.A.
              @endif
-             {{ $data->fm3 }}
+             {{ $data->rm3 }}
             </td>
             <td>
-                @if(empty($data->fm3_sig))
+                @if(empty($data->rm3_sig))
                 N.A.
              @endif
-                {{ $data->fm3_sig }}
+                {{ $data->rm3_sig }}
             </td>
             <td>
-             @if(empty($data->fm4))
+             @if(empty($data->rm4))
                 N.A.
              @endif
-             {{ $data->fm4 }}
+             {{ $data->rm4 }}
             </td>
             <td>
-                @if(empty($data->fm4_sig))
+                @if(empty($data->rm4_sig))
                 N.A.
              @endif
-                {{ $data->fm4_sig }}
+                {{ $data->rm4_sig }}
             </td>
 
 
             <td>
-                @if(empty($data->fm5))
+                @if(empty($data->rm5))
                    N.A.
                 @endif
-                {{ $data->fm5 }}
+                {{ $data->rm5 }}
             </td>
             <td>
-                @if(empty($data->fm5_sig))
+                @if(empty($data->rm5_sig))
                 N.A.
                 @endif
-                {{ $data->fm5_sig }}
+                {{ $data->rm5_sig }}
             </td>
             <td>
-                @if(empty($data->fm6))
+                @if(empty($data->rm6))
                 N.A.
                 @endif
-                {{ $data->fm6 }}
+                {{ $data->rm6 }}
             </td>
             <td>
-                @if(empty($data->fm6_sig))
+                @if(empty($data->rm6_sig))
                 N.A.
                 @endif
-                {{ $data->fm6_sig }}
+                {{ $data->rm6_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm7))
+                N.A.
+                @endif
+                {{ $data->rm7 }}
+            </td>
+            <td>
+                @if(empty($data->rm7_sig))
+                N.A.
+                @endif
+                {{ $data->rm7_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm8))
+                N.A.
+                @endif
+                {{ $data->rm8 }}
+            </td>
+            <td>
+                @if(empty($data->rm8_sig))
+                N.A.
+                @endif
+                {{ $data->rm8_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm9))
+                N.A.
+                @endif
+                {{ $data->rm9 }}
+            </td>
+            <td>
+                @if(empty($data->rm9_sig))
+                N.A.
+                @endif
+                {{ $data->rm9_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm10))
+                N.A.
+                @endif
+                {{ $data->rm10 }}
+            </td>
+            <td>
+                @if(empty($data->rm10_sig))
+                N.A.
+                @endif
+                {{ $data->rm10_sig }}
+            </td>
+            <td>
+                @if(empty($data->rm11))
+                N.A.
+                @endif
+                {{ $data->rm11 }}
+            </td>
+            <td>
+                @if(empty($data->rm11_sig))
+                N.A.
+                @endif
+                {{ $data->rm11_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm12))
+                N.A.
+                @endif
+                {{ $data->rm12 }}
+            </td>
+            <td>
+                @if(empty($data->rm12_sig))
+                N.A.
+                @endif
+                {{ $data->rm12_sig }}
+            </td>
+
+            <td>
+                @if(empty($data->rm13))
+                N.A.
+                @endif
+                {{ $data->rm13 }}
+            </td>
+            <td>
+                @if(empty($data->rm13_sig))
+                N.A.
+                @endif
+                {{ $data->rm13_sig }}
             </td>
             <td>{{$data->avg}}</td>
 
@@ -125,19 +225,6 @@
     @endforeach
     </tbody>
 </table>
-<table>
-    <thead>
-        <tr>
-            <th>average</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ $avg_total=DB::table('fix_forms')
-                ->avg('avg'); }}</td>
-        </tr>
-    </tbody>
 
-</table>
 
 

@@ -59,7 +59,7 @@
                                     <label for="OTP-Code" class="col-md-4 col-form-label text-md-end">{{ __('OTP-Code') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="OTP-Code" type="OTP-Code" class="form-control @error('OTP-Code') is-invalid @enderror" name="OTP-Code" required autocomplete="current-password">
+                                        <input id="OTP-Code" type="password" class="form-control @error('OTP-Code') is-invalid @enderror" name="OTP-Code" required autocomplete="current-password">
 
                                         @error('OTP-Code')
                                             <span class="invalid-feedback" role="alert">

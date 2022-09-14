@@ -9,6 +9,7 @@ use App\Models\RemForm;
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\RemFormExport;
+use App\Exports\RemFormExportSingle;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -30,12 +31,29 @@ class RemFormController extends Controller
          $data=RemForm::get();
         return view('rem_form.create', compact('name','students_users','arr_rest_type','data'));
  }
+ ///////////////////////////////Export///////////////////////////////////////////////
  public function export()
  {
 
         $currentTime = Carbon::now();
          return Excel::download(new RemFormExport,  $currentTime.'removable-report.xlsx');
  }
+ public function exportstudent(){
+    $students_users=StudentUser::get();
+
+    return view('exports.student-rem',compact('students_users'));
+
+ }
+ public function exportexcelstudent(Request $request)
+ {
+    return Excel::download(new RemFormExportSingle($request->student_number), $request->student_number.'Removal_Report.xlsx');
+   // return Excel::download(new MttRegistrationsExport($request->id), 'MttRegistrations.xlsx');
+
+
+ }
+
+
+ /////////////////////////////////End Export
  public function store(Request $request){
     $remform = new RemForm($request->all());
 
@@ -93,7 +111,6 @@ class RemFormController extends Controller
    'p_name',
    'p_rn',
    'arch_type',
-   'tooth_number',
  ]);
 
   return  response()->json($data);

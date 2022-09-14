@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use DateTime;
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\FixForm;
 use Carbon\Traits\Date;
 use App\Models\StudentUser;
+
 use Illuminate\Http\Request;
 use App\Exports\FixFormExport;
+use Illuminate\Support\Facades\DB;
+use App\Exports\FixFormExportSingle;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FixedFormController extends Controller
@@ -191,10 +196,32 @@ public function fetchremprn(Request $request){
  }
  public function exportexcelstudent(Request $request)
  {
-    return Excel::download(new FixFormExport($request->student_number), $request->student_number.'Fixed_Report.xlsx');
+    return Excel::download(new FixFormExportSingle($request->student_number), $request->student_number.'Fixed_Report.xlsx');
    // return Excel::download(new MttRegistrationsExport($request->id), 'MttRegistrations.xlsx');
 
 
+ }
+ public function updatePassword(){
+    /*$password = Hash::make('12341234');
+
+    $data = array(
+        array('password'=>$password),
+        //...
+    );
+
+    User::insert($data);
+    */
+    $password = Hash::make('12341234');
+
+    DB::table('users')
+
+->update(['users.password'=> $password]);
+/*
+    $post=User::where('id',15)->get();
+    $password = Hash::make('12341234');
+
+    $post()->update(['password' => '1234213']);
+*/
  }
  public function exportstudent(){
     $students_users=StudentUser::get();

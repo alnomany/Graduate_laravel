@@ -16,7 +16,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('home') }}"> Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active"><a href="#">Student Report</a>
+                                    <li class="breadcrumb-item active"><a href="#">Student Removable Report</a>
                                     </li>
 
                                 </ol>
@@ -45,7 +45,8 @@
                                     <h4 class="card-title"></h4>
                                 </div>
                                 <div class="card-body">
-                                                        <form method="get" action="{{ route('fill.export.Excel.student') }}">
+
+                                                                        <form method="get" action="{{ route('fill.rem.export.Excel.student') }}">
 
                                     <div class="row">
 
