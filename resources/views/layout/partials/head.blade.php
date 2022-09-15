@@ -42,6 +42,7 @@
         background-color:  #b3ff99
         !important;
         border-color:   #b3ff99 !important;
+        color:black !important;
 
       }
       .pink:hover{
