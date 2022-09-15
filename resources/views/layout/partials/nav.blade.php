@@ -48,7 +48,7 @@
                     </span><span class="user-status">  @if(Auth::user()->type == "admin")  Admin @else  Doctor @endif </span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/user-29.png" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
-                    <a class="dropdown-item" href="page-profile.html"><i class="mr-50" data-feather="user"></i> Profile</a>             <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('changePasswordGet') }}"><i class="mr-50" data-feather="user"></i> Profile</a>             <div class="dropdown-divider"></div>
                         <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

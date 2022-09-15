@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthOtpController;
-use App\Http\Controllers\FixedFormController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RemFormController;
+use App\Http\Controllers\FixedFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +93,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', function () {
     return view('welcome');
 });
+////////////////////////////////////change password/////////////////////////////////////////
+Route::get('/changePassword', [App\Http\Controllers\ProfileController::class, 'showChangePasswordGet'])->name('changePasswordGet');
+Route::post('/changePassword', [ProfileController::class, 'changePasswordPost'])->name('changePasswordPost');
+////////////////////////////////////////////OTP///////////////////////////////////
 Route::controller(AuthOtpController::class)->group(function(){
     Route::get('/otp/login', 'login')->name('otp.login');
     Route::post('/otp/generate', 'generate')->name('otp.generate');
@@ -99,8 +104,8 @@ Route::controller(AuthOtpController::class)->group(function(){
     Route::post('/otp/login', 'loginWithOtp')->name('otp.getlogin');
 });
 Route::post('/login/phone', 'AuthController@create')->name('register-phone');
-Route::post('/verify/phone', 'AuthController@verify')->name('verify-phone');
 Route::controller(AuthController::class)->group(function(){
     Route::post('/login/phone', 'create')->name('register-phone');
     Route::post('/verify/phone', 'verify')->name('verify-phone');
 });
+/////////////////////////////////End OTP///////////////////////////////////////////

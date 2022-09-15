@@ -1,6 +1,14 @@
-@extends('layouts.app')
+@extends('layout.app-main')
 
 @section('content')
+<div class="app-content content ">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper container-xxl p-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,8 +16,8 @@
                 <div class="card-header">{{ __('Mobile no') }}</div>
 
                 <div class="card-body">
-                    {{--  <form method="POST"  action="{{ route('otp.generate') }}">--}}
-                    <form method="POST"  action="{{ route('register-phone') }}">
+                    {{--  <form method="POST"  action="{{ route('register-phone') }}">--}}
+                    <form method="POST"  action="">
 
 
                         @csrf

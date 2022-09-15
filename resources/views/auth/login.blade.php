@@ -81,11 +81,11 @@
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
-                                        {{--
+
                                         <a class="btn btn-link" href="{{ route('otp.login') }}">
                                             {{ __('Login By Phone Number') }}
                                         </a>
-                                        --}}
+
                                     </div>
                                 </div>
                             </form>

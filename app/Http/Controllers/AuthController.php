@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use GuzzleHttp\Client;
+use Twilio\Rest\Client;
 use Illuminate\Http\Request;
 use GuzzleHttp\Psr7\Request as GuzzleRequest;
 use Illuminate\Support\Facades\Auth;
