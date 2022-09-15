@@ -84,9 +84,9 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="">Fixed Form</span>{{-- <spanclass="badgebadge-light-warningbadge-pillml-automr-1">2</span> --}}</a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Creat</span></a>
+                    <li><a class="d-flex align-items-center" href="{{ route('create') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Creat</span></a>
                     </li>
-                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Edit</span></a>
+                    <li><a class="d-flex align-items-center" href="{{ route('fill') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Edit</span></a>
                     </li>
                 </ul>
             </li>
