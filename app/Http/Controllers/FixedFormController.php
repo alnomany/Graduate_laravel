@@ -102,7 +102,7 @@ public function fill(){
 
  }
  public function sendnote($fixform){
-    $to='aalnomany250@gmail.com';
+    $to='aalnomany350@gmail.com';
     Mail::to($to)->send(new NoteMail($fixform));
 
  }
