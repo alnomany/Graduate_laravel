@@ -13,8 +13,10 @@ use Illuminate\Http\Request;
 use App\Exports\FixFormExport;
 use Illuminate\Support\Facades\DB;
 use App\Exports\FixFormExportSingle;
+use App\Mail\NoteMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FixedFormController extends Controller
@@ -92,6 +94,16 @@ public function fill(){
     }
     return view('fixed_form.fill_data', compact('data'));
 
+
+ }
+ public function note(Request $request){
+    $data=FixForm::whereNotNull('note')->get();
+    return view('note.index', compact('data'));
+
+ }
+ public function sendnote($fixform){
+    $to='aalnomany250@gmail.com';
+    Mail::to($to)->send(new NoteMail($fixform));
 
  }
 
@@ -174,6 +186,8 @@ public function fetchremprn(Request $request){
     $data->update($request->all());
 
      $data->save();
+
+     $this->sendnote($data);
      $data=FixForm::all();
      return redirect()->back()->with('success', 'Updated successfully');
 

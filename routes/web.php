@@ -26,6 +26,9 @@ use App\Http\Controllers\FixedFormController;
     Route::put('/remform/fill/{update}', [RemFormController::class, 'update'])->name('remform.fill.update');
     Route::patch('/remform/fill/{update}',[RemFormController::class, 'update'])->name('remform.fill.update');
     Route::get('/remform/delete/{id}', [RemFormController::class, 'delete'])->name('remform.delete');
+    //note
+    Route::get('/remform/note', [RemFormController::class, 'note'])->name('remform.note');
+
 
 
     Route::get('/remform/fill', [RemFormController::class, 'fill'])->name('remform.fill');
@@ -38,6 +41,8 @@ use App\Http\Controllers\FixedFormController;
 
 
    Route::get('/fixedform/updatepassword', [FixedFormController::class, 'updatePassword']);
+   Route::get('/fixedform/note', [FixedFormController::class, 'note'])->name('fixed.note');
+
 
 
 

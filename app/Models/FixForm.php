@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Mail\NoteMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FixForm extends Model
 {
@@ -55,5 +57,7 @@ class FixForm extends Model
      *
      * @var array
      */
+
+
 
 }

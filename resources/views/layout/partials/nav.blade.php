@@ -26,7 +26,9 @@
                     <ul class="search-list search-list-main"></ul>
                 </div>
             </li>--}}
+
             @guest
+
             @if (Route::has('login'))
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -39,9 +41,83 @@
             </li>
         @endif
             @else
+{{-- fixed not --}}
+            <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">
+                <?php
+                echo DB::table('fix_forms')->whereNotNull('note')
+                ->get()->count();
+                                ?>
+            </span></a>
+                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                    <li class="dropdown-menu-header">
+                        <div class="dropdown-header d-flex">
+                            <h4 class="notification-title mb-0 mr-auto">note fixed form</h4>
+                            <div class="badge badge-pill badge-light-primary">
+                                <?php
+                                echo DB::table('fix_forms')->whereNotNull('note')
+                                ->get()->count();
+                                ?>
+                                record</div>
+                        </div>
+                    </li>
+                    {{--
+                    <li class="scrollable-container media-list"><a class="d-flex" href="javascript:void(0)">
+                            <div class="media d-flex align-items-start">
+                                <div class="media-left">
+                                    <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                </div>
+                                <div class="media-body">
+                                    <p class="media-heading"><span class="font-weight-bolder">Congratulation Sam 🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                                </div>
+                            </div>
+                        </a>
 
 
 
+                    </li>
+                    --}}
+                    <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="{{ route('fixed.note') }}">Read all </a></li>
+                </ul>
+            </li>
+{{---------- rem form ----------------------------------------------------------------------}}
+    <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">
+                <?php
+                echo DB::table('rem_forms')->whereNotNull('note')
+                ->get()->count();
+                                ?>
+            </span></a>
+                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                    <li class="dropdown-menu-header">
+                        <div class="dropdown-header d-flex">
+                            <h4 class="notification-title mb-0 mr-auto">note Removal form</h4>
+                            <div class="badge badge-pill badge-light-primary">
+                                <?php
+                                echo DB::table('rem_forms')->whereNotNull('note')
+                                ->get()->count();
+                                ?>
+                                record</div>
+                        </div>
+                    </li>
+                    {{--
+                    <li class="scrollable-container media-list"><a class="d-flex" href="javascript:void(0)">
+                            <div class="media d-flex align-items-start">
+                                <div class="media-left">
+                                    <div class="avatar"><img src="../../../app-assets/images/portrait/small/avatar-s-15.jpg" alt="avatar" width="32" height="32"></div>
+                                </div>
+                                <div class="media-body">
+                                    <p class="media-heading"><span class="font-weight-bolder">Congratulation  🎉</span>winner!</p><small class="notification-text"> Won the monthly best seller badge.</small>
+                                </div>
+                            </div>
+                        </a>
+
+
+
+                    </li>
+                    --}}
+                    <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="{{ route('remform.note') }}">Read all </a></li>
+                </ul>
+            </li>
+{{-------------------------------Profile  ------------------}}
             <li class="nav-item dropdown dropdown-user" style="margin-left: -145%;"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">
                         {{ Auth::user()->name }}
@@ -57,10 +133,16 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                            @csrf
                         </form>
-                        @endguest
 
                 </div>
             </li>
+
+
+
+            @endguest
+
+
+
         </ul>
     </div>
 </nav>

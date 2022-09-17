@@ -130,7 +130,11 @@ public function record(Request $request){
 
 }
 
+public function note(Request $request){
+    $data=RemForm::whereNotNull('note')->get();
+    return view('note.index-rem', compact('data'));
 
+ }
   public function edit(Request $request,$id){
     $students_users=RemForm::select('student_number')->distinct()->get();
     $record = RemForm::find($id);
