@@ -31,6 +31,6 @@ class NoteMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('note issue')->view('mails.note');
+        return $this->subject('issue new one')->view('mails.note');
     }
 }
