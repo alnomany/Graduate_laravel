@@ -42,7 +42,9 @@
         @endif
             @else
 {{-- fixed not --}}
-            <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">
+            <li class="nav-item dropdown dropdown-notification mr-25">
+
+                <a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i> Fixed Form<span class="badge badge-pill badge-danger badge-up">
                 <?php
                 echo DB::table('fix_forms')->whereNotNull('note')
                 ->get()->count();
@@ -51,7 +53,7 @@
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                     <li class="dropdown-menu-header">
                         <div class="dropdown-header d-flex">
-                            <h4 class="notification-title mb-0 mr-auto">note fixed form</h4>
+                            <h4 class="notification-title mb-0 mr-auto">Note Fixed Form</h4>
                             <div class="badge badge-pill badge-light-primary">
                                 <?php
                                 echo DB::table('fix_forms')->whereNotNull('note')
@@ -80,7 +82,7 @@
                 </ul>
             </li>
 {{---------- rem form ----------------------------------------------------------------------}}
-    <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">
+    <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i>Removal Form<span class="badge badge-pill badge-danger badge-up">
                 <?php
                 echo DB::table('rem_forms')->whereNotNull('note')
                 ->get()->count();
@@ -89,7 +91,7 @@
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                     <li class="dropdown-menu-header">
                         <div class="dropdown-header d-flex">
-                            <h4 class="notification-title mb-0 mr-auto">note Removal form</h4>
+                            <h4 class="notification-title mb-0 mr-auto">Note Removal Form</h4>
                             <div class="badge badge-pill badge-light-primary">
                                 <?php
                                 echo DB::table('rem_forms')->whereNotNull('note')
@@ -118,7 +120,7 @@
                 </ul>
             </li>
 {{-------------------------------Profile  ------------------}}
-            <li class="nav-item dropdown dropdown-user" style="margin-left: -145%;"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown dropdown-user" style="margin-left: 0%;"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">
                         {{ Auth::user()->name }}
                     </span><span class="user-status">  @if(Auth::user()->type == "admin")  Admin @else  Doctor @endif </span></div><span class="avatar"><img class="round" src="../../../app-assets/images/portrait/small/user-29.png" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
