@@ -102,7 +102,15 @@ public function fill(){
 
  }
  public function sendnote($fixform){
-    $to='aalnomany350@gmail.com';
+  $to= Auth::user()->email;
+/*
+  return  $email_student = DB::table('fix_forms')
+    ->select('email')
+    ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
+    ->where('student_users.student_number',$fixform->student_number)
+    ->get();
+*/
+
     Mail::to($to)->send(new NoteMail($fixform));
 
  }

@@ -7,6 +7,7 @@
     <title>Hi</title>
 </head>
 <body>
+    <h1>the id number is {{ $fixform->id }}</h1>
 
 </body>
 </html>
