@@ -21,7 +21,7 @@ class NoteMail extends Mailable
     public function __construct(FixForm $fixform)
     {
         //
-        $this->$fixform=$fixform;
+     return   $this->$fixform=$fixform;
     }
 
     /**
