@@ -101,7 +101,7 @@ public function fill(){
     return view('note.index', compact('data'));
 
  }
- public function sendnote($fixform){
+ public function sendnote($data){
   $to= Auth::user()->email;
 /*
   return  $email_student = DB::table('fix_forms')
@@ -111,7 +111,7 @@ public function fill(){
     ->get();
 */
 
-    Mail::to($to)->send(new NoteMail($fixform));
+    Mail::to($to)->send(new NoteMail($data));
 
  }
 
@@ -195,7 +195,7 @@ public function fetchremprn(Request $request){
 
      $data->save();
 
-     $this->sendnote($data);
+      $this->sendnote($data);
      $data=FixForm::all();
      return redirect()->back()->with('success', 'Updated successfully');
 
