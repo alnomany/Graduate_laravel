@@ -182,6 +182,25 @@ public function fetchremprn(Request $request){
 
 
  public function store(Request $request){
+    $validated = $request->validate([
+        'student_number' => 'required',
+        'student_name' => 'required',
+
+        'p_name' => 'required',
+        'p_rn' => 'required',
+
+        'tooth_number' => 'required',
+        'rest_type' => 'required',
+
+
+        
+
+    ]);
+    //message
+    if($request->note != null){
+      return  $data=$request;
+        $this->sendnote($data);
+    }
    // $fixform = new FixForm($request->except('fm1'));
     $fixform = new FixForm($request->all());
    //return avg($request->fm1+$request->fm2+$request->fm3);
@@ -189,6 +208,10 @@ public function fetchremprn(Request $request){
     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();
     "the average is " .$average;
     $fixform->save();
+    if($request->note != null){
+        return "hi";
+    }
+
     $data=FixForm::all();
     return redirect()->back()->with('success', 'Saved successfully');
 
@@ -199,7 +222,6 @@ public function fetchremprn(Request $request){
      $data = FixForm::find($id);
      $data->update($request->all());
      $data->save();
-     $this->sendnote($data);
      $data=FixForm::all();
      return redirect()->back()->with('success', 'Updated successfully');
 

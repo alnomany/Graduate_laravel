@@ -83,6 +83,7 @@
                 </ul>
             </li>
 {{---------- rem form ----------------------------------------------------------------------}}
+@if(Auth::user()->type == "admin1" || Auth::user()->type == "admin") 
     <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i>Removal Form<span class="badge badge-pill badge-danger badge-up">
                 <?php
                 echo DB::table('rem_forms')->whereNotNull('note')
@@ -119,7 +120,8 @@
                     --}}
                     <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="{{ route('remform.note') }}">Read all </a></li>
                 </ul>
-            </li>
+    </li>
+@endif
 {{-------------------------------Profile  ------------------}}
             <li class="nav-item dropdown dropdown-user" style="margin-left: 0%;"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">
@@ -172,6 +174,18 @@
                     <li><a class="d-flex align-items-center" href="{{ route('create') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Creat</span></a>
                     </li>
                     <li><a class="d-flex align-items-center" href="{{ route('fill') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Edit</span></a>
+                    </li>
+                </ul>
+            </li>
+
+
+        </ul>
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="">Removable Form</span>{{-- <spanclass="badgebadge-light-warningbadge-pillml-automr-1">2</span> --}}</a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="{{ route('remform.create') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Creat</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="{{ route('remform.fill') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Edit</span></a>
                     </li>
                 </ul>
             </li>

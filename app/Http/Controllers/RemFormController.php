@@ -65,6 +65,19 @@ class RemFormController extends Controller
 
  /////////////////////////////////End Export
  public function store(Request $request){
+    $validated = $request->validate([
+        'student_number' => 'required',
+        'student_name' => 'required',
+
+        'p_name' => 'required',
+        'p_rn' => 'required',
+
+        'arch_type' => 'required',
+
+
+        
+
+    ]);
     $remform = new RemForm($request->all());
 
      $remform->save();
