@@ -103,15 +103,21 @@ public function fill(){
  }
  public function sendnote($data){
   $to= Auth::user()->email;
+  $to="sbajunaid@ksu.edu.sa";
+  $toadmin="aalnomany350@gmail.com";
+
+
 /*
-  return  $email_student = DB::table('fix_forms')
+    return  $email_student = DB::table('fix_forms')
     ->select('email')
     ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
     ->where('student_users.student_number',$fixform->student_number)
     ->get();
 */
 
+
     Mail::to($to)->send(new NoteMail($data));
+    Mail::to($toadmin)->send(new NoteMail($data));
 
  }
 
@@ -191,11 +197,9 @@ public function fetchremprn(Request $request){
  }
  public function update(Request $request,$id){
      $data = FixForm::find($id);
-    $data->update($request->all());
-
+     $data->update($request->all());
      $data->save();
-
-      $this->sendnote($data);
+     $this->sendnote($data);
      $data=FixForm::all();
      return redirect()->back()->with('success', 'Updated successfully');
 

@@ -7,7 +7,7 @@
     <title>Hi</title>
 </head>
 <body>
-    <h1>the id number is {{ $data}}</h1>
+    <h1>the id number is {{ $data->id}}</h1>
 
 </body>
 </html>
