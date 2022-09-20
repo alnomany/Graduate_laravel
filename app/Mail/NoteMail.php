@@ -11,17 +11,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class NoteMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public   $data;
+    public   $currentURL;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($currentURL)
     {
         //
-        $this->data=$data;
+        $this->currentURL=$currentURL;
     }
 
     /**

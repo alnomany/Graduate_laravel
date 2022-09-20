@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use DateTime;
 use Carbon\Carbon;
 use App\Models\User;
+use App\Mail\NoteMail;
 use App\Models\FixForm;
 use Carbon\Traits\Date;
-use App\Models\StudentUser;
 
+use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\FixFormExport;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use App\Exports\FixFormExportSingle;
-use App\Mail\NoteMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -101,10 +102,12 @@ public function fill(){
     return view('note.index', compact('data'));
 
  }
- public function sendnote($data){
+ public function sendnote($currentURL){
   $to= Auth::user()->email;
   $to="sbajunaid@ksu.edu.sa";
   $toadmin="aalnomany350@gmail.com";
+  Mail::to($to)->send(new NoteMail($currentURL));
+  Mail::to($toadmin)->send(new NoteMail($currentURL));
 
 
 /*
@@ -116,8 +119,7 @@ public function fill(){
 */
 
 
-    Mail::to($to)->send(new NoteMail($data));
-    Mail::to($toadmin)->send(new NoteMail($data));
+ 
 
  }
 
@@ -189,8 +191,9 @@ public function fetchremprn(Request $request){
         'p_name' => 'required',
         'p_rn' => 'required',
 
-        'tooth_number' => 'required',
-        'rest_type' => 'required',
+        'tooth_number' => 'required|in:11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,39,40,41,42,43,44,45,46,47,48',
+        'rest_type' => 'required|in:FPD,Crwn,Post&core,Onlay,Inlay,Veneer',
+        
 
 
         
@@ -198,8 +201,9 @@ public function fetchremprn(Request $request){
     ]);
     //message
     if($request->note != null){
-      return  $data=$request;
-        $this->sendnote($data);
+         $currentURL = URL::current();
+
+        $this->sendnote($currentURL);
     }
    // $fixform = new FixForm($request->except('fm1'));
     $fixform = new FixForm($request->all());
@@ -208,9 +212,7 @@ public function fetchremprn(Request $request){
     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();
     "the average is " .$average;
     $fixform->save();
-    if($request->note != null){
-        return "hi";
-    }
+
 
     $data=FixForm::all();
     return redirect()->back()->with('success', 'Saved successfully');

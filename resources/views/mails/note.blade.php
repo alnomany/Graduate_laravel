@@ -7,7 +7,8 @@
     <title>Hi</title>
 </head>
 <body>
-    <h1>the id number is {{ $data->id}}</h1>
+    <h1>The Record is That has note</h1>
+    <a href="{{ $currentURL }}">Click here</a>
 
 </body>
 </html>
