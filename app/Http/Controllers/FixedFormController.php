@@ -184,7 +184,6 @@ public function fetchremprn(Request $request){
 
 
  public function store(Request $request){
-    return $request;
     $validated = $request->validate([
         'student_number' => 'required',
         'student_name' => 'required',
@@ -202,7 +201,7 @@ public function fetchremprn(Request $request){
     ]);
     //message
     if($request->note != null){
-         $currentURL = URL::current();
+        // $currentURL = URL::current();
 
         $this->sendnote($request);
     }
