@@ -7,8 +7,33 @@
     <title>Hi</title>
 </head>
 <body>
-    <h1>The Record is That has note</h1>
-    <a href="{{ $currentURL }}">Click here</a>
+
+    <h2>HTML Table</h2>
+
+    <table>
+      <tr>
+        <th>student number</th>
+        <th>Student Name</th>
+
+        <th>Patient Number-PRN</th>
+        <th>Patient Name</th>
+
+        <th>Tooth number</th>
+        <th>Rest Type</th>
+
+      </tr>
+      <tr>
+        <td>{{ $request->student_number }}</td>
+        <td>{{ $request->student_name }}</td>
+        <td>{{ $request->p_rn }}</td>
+        <td>{{ $request->p_name }}</td>
+        <td>{{ $request->tooth_number }}</td>
+        <td>{{ $request->rest_type }}</td>
+
+      </tr>
+   
+    </table>
+    go to link <a href="http://sds493.co/fixedform/fill">Click here</a>
 
 </body>
 </html>

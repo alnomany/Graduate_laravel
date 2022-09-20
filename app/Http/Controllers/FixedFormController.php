@@ -102,12 +102,12 @@ public function fill(){
     return view('note.index', compact('data'));
 
  }
- public function sendnote($currentURL){
+ public function sendnote($request){
   $to= Auth::user()->email;
   $to="sbajunaid@ksu.edu.sa";
   $toadmin="aalnomany350@gmail.com";
-  Mail::to($to)->send(new NoteMail($currentURL));
-  Mail::to($toadmin)->send(new NoteMail($currentURL));
+ // Mail::to($to)->send(new NoteMail($request));
+  Mail::to($toadmin)->send(new NoteMail($request));
 
 
 /*
@@ -184,6 +184,7 @@ public function fetchremprn(Request $request){
 
 
  public function store(Request $request){
+    return $request;
     $validated = $request->validate([
         'student_number' => 'required',
         'student_name' => 'required',
@@ -203,7 +204,7 @@ public function fetchremprn(Request $request){
     if($request->note != null){
          $currentURL = URL::current();
 
-        $this->sendnote($currentURL);
+        $this->sendnote($request);
     }
    // $fixform = new FixForm($request->except('fm1'));
     $fixform = new FixForm($request->all());
