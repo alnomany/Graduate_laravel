@@ -89,7 +89,7 @@
                 echo DB::table('rem_forms')->whereNotNull('note')
                 ->get()->count();
                                 ?>
-            </span></a>
+            </span> </a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                     <li class="dropdown-menu-header">
                         <div class="dropdown-header d-flex">
