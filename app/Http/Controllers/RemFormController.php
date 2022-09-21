@@ -168,7 +168,7 @@ public function note(Request $request){
 
 
    }
-   return view('rem_form.edit', compact('name','students_users','record','recordall','arr','arr_rest_type'));
+   return view('rem_form.edit', compact('name','students_users','record','recordall','arr_rest_type'));
 }
 
 
