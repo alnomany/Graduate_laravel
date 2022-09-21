@@ -23,6 +23,8 @@ use App\Http\Controllers\FixedFormController;
     Route::get('/remform/create', [RemFormController::class, 'create'])->name('remform.create');
     Route::post('/remform/store', [RemFormController::class, 'store'])->name('remform.store');
     Route::get('/remform/edit/{id}', [RemFormController::class, 'edit'])->name('remform.edit');
+    Route::get('/remform/fill', [RemFormController::class, 'fill'])->name('remform.fill');
+
     Route::put('/remform/fill/{update}', [RemFormController::class, 'update'])->name('remform.fill.update');
     Route::patch('/remform/fill/{update}',[RemFormController::class, 'update'])->name('remform.fill.update');
     Route::get('/remform/delete/{id}', [RemFormController::class, 'delete'])->name('remform.delete');
@@ -31,7 +33,6 @@ use App\Http\Controllers\FixedFormController;
 
 
 
-    Route::get('/remform/fill', [RemFormController::class, 'fill'])->name('remform.fill');
     //fech student removable
     Route::post('remform/fetch-name-rem', [RemFormController::class, 'fetchname']);
     //fech patint

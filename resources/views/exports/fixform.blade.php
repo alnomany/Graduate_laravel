@@ -6,7 +6,7 @@
         <th>PRN</th>
         <th>Patient Name</th>
 
-        <th>preparation plan mark</th>
+        <th>Treatment Plan Mark</th>
         <th>Sign</th>
 
 

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Requests\StoreFixFormRequest;
 
 class FixedFormController extends Controller
 {
@@ -36,7 +37,7 @@ class FixedFormController extends Controller
 
         }
 
-        $arr = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48'];
+        $arr = ['11','12','13','14','15','16','17','18','21','22','23','24','25','26','27','28','31','32','33','34','35','36','37','38','41','42','43','44','45','46','47','48'];
         $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
         $students_users=StudentUser::get();
          $data=FixForm::get();
@@ -46,7 +47,7 @@ class FixedFormController extends Controller
      $students_users=FixForm::select('student_number')->distinct()->get();
      $record = FixForm::find($id);
      $recordall =FixForm::all();
-     $arr = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48'];
+     $arr = ['11','12','13','14','15','16','17','18','21','22','23','24','25','26','27','28','31','32','33','34','35','36','37','38','41','42','43','44','45','46','47','48'];
      $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
 
 
@@ -104,9 +105,10 @@ public function fill(){
  }
  public function sendnote($request){
   $to= Auth::user()->email;
-  $to="sbajunaid@ksu.edu.sa";
-  $toadmin="aalnomany350@gmail.com";
- // Mail::to($to)->send(new NoteMail($request));
+  //$to="sbajunaid@ksu.edu.sa";
+  $toadmin="aboosalem@gmail.com";
+  $to="aalnomany50@gmail.com";
+  Mail::to($to)->send(new NoteMail($request));
   Mail::to($toadmin)->send(new NoteMail($request));
 
 
@@ -183,22 +185,8 @@ public function fetchremprn(Request $request){
  }
 
 
- public function store(Request $request){
-    $validated = $request->validate([
-        'student_number' => 'required',
-        'student_name' => 'required',
-
-        'p_name' => 'required',
-        'p_rn' => 'required',
-
-        'tooth_number' => 'required|in:11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,39,40,41,42,43,44,45,46,47,48',
-        'rest_type' => 'required|in:FPD,Crwn,Post&core,Onlay,Inlay,Veneer',
-        
-
-
-        
-
-    ]);
+ public function store(StoreFixFormRequest $request){
+ 
     //message
     if($request->note != null){
         // $currentURL = URL::current();
@@ -220,7 +208,7 @@ public function fetchremprn(Request $request){
 
   //  return view('fixed_form.create', compact('data'));
  }
- public function update(Request $request,$id){
+ public function update(StoreFixFormRequest $request,$id){
      $data = FixForm::find($id);
      $data->update($request->all());
      $data->save();

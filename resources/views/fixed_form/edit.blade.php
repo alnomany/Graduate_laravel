@@ -35,12 +35,21 @@
                     <div class="col-8">
                         <div class="card">
                             @if (\Session::has('success'))
-                            <div class="alert alert-danger">
+                            <div class="alert alert-success">
                                 <ul>
                                     <li>{!! \Session::get('success') !!}</li>
                                 </ul>
                             </div>
-                            @endif
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                             <div class="card-header">
                                 <h4 class="card-title"></h4>
                             </div>
