@@ -83,7 +83,7 @@
                 </ul>
             </li>
 {{---------- rem form ----------------------------------------------------------------------}}
-@if(Auth::user()->type == "admin1" || Auth::user()->type == "admin") 
+@if(Auth::user()->type == "admin1" || Auth::user()->type == "admin")
     <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i>Removal Form<span class="badge badge-pill badge-danger badge-up">
                 <?php
                 echo DB::table('rem_forms')->whereNotNull('note')
