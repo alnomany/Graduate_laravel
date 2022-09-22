@@ -91,6 +91,9 @@ class RemFormController extends Controller
 
  }
   public function fill(){
+  //  $prn="testtt";
+    //$studentnumber="01-437201130";
+    //return RemForm::where("student_number", $studentnumber)->where("p_rn", $prn)->orderBy('id', 'asc')->get();
     $words = explode(" ",  Auth::user()->name);
     $name = "";
     foreach ($words as $w) {
@@ -132,7 +135,7 @@ class RemFormController extends Controller
 public function record(Request $request){
     $studentnumber = $request->studentnumber;
    $student_name = $request->student_name;
-   $prn=$request->prn;
+    $prn=$request->prn;
    if($request->ajax()) {
        $data = RemForm::where("student_number", $studentnumber)->where("p_rn", $prn)->orderBy('id', 'asc')->get();
    }

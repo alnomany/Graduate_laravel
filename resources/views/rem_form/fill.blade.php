@@ -130,6 +130,9 @@
               }
           });
       });
+      $('#PRN-REM').on('change', function () {
+        getMoreRecord();
+    });
       function getMoreRecord(page) {
 
           var studentnumber = $('#student-number-rem').val();

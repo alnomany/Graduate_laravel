@@ -285,7 +285,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM7 -Try-in Framework Mark</label>
-            <input type="text" id="fm" class="form-control fm fm7 rm7" placeholder="N.A." value="{{ $record->rm7 }}" name="rm7" />
+            <input type="text" id="fm" class="form-control fm fm7" placeholder="N.A." value="{{ $record->rm7 }}" name="rm7" />
 
 
         </div>
