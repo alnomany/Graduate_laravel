@@ -23,6 +23,22 @@ use App\Http\Requests\StoreFixFormRequest;
 
 class FixedFormController extends Controller
 {
+
+    //test 
+    public function formCreate()
+    {
+        return view('fixed_form.form');
+    }
+
+    /**
+    * Write code on Method
+    *
+    * @return response()
+    */
+    public function formPost()
+    {
+        return redirect('/forms');
+    }
     //
     public function create(){
         $words = explode(" ",  Auth::user()->name);
@@ -130,7 +146,7 @@ public function fill(){
  public function fetchname(Request $request)
  {
      $data['studentnames'] = StudentUser::where("student_number", $request->stunum)
-                             ->get(["student_name", "student_number"]);
+->distinct()->get(["student_name", "student_number"]);
      return response()->json($data);
  }
  public function fetch_name_student_edit(Request $request){
@@ -185,7 +201,7 @@ public function fetchremprn(Request $request){
  }
 
 
- public function store(StoreFixFormRequest $request){
+ public function store(Request $request){
  
     //message
     if($request->note != null){
@@ -208,7 +224,7 @@ public function fetchremprn(Request $request){
 
   //  return view('fixed_form.create', compact('data'));
  }
- public function update(StoreFixFormRequest $request,$id){
+ public function update(Request $request,$id){
      $data = FixForm::find($id);
      $data->update($request->all());
      $data->save();

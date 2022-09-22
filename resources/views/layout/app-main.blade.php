@@ -22,6 +22,12 @@
 @include('layout.partials.footer-scripts')
 @stack('footer-fill-scripts')
 @stack('footer-fill-rem-scripts')
+@stack('fixed-form-validation')
+@stack('remove-form-validation')
+
+
+
+
 
 
 

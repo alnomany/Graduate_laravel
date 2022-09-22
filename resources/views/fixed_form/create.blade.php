@@ -78,4 +78,80 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 @endsection
+@push('fixed-form-validation')
 
+
+<script>
+    
+$(document).ready(function () {
+    $('#form').validate({ 
+        rules: {
+            student_number:{
+                required:true,
+            },
+        
+            p_name:{
+                required:true,
+            },
+            p_rn:{
+                required:true,
+            },
+   
+            rest_type:{
+                required:true,
+            },
+            tooth_number:{
+                required:true,
+                min:11,
+                max:48,
+            },
+            fm0:{
+                min:0,
+                max:10,
+            }
+            ,
+            fm1:{
+                min:0,
+                max:10,
+            }
+            ,
+            fm2:{
+                min:0,
+                max:10,
+            }
+            ,
+            fm3:{
+                min:0,
+                max:10,
+            }
+            ,
+            fm4:{
+                min:0,
+                max:10,
+            }
+            ,
+            fm5:{
+                min:0,
+                max:10,
+            },
+            fm6:{
+                min:0,
+                max:10,
+            }
+    
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+        }
+    });
+});
+</script>
+@endpush

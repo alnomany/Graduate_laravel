@@ -75,3 +75,104 @@
 <div class="sidenav-overlay"></div>
 <div class="drag-target"></div>
 @endsection
+
+@push('remove-form-validation')
+
+
+<script>
+    
+$(document).ready(function () {
+    $('#form').validate({ 
+        rules: {
+            student_number:{
+                required:true,
+            },
+            arch_type:{
+                required:true,
+            },
+            
+        
+            p_name:{
+                required:true,
+            },
+            p_rn:{
+                required:true,
+            },
+   
+            rest_type:{
+                required:true,
+            }
+            ,
+            rm1:{
+                min:0,
+                max:10,
+            }
+            ,
+            rm2:{
+                min:0,
+                max:10,
+            }
+            ,
+            rm3:{
+                min:0,
+                max:10,
+            }
+            ,
+            rm4:{
+                min:0,
+                max:10,
+            }
+            ,
+            rm5:{
+                min:0,
+                max:10,
+            },
+            rm6:{
+                min:0,
+                max:10,
+            },
+            rm7:{
+                min:0,
+                max:10,
+            }
+            ,
+            rm8:{
+                min:0,
+                max:10,
+            },
+            rm9:{
+                min:0,
+                max:10,
+            },
+            rm10:{
+                min:0,
+                max:10,
+            },
+            rm11:{
+                min:0,
+                max:10,
+            },
+            rm12:{
+                min:0,
+                max:10,
+            },
+            rm13:{
+                min:0,
+                max:10,
+            }
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $(element).removeClass('is-invalid');
+        }
+    });
+});
+</script>
+@endpush

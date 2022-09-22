@@ -5,7 +5,7 @@
             <label for="Student Number">Student Number</label>
 
             <select id="student-number" class="select2 form-control form-control-lg" name="student_number">
-                <option value="null">Select student number </option>
+                <option value="">Select student number </option>
 
                 @foreach ($students_users as $student)
 
@@ -62,13 +62,13 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="city-column">Patient Number-PRN</label>
-            <input type="text" id="PRN" class="form-control" placeholder="PRN" name="p_rn" value="" />
+            <input type="text" id="p_rn" class="form-control" placeholder="PRN" name="p_rn" value="" />
         </div>
     </div>
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="PName">Patient Name</label>
-            <input type="text" id="PName" class="form-control" name="p_name" placeholder="Patient Name" value=""/>
+            <input type="text" id="p_name" class="form-control" name="p_name" placeholder="Patient Name" value=""/>
         </div>
     </div>
   {{--   @endif --}}
@@ -77,7 +77,7 @@
             <label for="company-column">Tooth number</label>
             <div class="input-group">
 
-                <select class="form-control" id="tooth number" name="tooth_number">
+                <select class="form-control" id="tooth_number" name="tooth_number">
                     <option value="N.A.">Treatment Plan</option>
 
                     @foreach($arr as $item)
@@ -96,8 +96,8 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Rest Type</label>
-            <select class="form-control" id="Rest Type" name="rest_type">
-                <option value="N.A.">Treatment Plan</option>
+            <select class="form-control" id="rest_type" name="rest_type">
+                <option value="">Treatment Plan</option>
 
                 @foreach($arr_rest_type as $item)
                 <option value="{{ $item}}" > {{ strtoupper($item) }}</option>

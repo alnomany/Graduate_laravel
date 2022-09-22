@@ -149,6 +149,8 @@ $('#student-number').on('change', function () {
 
     var stunum = this.value;
     var studentnumber = $('#student-number').val();
+    $("#PRN").html('');
+
 
     $.ajax({
         url: "{{url('fixedform/fetch-prn')}}",

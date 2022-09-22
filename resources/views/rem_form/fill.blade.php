@@ -99,6 +99,8 @@
 
           var stunum = this.value;
           var studentnumber = $('#student-number-rem').val();
+          $("#PRN-REM").html('');
+
 
           $.ajax({
               url: "{{url('remform/fetch-prn-rem')}}",

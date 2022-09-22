@@ -5,7 +5,7 @@
             <label for="Student Number">Student Number</label>
 
             <select id="student-number" class="select2 form-control form-control-lg" name="student_number">
-                <option value="null">Select student number </option>
+                <option value="">Select student number </option>
 
                 @foreach ($students_users as $student)
 
@@ -96,8 +96,8 @@
     <div class="col-md-12 col-12">
         <div class="form-group">
             <label for="Rest Type">Arch Type</label>
-            <select class="form-control" id="Arch Type" name="arch_type">
-                <option value="N.A.">Treatment Plan</option>
+            <select class="form-control" id="arch_type" name="arch_type">
+                <option value="">Treatment Plan</option>
 
                 @foreach($arr_rest_type as $item)
                 <option value="{{ $item}}" > {{ strtoupper($item) }}</option>

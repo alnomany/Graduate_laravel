@@ -65,7 +65,7 @@ class RemFormController extends Controller
 
 
  /////////////////////////////////End Export
- public function store(StoreRemFormRequest $request){
+ public function store(Request $request){
  
     $remform = new RemForm($request->all());
 
@@ -73,7 +73,7 @@ class RemFormController extends Controller
      $data=RemForm::all();
      return redirect()->back()->with('success', 'Saved successfully');
   }
-  public function update(StoreRemFormRequest $request,$id){
+  public function update(Request $request,$id){
     $data = RemForm::find($id);
    $data->update($request->all());
 

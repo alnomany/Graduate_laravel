@@ -17,6 +17,8 @@
     <!-- BEGIN: Theme JS-->
     <script src="../../../app-assets/js/core/app-menu.js"></script>
     <script src="../../../app-assets/js/core/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
@@ -261,4 +263,9 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+
+
+
 </script>

@@ -31,7 +31,12 @@ use App\Http\Controllers\FixedFormController;
     //note
     Route::get('/remform/note', [RemFormController::class, 'note'])->name('remform.note');
 
+//test
 
+Route::get('forms',[FixedFormController::class, 'formCreate']);
+Route::post('forms',[FixedFormController::class, 'formPost'])->name('forms');
+
+//test
 
     //fech student removable
     Route::post('remform/fetch-name-rem', [RemFormController::class, 'fetchname']);
