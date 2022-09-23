@@ -24,7 +24,7 @@ use App\Http\Requests\StoreFixFormRequest;
 class FixedFormController extends Controller
 {
 
-    //test 
+    //test
     public function formCreate()
     {
         return view('fixed_form.form');
@@ -137,7 +137,7 @@ public function fill(){
 */
 
 
- 
+
 
  }
 
@@ -164,19 +164,9 @@ public function fill(){
 
 
 public function fetchprn(Request $request){
-     $data['prnlist'] =FixForm::where("student_number",$request->studentnumber)->get([
-    'student_number',
-    'student_name',
-    'p_name',
-    'p_rn',
-    'rest_type',
-    'tooth_number',
-    'avg',
-    'note',
-    'total_avg',
-    'status',
-    'fm0',
-    'fm0_sig']);
+
+    $data['prnlist']=   DB::table('fix_forms')->where("student_number",$request->studentnumber)->distinct()->get(['p_rn','student_number','student_name','p_name']);
+
 
    return  response()->json($data);
 
@@ -202,7 +192,7 @@ public function fetchremprn(Request $request){
 
 
  public function store(Request $request){
- 
+
     //message
     if($request->note != null){
         // $currentURL = URL::current();

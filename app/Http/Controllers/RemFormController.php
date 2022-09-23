@@ -9,6 +9,7 @@ use App\Models\RemForm;
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\RemFormExport;
+use Illuminate\Support\Facades\DB;
 use App\Exports\RemFormExportSingle;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
@@ -66,7 +67,7 @@ class RemFormController extends Controller
 
  /////////////////////////////////End Export
  public function store(Request $request){
- 
+
     $remform = new RemForm($request->all());
 
      $remform->save();
@@ -108,7 +109,8 @@ class RemFormController extends Controller
     $data=[];
      $students_users=RemForm::select('student_number')->distinct()->get();
 
-   // $students_users=StudentUser::get();
+
+
     return view('rem_form.fill', compact('name','students_users','data'));
  }
  //fetchname
@@ -120,13 +122,8 @@ class RemFormController extends Controller
  }
  //fetchpationt
  public function fetchprn(Request $request){
-    $data['prnlist'] =RemForm::where("student_number",$request->studentnumber)->get([
-   'student_number',
-   'student_name',
-   'p_name',
-   'p_rn',
-   'arch_type',
- ]);
+
+ $data['prnlist']=   DB::table('rem_forms')->where("student_number",$request->studentnumber)->distinct()->get(['p_rn','student_number','student_name','p_name']);
 
   return  response()->json($data);
 
