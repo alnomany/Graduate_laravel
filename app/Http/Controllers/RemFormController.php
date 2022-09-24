@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Mail\NoteMail;
 use App\Models\FixForm;
-use App\Models\RemForm;
 
+use App\Models\RemForm;
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\RemFormExport;
 use Illuminate\Support\Facades\DB;
 use App\Exports\RemFormExportSingle;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreRemFormRequest;
 
@@ -68,12 +70,31 @@ class RemFormController extends Controller
  /////////////////////////////////End Export
  public function store(Request $request){
 
-    $remform = new RemForm($request->all());
 
+    $remform = new RemForm($request->all());
+    //round average
+    $value = $request->avg;
+    $request->avg=  round($value, 2);
+    //send student
+    $email_student = DB::table('student_users')
+    ->select('email')
+    ->where('student_number',$request->student_number)
+    ->get();
+    if($email_student != null){
+        $this->sendnotestudent($request);
+    }
      $remform->save();
      $data=RemForm::all();
      return redirect()->back()->with('success', 'Saved successfully');
   }
+  public function sendnotestudent($request){
+    $email_student = DB::table('rem_forms')
+  ->select('email','student_number')
+  ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
+  ->where('student_users.student_number',$request->student_number)
+  ->get();
+  Mail::to($email_student)->send(new NoteMail($request));
+}
   public function update(Request $request,$id){
     $data = RemForm::find($id);
    $data->update($request->all());

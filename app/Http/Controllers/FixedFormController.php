@@ -121,7 +121,7 @@ public function fill(){
  }
  public function sendnotestudent($request){
       $email_student = DB::table('fix_forms')
-    ->select('email')
+    ->select('email','student_number')
     ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
     ->where('student_users.student_number',$request->student_number)
     ->get();
@@ -199,6 +199,7 @@ public function fetchremprn(Request $request){
 
  public function store(Request $request){
 
+
     //message
     if($request->note != null){
         // $currentURL = URL::current();
@@ -211,8 +212,19 @@ public function fetchremprn(Request $request){
    //average($request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6);
     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();
     "the average is " .$average;
+    //round average
+    $value = $request->avg;
+    $request->avg=  round($value, 2);
+    //send student
+    $email_student = DB::table('student_users')
+    ->select('email')
+    ->where('student_number',$request->student_number)
+    ->get();
+    if($email_student != null){
+        $this->sendnotestudent($request);
+    }
+
     $fixform->save();
-    $this->sendnotestudent($request);
 
     $data=FixForm::all();
     return redirect()->back()->with('success', 'Saved successfully');
