@@ -121,8 +121,7 @@ public function fill(){
  }
  public function sendnotestudent($request){
       $email_student = DB::table('fix_forms')
-    ->select('email','student_number')
-    ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
+    ->select('email')
     ->where('student_users.student_number',$request->student_number)
     ->get();
     Mail::to($email_student)->send(new NoteMail($request));

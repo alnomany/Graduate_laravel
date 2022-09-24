@@ -69,8 +69,6 @@ class RemFormController extends Controller
 
  /////////////////////////////////End Export
  public function store(Request $request){
-
-
     $remform = new RemForm($request->all());
     //round average
     $value = $request->avg;
@@ -88,9 +86,8 @@ class RemFormController extends Controller
      return redirect()->back()->with('success', 'Saved successfully');
   }
   public function sendnotestudent($request){
-    $email_student = DB::table('rem_forms')
-  ->select('email','student_number')
-  ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
+  $email_student = DB::table('rem_forms')
+  ->select('email')
   ->where('student_users.student_number',$request->student_number)
   ->get();
   Mail::to($email_student)->send(new NoteMail($request));
