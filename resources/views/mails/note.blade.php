@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hi</title>
+    <title></title>
 </head>
 <body>
 
-    <h2>HTML Table</h2>
+    <h2>{{ $request->student_name }}</h2>
 
     <table>
       <tr>
@@ -35,7 +35,7 @@
 
 
       </tr>
-   
+
     </table>
     go to link <a href="http://sds493.co/fixedform/fill">Click here</a>
 

@@ -120,9 +120,9 @@ public function fill(){
 
  }
  public function sendnotestudent($request){
-      $email_student = DB::table('fix_forms')
+    $email_student = DB::table('student_users')
     ->select('email')
-    ->where('student_users.student_number',$request->student_number)
+    ->where('student_number',$request->student_number)
     ->get();
     Mail::to($email_student)->send(new NoteMail($request));
  }
@@ -215,13 +215,17 @@ public function fetchremprn(Request $request){
     $value = $request->avg;
     $request->avg=  round($value, 2);
     //send student
-    $email_student = DB::table('student_users')
+    $email_student_count = DB::table('student_users')
     ->select('email')
     ->where('student_number',$request->student_number)
-    ->get();
-    if($email_student != null){
+    ->count();
+    if($email_student_count > 0){
+
+
         $this->sendnotestudent($request);
     }
+
+
 
     $fixform->save();
 

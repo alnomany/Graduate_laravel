@@ -130,8 +130,10 @@
             nums++;
            }
         });
+        $number=(sum / nums);
+        $number=$number.toFixed(2);
 //Math.floor(
-        $(".Average").val(sum / nums);
+        $(".Average").val($number);
 
     });
     $(document).on("change", ".fm1", function() {
