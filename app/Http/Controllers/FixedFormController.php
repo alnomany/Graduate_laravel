@@ -119,6 +119,16 @@ public function fill(){
     return view('note.index', compact('data'));
 
  }
+ public function sendnotestudent($request){
+      $email_student = DB::table('fix_forms')
+    ->select('email')
+    ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
+    ->where('student_users.student_number',$request->student_number)
+    ->get();
+    Mail::to($email_student)->send(new NoteMail($request));
+ }
+
+
  public function sendnote($request){
   $to= Auth::user()->email;
   //$to="sbajunaid@ksu.edu.sa";
@@ -128,13 +138,9 @@ public function fill(){
   Mail::to($toadmin)->send(new NoteMail($request));
 
 
-/*
-    return  $email_student = DB::table('fix_forms')
-    ->select('email')
-    ->join('student_users', 'student_users.student_number', '=', 'fix_forms.student_number')
-    ->where('student_users.student_number',$fixform->student_number)
-    ->get();
-*/
+
+
+
 
 
 
@@ -206,7 +212,7 @@ public function fetchremprn(Request $request){
     $average = collect([$request->fm1,$request->fm2,$request->fm3,$request->fm4,$request->fm5,$request->fm6])->average();
     "the average is " .$average;
     $fixform->save();
-
+    $this->sendnotestudent($request);
 
     $data=FixForm::all();
     return redirect()->back()->with('success', 'Saved successfully');

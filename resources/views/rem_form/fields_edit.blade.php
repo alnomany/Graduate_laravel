@@ -73,7 +73,7 @@
                 <option value="N.A.">Treatment</option>
 
                 @foreach($arr_rest_type as $item)
-                <option value="{{ $item }}" @if($record->rest_type == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
+                <option value="{{ $item }}" @if($record->arch_type == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
                 @endforeach
 
 
@@ -90,7 +90,7 @@
     <div class="col-md-4 col-4">
                     <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">RM1-Tooth Preparation Mark </label>
+            <label for="basicSelect">RM1-Diagnosis & Treatment Planning </label>
             <input type="text" id="fm" class="form-control fm fm1" placeholder="N.A." value="{{ $record->rm1 }}" name="rm1" />
 
         </div>

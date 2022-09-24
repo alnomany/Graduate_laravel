@@ -115,7 +115,7 @@
     <div class="col-md-4 col-4">
                     <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">RM1-Dx & Tx Planning Mark </label>
+            <label for="basicSelect">RM1 Diagnosis & Treatment Planning </label>
             <input type="text" id="fm" class="form-control fm rm1 fm1" placeholder="N.A." value="" name="rm1" />
 
         </div>
