@@ -285,7 +285,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">RM7 -Try-in Framework Mark</label>
-            <input type="text" id="fm" class="form-control fm fm7" placeholder="N.A." value="{{ $record->rm7 }}" name="rm7" />
+            <input type="text" id="fm" class="form-control fm rm7" placeholder="N.A." value="{{ $record->rm7 }}" name="rm7" />
 
 
         </div>
@@ -295,14 +295,14 @@
         <div class="form-group">
                     <label for="basicSelect">RM7 sig<span class="name">
                        </label>
-                    <input type="text" id="fm7_sig" class="form-control fm7_sig rm7_sig" placeholder="" value="{{ $record->rm7_sig }}" name="rm7_sig" onchange=""/>
+                    <input type="text" id="rm7_sig" class="form-control rm7_sig" placeholder="" value="{{ $record->rm7_sig }}" name="rm7_sig" onchange=""/>
         </div>
     </div>
     <div class="col-md-4 col-4">
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="rm7_date" name="rm7_date" class="date-fm6" value="{{ $record->rm7_date }}" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="rm7_date" name="rm7_date" class="date-fm7" value="{{ $record->rm7_date }}" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>
@@ -321,14 +321,14 @@
             <div class="form-group">
                         <label for="basicSelect">RM8 sig<span class="name">
                            </label>
-                        <input type="text" id="fm8_sig" class="form-control fm8_sig" placeholder="" value="{{ $record->rm8_sig }}" name="rm8_sig" onchange=""/>
+                        <input type="text" id="rm8_sig" class="form-control rm8_sig" placeholder="" value="{{ $record->rm8_sig }}" name="rm8_sig" onchange=""/>
             </div>
         </div>
         <div class="col-md-4 col-4">
             <div class="form-group">
                     <div class="custom-control demo-inline-spacin">
                         <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                        <input type="text" style="margin-top: .5rem;" id="fm8_date" name="rm8_date" class="date-fm8" value="{{ $record->rm8_date }}" min="2022-01-01" max="2025-12-31">
+                        <input type="text" style="margin-top: .5rem;" id="rm8_date" name="rm8_date" class="date-fm8" value="{{ $record->rm8_date }}" min="2022-01-01" max="2025-12-31">
                     </div>
             </div>
         </div>
@@ -354,7 +354,7 @@
             <div class="form-group">
                     <div class="custom-control demo-inline-spacin">
                         <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                        <input type="text" style="margin-top: .5rem;" id="fm8_date" name="rm9_date" class="date-fm8" value="{{ $record->rm9_date }}" min="2022-01-01" max="2025-12-31">
+                        <input type="text" style="margin-top: .5rem;" id="rm9_date" name="rm9_date" class="date-fm9" value="{{ $record->rm9_date }}" min="2022-01-01" max="2025-12-31">
                     </div>
             </div>
         </div>
@@ -373,7 +373,7 @@
             <div class="form-group">
                         <label for="basicSelect">RM10 sig<span class="name">
                            </label>
-                        <input type="text" id="rm10" class="form-control rm10" placeholder="" value="{{ $record->rm10_sig }}" name="rm10_sig" onchange=""/>
+                        <input type="text" id="rm10_sig" class="form-control rm10_sig" placeholder="" value="{{ $record->rm10_sig }}" name="rm10_sig" onchange=""/>
             </div>
         </div>
         <div class="col-md-4 col-4">
@@ -389,7 +389,7 @@
             <!-- Basic Select -->
             <div class="form-group">
                 <label for="basicSelect">RM11 -Prosthesis Placement Mark</label>
-                <input type="text" id="fm" class="form-control fm rm11" placeholder="N.A." value="{{ $record->rm11 }}" name="rm10" />
+                <input type="text" id="fm" class="form-control fm rm11" placeholder="N.A." value="{{ $record->rm11 }}" name="rm11" />
 
 
             </div>
@@ -399,7 +399,7 @@
             <div class="form-group">
                         <label for="basicSelect">RM11 sig<span class="name">
                            </label>
-                        <input type="text" id="rm11" class="form-control rm11" placeholder="" value="{{ $record->rm10_sig }}" name="rm11_sig" onchange=""/>
+                        <input type="text" id="rm11_sig" class="form-control rm11_sig" placeholder="" value="{{ $record->rm11_sig }}" name="rm11_sig" onchange=""/>
             </div>
         </div>
         <div class="col-md-4 col-4">
@@ -425,7 +425,7 @@
             <div class="form-group">
                         <label for="basicSelect">RM12 sig<span class="name">
                            </label>
-                        <input type="text" id="rm12" class="form-control rm12" placeholder="" value="{{ $record->rm12_sig }}" name="rm12_sig" onchange=""/>
+                        <input type="text" id="rm12_sig" class="form-control rm12_sig" placeholder="" value="{{ $record->rm12_sig }}" name="rm12_sig" onchange=""/>
             </div>
         </div>
         <div class="col-md-4 col-4">
@@ -451,7 +451,7 @@
             <div class="form-group">
                         <label for="basicSelect">RM13 sig<span class="name">
                            </label>
-                        <input type="text" id="rm13" class="form-control rm13" placeholder="" value="{{ $record->rm13_sig }}" name="rm13_sig" onchange=""/>
+                        <input type="text" id="rm13_sig" class="form-control rm13_sig" placeholder="" value="{{ $record->rm13_sig }}" name="rm13_sig" onchange=""/>
             </div>
         </div>
         <div class="col-md-4 col-4">

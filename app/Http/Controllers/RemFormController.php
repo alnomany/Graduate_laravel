@@ -73,6 +73,7 @@ class RemFormController extends Controller
     $value = $request->avg;
     $request->avg=  round($value, 2);
     //send student
+    /*
     $email_student_count = DB::table('student_users')
     ->select('email')
     ->where('student_number',$request->student_number)
@@ -82,7 +83,7 @@ class RemFormController extends Controller
 
         $this->sendnotestudent($request);
     }
-
+*/
      $remform->save();
      $data=RemForm::all();
      return redirect()->back()->with('success', 'Saved successfully');
