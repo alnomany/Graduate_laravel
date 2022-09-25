@@ -267,26 +267,21 @@ public function fetchremprn(Request $request){
 
  }
  public function updatePassword(){
-    /*$password = Hash::make('12341234');
 
-    $data = array(
-        array('password'=>$password),
-        //...
-    );
+     $student_numbers=["01-437201130","02-438200126","03-438200128","04-438200149","05-438200243","06-438200279","07-438200335","08-438200403","09-438200420","10-438200456","11-438200571","12-438200611","13-438200712","14-438200897","15-438200923","16-438200948","17-438201205","18-438201208","19-438201270","20-438201271","21-438201347","22-438201407","23-438201418","24-438201444","25-438201456","26-438201515","27-438201523","28-438201540","29-438201541","30-438201663","31-438201740","32-438201767","33-438201958","34-438201999","35-438202005","36-438202007","37-438202052","38-438202307","39-438202335","40-438202446","41-438202518","42-438202561","43-438202617","44-438202640","45-438202666","46-438202712","47-438202724","48-438202737","49-438202868","50-438202871","51-438202874","52-438203351","53-438204370"];
+    foreach ($student_numbers as $student_number){
+       $student_number_sub=  substr($student_number, 3, 22);
 
-    User::insert($data);
-    */
+    $email=$student_number_sub.'@student.ksu.edu.sa';
+    DB::table('student_users')->where('student_number', $student_number)->update(['student_users.email'=>$email]);
+   }
+
+    /*
     $password = Hash::make('12341234');
-
     DB::table('users')
+    ->update(['users.password'=> $password]);
+    */
 
-->update(['users.password'=> $password]);
-/*
-    $post=User::where('id',15)->get();
-    $password = Hash::make('12341234');
-
-    $post()->update(['password' => '1234213']);
-*/
  }
  public function exportstudent(){
     $students_users=StudentUser::get();
