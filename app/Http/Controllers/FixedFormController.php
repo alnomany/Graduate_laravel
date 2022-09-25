@@ -41,6 +41,7 @@ class FixedFormController extends Controller
     }
     //
     public function create(){
+
         $words = explode(" ",  Auth::user()->name);
         $name = "";
         foreach ($words as $w) {

@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="Student Number">Student Number</label>
 
-            <select id="student-number-edit" class="select2 form-control form-control-lg" name="student_number" @if(Auth::user()->type == null) disabled="true" @endif>
+            <select id="student-number-edit" class="select2 form-control form-control-lg" name="student_number" @if(Auth::user()->type != "admin") disabled="true" @endif>
                 <option value="null">Select student number </option>
 
                 @foreach ($students_users as $student)
@@ -25,7 +25,7 @@
 
       {{--   <input id="myText" type="text" value="colors">--}}
 
-    <input type="text" name="student-name-edit" id="student-name-edit" value="{{$record->student_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
+    <input type="text" name="student-name-edit" id="student-name-edit" value="{{$record->student_name}}" class="form-control" @if(Auth::user()->type != "admin" ) readonly @endif>
 {{--
         <select id="student-name" class="select2 form-control form-control-lg id_100" name="student_name" @if(Auth::user()->type == null) disabled="true" @endif>
         </select>
@@ -42,7 +42,7 @@
         <div class="form-group">
             <label for="pation Number">Patient Number-PRN </label>
 
-            <select id="pation-number-edit" class="select2 form-control form-control-lg" name="p_rn" @if(Auth::user()->type == null) disabled="true" @endif>
+            <select id="pation-number-edit" class="select2 form-control form-control-lg" name="p_rn" @if(Auth::user()->type != "admin") disabled="true" @endif>
                 <option value="null">Select Patient Number-PRN </option>
 
                 @foreach ($recordall as $patient)
@@ -58,7 +58,7 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="PName">Patient Name</label>
-            <input type="text" id="pation-name-edit" name="p_name" value="{{$record->p_name}}" class="form-control" @if(Auth::user()->type == null) readonly @endif>
+            <input type="text" id="pation-name-edit" name="p_name" value="{{$record->p_name}}" class="form-control">
 
 
         </div>
@@ -69,7 +69,7 @@
             <label for="company-column">Tooth number</label>
             <div class="input-group" >
 
-                <select class="form-control" id="tooth number" name="tooth_number" @if(Auth::user()->type == null) disabled="true" @endif>
+                <select class="form-control" id="tooth number" name="tooth_number" @if(Auth::user()->type != "admin") disabled="true" @endif>
                     <option value="N.A.">Treatment</option>
 
                     @foreach($arr as $item)
@@ -88,7 +88,7 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Rest Type</label>
-            <select class="form-control" id="Rest Type" name="rest_type" @if(Auth::user()->type == null) disabled="true" @endif>
+            <select class="form-control" id="Rest Type" name="rest_type" @if(Auth::user()->type != "admin") disabled="true" @endif>
                 <option value="N.A.">Treatment</option>
 
                 @foreach($arr_rest_type as $item)

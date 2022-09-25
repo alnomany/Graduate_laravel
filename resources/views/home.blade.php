@@ -15,9 +15,9 @@
                         <div class="col-xl-8 col-md-12 col-12">
                             <div class="card card-congratulation-medal">
                                 <div class="card-body">
-                                    <h5>welcome 🎉                                     {{ Auth::user()->name }}
+                                    <h5>Welcome 🎉                                     {{ Auth::user()->name }}
                                     </h5>
-                                    <p class="card-text font-small-3">chose one</p>
+                                    <p class="card-text font-small-3">Chose One</p>
                                     <div class="row">
                                         <a href="{{ route('create') }}">
                                             <button type="button" class="btn btn-primary">Create Fixed Form</button>

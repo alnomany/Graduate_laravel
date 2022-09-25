@@ -2,6 +2,11 @@
 
 namespace App\Console;
 
+use App\Mail\NoteMail;
+use App\Models\FixForm;
+use App\Mail\GradeStudent;
+use App\Models\StudentUser;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,7 +20,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            $request=FixForm::get();
+            Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
+        })->weeklyOn(7, '18:00');
     }
 
     /**

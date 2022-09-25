@@ -82,28 +82,19 @@
 
 
 <script>
-    
+
 $(document).ready(function () {
-    $('#form').validate({ 
+    $('#form').validate({
         rules: {
             student_number:{
                 required:true,
             },
-        
+
             p_name:{
                 required:true,
             },
             p_rn:{
                 required:true,
-            },
-   
-            rest_type:{
-                required:true,
-            },
-            tooth_number:{
-                required:true,
-                min:11,
-                max:48,
             },
             fm0:{
                 min:0,
@@ -138,7 +129,7 @@ $(document).ready(function () {
                 min:0,
                 max:10,
             }
-    
+
         },
         errorElement: 'span',
         errorPlacement: function (error, element) {

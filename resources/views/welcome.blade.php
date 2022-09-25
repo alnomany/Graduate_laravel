@@ -15,11 +15,11 @@
                 <div class="col-xl-8 col-md-12 col-12">
                     <div class="card card-congratulation-medal">
                         <div class="card-body">
-                            <h4>welcome to course SDS493 🎉
+                            <h4>Welcome to course SDS493 🎉
                             </h4>
                             <h6>Course Director: Dr. Salwa Bajunaid </h6>
                             <h6>Co-Director    : Dr. Ghada Alrabeah </h6>
-                            <p class="card-text font-small-3">chose one</p>
+                            <p class="card-text font-small-3">Chose one</p>
                             <div class="row">
                                 <a href="{{ route('create') }}">
                                     <button type="button" class="btn btn-primary">Create Fixed Form</button>
