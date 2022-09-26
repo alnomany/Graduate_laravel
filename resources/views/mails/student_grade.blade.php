@@ -17,6 +17,14 @@
 
         <th>Patient Number-PRN</th>
         <th>Patient Name</th>
+        <td>fm0 </td>
+        <td>fm1 </td>
+        <td>fm2 </td>
+        <td>fm3 </td>
+        <td>fm4 </td>
+        <td>fm5 </td>
+        <td>fm6 </td>
+
 
         <th>Tooth number</th>
         <th>Rest Type</th>
@@ -29,9 +37,27 @@
         <td>{{ $request->student_name }}</td>
         <td>{{ $request->p_rn }}</td>
         <td>{{ $request->p_name }}</td>
+
+        <td>{{ $request->fm0 }}</td>
+        <td>{{ $request->fm1 }}</td>
+        <td>{{ $request->fm2 }}</td>
+        <td>{{ $request->fm3 }}</td>
+        <td>{{ $request->fm4 }}</td>
+        <td>{{ $request->fm5 }}</td>
+        <td>{{ $request->fm6 }}</td>
+
+
+
         <td>{{ $request->tooth_number }}</td>
         <td>{{ $request->rest_type }}</td>
         <td>{{ $request->note }}</td>
+
+
+
+
+
+
+
 
 
       </tr>

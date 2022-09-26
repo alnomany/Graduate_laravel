@@ -42,6 +42,7 @@
         @endif
             @else
 {{-- fixed not --}}
+@if(Auth::user()->type == "admin1" || Auth::user()->type == "admin")
             <li class="nav-item dropdown dropdown-notification mr-25">
 
                 <a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i> Fixed Form<span class="badge badge-pill badge-danger badge-up">
@@ -82,6 +83,7 @@
                     <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block" href="{{ route('fixed.note') }}">Read all </a></li>
                 </ul>
             </li>
+            @endif
 {{---------- rem form ----------------------------------------------------------------------}}
 @if(Auth::user()->type == "admin1" || Auth::user()->type == "admin")
     <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon" data-feather="bell"></i>Removal Form<span class="badge badge-pill badge-danger badge-up">

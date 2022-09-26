@@ -12,6 +12,10 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
+    protected $commands = [
+        'App\Console\Commands\GradeStudentCommand'
+    ];
     /**
      * Define the application's command schedule.
      *
@@ -20,10 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            $request=FixForm::get();
-            Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
-        })->weeklyOn(7, '18:00');
+        /*
+        $schedule->command(function () {
+
+        })->weekly()->mondays()->at('13:00');
+        */
+        $schedule->command('GradeStudent:email')->weekly()->mondays()->at('18:00');
     }
 
     /**
