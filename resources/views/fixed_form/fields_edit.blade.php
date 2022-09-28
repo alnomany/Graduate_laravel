@@ -329,10 +329,18 @@
         </div>
     </div>
 
-    <div class="col-md-12 col-12">
+    <div class="col-md-9 col-9">
         <div class="form-group">
             <label for="note">note</label>
             <input type="textarea" id="note" class="form-control note" placeholder="note" name="note" value="{{ $record->note }}"/>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-3">
+        <div class="form-group">
+                    <label for="basicSelect">note_sign<span class="name">
+                       </label>
+                    <input type="text" id="note_sign" class="form-control note_sign" placeholder="note_sign" value="{{ $record->note_sign }}" name="note_sign" onchange=""/>
         </div>
     </div>
     <div class="col-12">

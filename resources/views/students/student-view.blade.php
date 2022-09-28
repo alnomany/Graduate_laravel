@@ -26,7 +26,7 @@
                                                 <div class="d-flex flex-column ml-1">
                                                     <div class="user-info mb-1">
                                                         <h4 class="mb-0">{{ $student_user->student_name }}</h4>
-                                                        <span class="card-text">{{ }}</span>
+                                                        <span class="card-text">{{ $student_user->student_number }}</span>
                                                     </div>
                                                    {{--
                                                     <div class="d-flex flex-wrap">
@@ -37,6 +37,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{--
                                         <div class="d-flex align-items-center user-total-numbers">
                                             <div class="d-flex align-items-center mr-2">
                                                 <div class="color-box bg-light-primary">
@@ -57,24 +58,47 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        --}}
                                     </div>
                                     <div class="col-xl-6 col-lg-12 mt-2 mt-xl-0">
                                         <div class="user-info-wrapper">
                                             <div class="d-flex flex-wrap">
                                                 <div class="user-info-title">
                                                     <i data-feather="user" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Username</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Treatment Quantity Mark </span>
                                                 </div>
-                                                <p class="card-text mb-0">eleanor.aguilar</p>
+                                                <p class="card-text mb-0"> </p>
                                             </div>
 
 
                                             <div class="d-flex flex-wrap my-50">
                                                 <div class="user-info-title">
                                                     <i data-feather="flag" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Country</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Count</span>
                                                 </div>
-                                                <p class="card-text mb-0">England</p>
+                                                <p class="card-text mb-0"> {{ $Fixed_Total_Procedures_Count }}</p>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap my-50">
+                                                <div class="user-info-title">
+                                                    <i data-feather="flag" class="mr-1"></i>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Mark :</span>
+                                                </div>
+                                                <p class="card-text mb-0">  {{ $Fixed_Total_Procedures_Mark }}</p>
+                                            </div>
+                                            <div class="d-flex flex-wrap my-50">
+                                                <div class="user-info-title">
+                                                    <i data-feather="flag" class="mr-1"></i>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Avg</span>
+                                                </div>
+                                                <p class="card-text mb-0">{{ $Fixed_Total_Procedures_Mark/$Fixed_Total_Procedures_Count }}</p>
+                                            </div>
+                                            <div class="d-flex flex-wrap my-50">
+                                                <div class="user-info-title">
+                                                    <i data-feather="flag" class="mr-1"></i>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Student Patients</span>
+                                                </div>
+                                                <p class="card-text mb-0"></p>
                                             </div>
 
                                         </div>

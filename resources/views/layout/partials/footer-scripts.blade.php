@@ -197,6 +197,13 @@
         var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate() + "  " +date.getHours() + ":" +date.getMinutes()+ ":" +date.getSeconds();
         document.getElementById("fm6_date").value = current_date;
     });
+    //note sig
+    $(document).on("change", ".note", function() {
+        var str = $("#sig_name").val();
+       // alert(date);
+        $(".note_sign").val(str);
+    });
+
     $(document).on("change", ".rm7", function() {
         var str = $("#sig_name").val();
         var date = new Date();

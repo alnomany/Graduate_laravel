@@ -43,6 +43,7 @@ class FixForm extends Model
 
         'avg',
         'note',
+        'note_sign',
         'total_avg',
         'status',
         'fm0',
@@ -61,14 +62,14 @@ class FixForm extends Model
         'rest_type' => 'required|in:FPD,Crwn,Post&core,Onlay,Inlay,Veneer',
 
 
-     
+
         'fm0' => 'nullable|numeric|min:0|max:10',
         'fm1' => 'nullable|numeric|min:0|max:10',
         'fm2' =>'nullable|numeric|min:0|max:10',
         'fm3' => 'nullable|numeric|min:0|max:10',
         'fm4' => 'nullable|numeric|min:0|max:10',
         'fm5' => 'nullable|numeric|min:0|max:10',
-        'fm6' => 'nullable|numeric|min:0|max:10',   
+        'fm6' => 'nullable|numeric|min:0|max:10',
      ];
 
     /**

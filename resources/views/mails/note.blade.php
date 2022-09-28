@@ -21,6 +21,8 @@
         <th>Tooth number</th>
         <th>Rest Type</th>
         <th>Note</th>
+        <th>Sign Note Doctor</th>
+
 
 
       </tr>
@@ -32,6 +34,8 @@
         <td>{{ $request->tooth_number }}</td>
         <td>{{ $request->rest_type }}</td>
         <td>{{ $request->note }}</td>
+        <td>{{ $request->note_sign }}</td>
+
 
 
       </tr>
