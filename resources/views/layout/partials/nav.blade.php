@@ -34,12 +34,15 @@
                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
         @endif
+{{--
+    @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif
+ --}}
 
-        @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-        @endif
+
             @else
 {{-- fixed not --}}
 @if(Auth::user()->type == "admin1" || Auth::user()->type == "admin")
@@ -182,6 +185,7 @@
 
 
         </ul>
+
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="">Removable Form</span>{{-- <spanclass="badgebadge-light-warningbadge-pillml-automr-1">2</span> --}}</a>
                 <ul class="menu-content">
@@ -194,6 +198,28 @@
 
 
         </ul>
+        @guest
+        @else
+        @if(Auth::user()->type == "admin")
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="">Setup course</span>{{-- <spanclass="badgebadge-light-warningbadge-pillml-automr-1">2</span> --}}</a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="{{ route('import.excel.student') }}"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Student</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Doctor</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href=""><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="">Course Director</span></a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+        @endif
+        @endguest
+
+
     </div>
 </div>
 <!-- END: Main Menu-->

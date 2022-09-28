@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthOtpController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RemFormController;
 use App\Http\Controllers\FixedFormController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,10 @@ Route::post('forms',[FixedFormController::class, 'formPost'])->name('forms');
 
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');
     Route::get('fixedform/export/student/excel', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student');
+    Route::get('import/excel', [StudentController::class, 'ImportExcelStudent'])->name('import.excel.student');
+    Route::get('student/view', [StudentController::class, 'view'])->name('student.view');
+
+
 
 
 

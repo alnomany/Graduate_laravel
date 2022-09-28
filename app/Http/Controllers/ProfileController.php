@@ -34,6 +34,8 @@ class ProfileController extends Controller
         $user->password = bcrypt($request->get('new-password'));
         $user->save();
 
-        return redirect()->back()->with("success","Password successfully changed!");
+        //return redirect()->back()->with("success","Password successfully changed!");
+        return redirect()->route('home')->with("success","Password successfully changed!");
+
 }
 }
