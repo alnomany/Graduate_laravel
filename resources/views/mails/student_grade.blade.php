@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h2>{{ $request->student_name }}</h2>
+    <h2>Student Grade</h2>
 
     <table>
       <tr>
@@ -32,35 +32,7 @@
 
 
       </tr>
-      <tr>
-        <td>{{ $request->student_number }}</td>
-        <td>{{ $request->student_name }}</td>
-        <td>{{ $request->p_rn }}</td>
-        <td>{{ $request->p_name }}</td>
 
-        <td>{{ $request->fm0 }}</td>
-        <td>{{ $request->fm1 }}</td>
-        <td>{{ $request->fm2 }}</td>
-        <td>{{ $request->fm3 }}</td>
-        <td>{{ $request->fm4 }}</td>
-        <td>{{ $request->fm5 }}</td>
-        <td>{{ $request->fm6 }}</td>
-
-
-
-        <td>{{ $request->tooth_number }}</td>
-        <td>{{ $request->rest_type }}</td>
-        <td>{{ $request->note }}</td>
-
-
-
-
-
-
-
-
-
-      </tr>
 
     </table>
     go to link <a href="http://sds493.co/fixedform/fill">Click here</a>
