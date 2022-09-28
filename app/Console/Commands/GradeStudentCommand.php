@@ -42,6 +42,9 @@ class GradeStudentCommand extends Command
     public function handle()
     {
         $request=FixForm::get();
+
+        Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
+
         $students_users=StudentUser::get();
         foreach($students_users as $user){
             Mail::to($user)->send(new GradeStudent($request));

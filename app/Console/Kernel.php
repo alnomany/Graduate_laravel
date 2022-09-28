@@ -29,7 +29,10 @@ class Kernel extends ConsoleKernel
 
         })->weekly()->mondays()->at('13:00');
         */
-        $schedule->command('GradeStudent:email')->weekly()->mondays()->at('18:00');
+      //  $schedule->command('GradeStudent:email')->weekly()->mondays()->at('18:00');
+
+     $schedule->command('GradeStudent:email')->daily();
+
     }
 
     /**
