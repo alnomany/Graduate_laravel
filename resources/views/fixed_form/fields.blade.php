@@ -77,7 +77,7 @@
             <label for="company-column">Tooth number</label>
             <div class="input-group">
 
-                <select class="form-control" id="tooth_number" name="tooth_number">
+                <select class="form-control tooth_number" id="tooth_number" name="tooth_number">
                     <option value="N.A.">Treatment Plan</option>
 
                     @foreach($arr as $item)
@@ -96,7 +96,7 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Rest Type</label>
-            <select class="form-control" id="rest_type" name="rest_type">
+            <select class="form-control rest_type" id="rest_type" name="rest_type" disabled=true;>
                 <option value="">Treatment Plan</option>
 
                 @foreach($arr_rest_type as $item)
@@ -140,7 +140,7 @@
                     <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM1-Tooth Preparation Mark </label>
-            <input type="text" id="fm" class="form-control fm fm1" placeholder="N.A." value="" name="fm1" />
+            <input type="text" id="fm" class="form-control fm fm1" placeholder="N.A." value="" name="fm1" readonly/>
 
         </div>
 
@@ -178,7 +178,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM2-Provisional Mark </label>
-            <input type="text" id="fm" class="form-control fm fm2" placeholder="N.A." value="" name="fm2" />
+            <input type="text" id="fm" class="form-control fm fm2" placeholder="N.A." value="" name="fm2" readonly/>
         </div>
 
     </div>
@@ -217,7 +217,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM3 -FI or Resin Pattern Mark </label>
-            <input type="text" id="fm" class="form-control fm fm3" placeholder="N.A." value="" name="fm3" />
+            <input type="text" id="fm" class="form-control fm fm3" placeholder="N.A." value="" name="fm3" readonly/>
 
 
         </div>
@@ -255,7 +255,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM4 -Fiber post & core build up Mark </label>
-            <input type="text" id="fm" class="form-control fm fm4" placeholder="N.A." name="fm4"  value="" />
+            <input type="text" id="fm" class="form-control fm fm4" placeholder="N.A." name="fm4"  value="" readonly/>
 
         </div>
 
@@ -281,7 +281,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM5-Try in Mark </label>
-            <input type="text" id="fm" class="form-control fm fm5" placeholder="N.A." name="fm5" value="" />
+            <input type="text" id="fm" class="form-control fm fm5" placeholder="N.A." name="fm5" value="" readonly/>
 
 
         </div>
@@ -308,7 +308,7 @@
         <!-- Basic Select -->
         <div class="form-group">
             <label for="basicSelect">FM6 -Cementation Mark </label>
-            <input type="text" id="fm" class="form-control fm fm6" placeholder="N.A." name="fm6" />
+            <input type="text" id="fm" class="form-control fm fm6" placeholder="N.A." name="fm6" readonly/>
 
 
         </div>

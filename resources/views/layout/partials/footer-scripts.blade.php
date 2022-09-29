@@ -35,6 +35,46 @@
         })
     </script>
     <script>
+        $(document).on("change", ".tooth_number", function() {
+            var tooth_number = this.value;
+             //   $("input").attr('disabled','disabled');
+            if (tooth_number != "N.A.") {
+                $("#rest_type").prop('disabled', false);
+                $('.fm0').attr('readonly', true);
+
+                $('.fm1').attr('readonly', false);
+                $('.fm2').attr('readonly', false);
+                $('.fm3').attr('readonly', false);
+                $('.fm4').attr('readonly', false);
+                $('.fm5').attr('readonly', false);
+                $('.fm6').attr('readonly', false);
+
+
+
+
+
+
+
+                                        }
+                else {
+                $("#rest_type").prop('disabled', true);
+                $('.fm0').attr('readonly', false);
+
+
+                //treatmeant
+                $('.fm1').attr('readonly', true);
+                $('.fm2').attr('readonly', true);
+                $('.fm3').attr('readonly', true);
+                $('.fm4').attr('readonly', true);
+                $('.fm5').attr('readonly', true);
+                $('.fm6').attr('readonly', true);
+                    }
+
+
+
+
+
+        });
 
 
 
