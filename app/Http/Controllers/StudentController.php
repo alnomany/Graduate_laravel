@@ -14,13 +14,47 @@ class StudentController extends Controller
 
     }
     public function view(){
-       $record= DB::table('fix_forms')->where("student_number","01-437201130")->distinct()->get();
+        $record= FixForm::where("student_number","01-437201130")->get();
        $student_user= DB::table('student_users')->where("student_number","01-437201130")->first();
-       $Fixed_Total_Procedures_Mark= DB::table('fix_forms')->where("student_number","01-437201130")->sum("fm0","fm1","fm2","fm3","fm4","fm5","fm6");
+       $Fixed_Total_Procedures_Mark= DB::table('fix_forms')->where("student_number","01-437201130")->get(
+        array(
+
+          DB::raw('SUM(fm0) as sumfm0'),
+          DB::raw('SUM(fm1) as sumfm1'),
+          DB::raw('SUM(fm2) as sumfm2'),
+          DB::raw('SUM(fm3) as sumfm3'),
+          DB::raw('SUM(fm4) as sumfm4'),
+          DB::raw('SUM(fm5) as sumfm5'),
+          DB::raw('SUM(fm6) as sumfm6')
+        )
+      );
+      $FTPM=$Fixed_Total_Procedures_Mark->toArray();
+      $FTPM=$FTPM[0]->sumfm0+$FTPM[0]->sumfm1+$FTPM[0]->sumfm2+$FTPM[0]->sumfm3+$FTPM[0]->sumfm4+$FTPM[0]->sumfm5+$FTPM[0]->sumfm6;
+     //sum(DB::raw('fm0+fm1+fm2+fm3+fm4+fm5+fm6'));
+
+
+
+
        $Fixed_Total_Procedures_Count= DB::table('fix_forms')->where("student_number","01-437201130")->count("fm0","fm1","fm2","fm3","fm4","fm5","fm6");
+       $Fixed_Total_Procedures_Mark_update= DB::table('fix_forms')->where("student_number","01-437201130")->get(
+        array(
+
+          DB::raw('count(fm0) as sumfm0'),
+          DB::raw('count(fm1) as sumfm1'),
+          DB::raw('count(fm2) as sumfm2'),
+          DB::raw('count(fm3) as sumfm3'),
+          DB::raw('count(fm4) as sumfm4'),
+          DB::raw('count(fm5) as sumfm5'),
+          DB::raw('count(fm6) as sumfm6')
+        )
+      );
+      $FTPC=$Fixed_Total_Procedures_Mark_update->toArray();
+      $FTPC=$FTPC[0]->sumfm0+$FTPC[0]->sumfm1+$FTPC[0]->sumfm2+$FTPC[0]->sumfm3+$FTPC[0]->sumfm4+$FTPC[0]->sumfm5+$FTPC[0]->sumfm6;
+
+        $Fixed_Total_Student_Patients=DB::table('fix_forms')->where("student_number","01-437201130")->distinct()->count("p_rn");
 
 
-         return view('students.student-view',compact('student_user','record','Fixed_Total_Procedures_Mark','Fixed_Total_Procedures_Count'));
+         return view('students.student-view',compact('student_user','record','FTPM','FTPC','Fixed_Total_Procedures_Count','Fixed_Total_Student_Patients','Fixed_Total_Student_Patients'));
 
     }
 }

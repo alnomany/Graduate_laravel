@@ -55,7 +55,7 @@ class FixedFormController extends Controller
         }
 
         $arr = ['11','12','13','14','15','16','17','18','21','22','23','24','25','26','27','28','31','32','33','34','35','36','37','38','41','42','43','44','45','46','47','48'];
-        $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
+        $arr_rest_type = ['Single Crown or Retainer','Implant Crown','Pontic/s','Cast Post & Core','Prefabricated Post & Core Build up','Non-rigid Connector','Resin-Bonded FPD','VENEER, Onlay, Inlay'];
         $students_users=StudentUser::get();
          $data=FixForm::get();
         return view('fixed_form.create', compact('name','students_users','arr','arr_rest_type','data'));
@@ -65,7 +65,9 @@ class FixedFormController extends Controller
      $record = FixForm::find($id);
      $recordall =FixForm::all();
      $arr = ['11','12','13','14','15','16','17','18','21','22','23','24','25','26','27','28','31','32','33','34','35','36','37','38','41','42','43','44','45','46','47','48'];
-     $arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
+     //$arr_rest_type = ['FPD','Crwn','Post&core','Onlay','Inlay','Veneer'];
+     $arr_rest_type = ['Single Crown or Retainer','Implant Crown','Pontic/s','Cast Post & Core','Prefabricated Post & Core Build up','Non-rigid Connector','Resin-Bonded FPD','VENEER, Onlay, Inlay'];
+
 
 
     $words = explode(" ",  Auth::user()->name);

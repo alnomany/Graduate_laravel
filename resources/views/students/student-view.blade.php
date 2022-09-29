@@ -65,7 +65,7 @@
                                             <div class="d-flex flex-wrap">
                                                 <div class="user-info-title">
                                                     <i data-feather="user" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Treatment Quantity Mark </span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Treatment Quantity Mark : </span>
                                                 </div>
                                                 <p class="card-text mb-0"> </p>
                                             </div>
@@ -74,31 +74,31 @@
                                             <div class="d-flex flex-wrap my-50">
                                                 <div class="user-info-title">
                                                     <i data-feather="flag" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Count</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Count: </span>
                                                 </div>
-                                                <p class="card-text mb-0"> {{ $Fixed_Total_Procedures_Count }}</p>
+                                                <p class="card-text mb-0"> {{ $FTPC }}</p>
                                             </div>
 
                                             <div class="d-flex flex-wrap my-50">
                                                 <div class="user-info-title">
                                                     <i data-feather="flag" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Mark :</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Mark : </span>
                                                 </div>
-                                                <p class="card-text mb-0">  {{ $Fixed_Total_Procedures_Mark }}</p>
+                                                <p class="card-text mb-0">  {{ $FTPM }}</p>
                                             </div>
                                             <div class="d-flex flex-wrap my-50">
                                                 <div class="user-info-title">
                                                     <i data-feather="flag" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Avg</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Procedures Avg : </span>
                                                 </div>
-                                                <p class="card-text mb-0">{{ $Fixed_Total_Procedures_Mark/$Fixed_Total_Procedures_Count }}</p>
+                                                <p class="card-text mb-0">{{ $FTPM/$FTPC }}</p>
                                             </div>
                                             <div class="d-flex flex-wrap my-50">
                                                 <div class="user-info-title">
                                                     <i data-feather="flag" class="mr-1"></i>
-                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Student Patients</span>
+                                                    <span class="card-text user-info-title font-weight-bold mb-0">Fixed Total Student Patients : </span>
                                                 </div>
-                                                <p class="card-text mb-0"></p>
+                                                <p class="card-text mb-0">{{ $Fixed_Total_Student_Patients }}</p>
                                             </div>
 
                                         </div>
@@ -114,7 +114,7 @@
                 <!-- User Card & Plan Ends -->
 
 
-{{--
+
                 <!-- User  Starts-->
                 <div class="row invoice-list-wrapper">
                     <div class="col-12">
@@ -123,24 +123,138 @@
                                 <table class="invoice-list-table table">
                                     <thead>
                                         <tr>
-                                            <th></th>
                                             <th>#</th>
-                                            <th><i data-feather="trending-up"></i></th>
-                                            <th>#</th>
-                                            <th>#</th>
-                                            <th class="text-truncate">#</th>
-                                            <th>#</th>
-                                            <th>#</th>
-                                            <th class="cell-fit">#</th>
+                                            <th>treatment</th>
+                                            <th><i data-feather=""></i>count</th>
+
+
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                          <tr>
+                                            <td>fm0</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm0;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm0 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>fm1</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm1;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm1 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>fm2</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm2;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm2 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>fm3</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm3;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm3 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- /User  Ends-->
---}}
+
             </section>
 
         </div>
