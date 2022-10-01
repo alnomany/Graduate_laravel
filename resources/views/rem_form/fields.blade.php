@@ -113,7 +113,7 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Arch Type</label>
-            <select class="form-control" id="arch_type" name="arch_type">
+            <select class="form-control" id="arch_type1" name="arch_type1">
                 <option value="No Mand">No Mand</option>
 
                 @foreach($arr_rest_type1 as $item)
