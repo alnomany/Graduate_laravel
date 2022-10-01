@@ -66,7 +66,7 @@
 
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="company-column">Tooth number</label>
+            <label for="company-column">Treatment Plan / Tooth number</label>
             <div class="input-group" >
 
                 <select class="form-control" id="tooth number" name="tooth_number" @if(Auth::user()->type != "admin") disabled="true" @endif>

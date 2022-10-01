@@ -132,7 +132,7 @@
                                     </thead>
                                     <tbody>
                                           <tr>
-                                            <td>fm0</td>
+                                            <td>Treatment Plan Mark</td>
                                             <td>
                                             <?php
 
@@ -158,7 +158,7 @@
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td>fm1</td>
+                                            <td>Tooth Preparation Mark</td>
                                             <td>
                                             <?php
 
@@ -184,7 +184,7 @@
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td>fm2</td>
+                                            <td>Provisional Mark</td>
                                             <td>
                                             <?php
 
@@ -210,7 +210,7 @@
                                             </td>
                                           </tr>
                                           <tr>
-                                            <td>fm3</td>
+                                            <td>FI or Resin Pattern Mark</td>
                                             <td>
                                             <?php
 
@@ -235,6 +235,86 @@
                                             ?>
                                             </td>
                                           </tr>
+
+                                          <tr>
+                                            <td>Fiber post & core build up Mark</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm5;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm4 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Try in Mark</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm5;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm4 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Cementation Mark</td>
+                                            <td>
+                                            <?php
+
+                                                    $sum = 0;
+                                                   foreach ($record as $x) {
+                                                    $sum += $x->fm6;
+                                                   }
+                                                   echo $sum;
+                                            ?>
+                                        </td>
+                                            <td>
+
+                                            <?php
+
+                                            $y = 0;
+
+                                           foreach ($record as $x) {
+                                            if($x->fm4 !==null){
+                                                   $y=$y+1;
+                                            }}
+                                           echo $y;
+                                            ?>
+                                            </td>
+                                          </tr>
+
 
 
 

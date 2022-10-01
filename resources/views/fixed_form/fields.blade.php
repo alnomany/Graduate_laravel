@@ -3,6 +3,21 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Student Number">Student Number</label>
+            @if(isset($_GET['student_number']))
+            <?php
+            $student_number_get =  $_GET['student_number'];
+            ?>
+
+            <select id="student-number" class="select2 form-control form-control-lg" name="student_number" disabled="true">
+                <option value="">Select student number </option>
+
+                @foreach ($students_users as $student)
+
+                <option value="{{ $student->student_number }}" @if($student->student_number == $student_number_get) selected='selected' @endif>{{ $student->student_number }}</option>
+                @endforeach
+
+            </select>
+            @else
 
             <select id="student-number" class="select2 form-control form-control-lg" name="student_number">
                 <option value="">Select student number </option>
@@ -13,6 +28,7 @@
                 @endforeach
 
             </select>
+            @endif
         </div>
         </div>
 
@@ -23,9 +39,19 @@
     <div class="form-group col-sm-6">
 
             <label for="Student Name">Student Name</label>
+            @if(isset($_GET['student_name']))
+            <?php
+            $student_name_get =  $_GET['student_name'];
+            ?>
+            <input type="text" name="student_name" id="student-name-edit" value="{{ $student_name_get}}" class="form-control" disabled="true">
+
+
+            @else
             <select id="student-name" class="select2 form-control form-control-lg" name="student_name">
 
             </select>
+            @endif
+
 
     </div>
     {{--
@@ -62,19 +88,38 @@
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="city-column">Patient Number-PRN</label>
-            <input type="text" id="p_rn" class="form-control" placeholder="PRN" name="p_rn" value="" />
+               @if(isset($_GET['p_rn']))
+                <input type="text" id="p_rn" class="form-control" placeholder="PRN" name="p_rn" value="<?php
+                echo  $_GET['p_rn'];
+
+                ?>" />
+                    @else
+                    <input type="text" id="p_rn" class="form-control" placeholder="PRN" name="p_rn" value="" />
+
+                    @endif
         </div>
     </div>
     <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="PName">Patient Name</label>
-            <input type="text" id="p_name" class="form-control" name="p_name" placeholder="Patient Name" value=""/>
+            @if(isset($_GET['p_name']))
+            <input type="text" id="p_name" class="form-control" name="p_name" placeholder="Patient Name" value="<?php
+            echo  $_GET['p_name'];
+
+            ?>"/>
+
+
+                @else
+                <input type="text" id="p_name" class="form-control" name="p_name" placeholder="Patient Name" value=""/>
+
+
+                @endif
         </div>
     </div>
   {{--   @endif --}}
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="company-column">Tooth number</label>
+            <label for="company-column">Treatment Plan / Tooth number</label>
             <div class="input-group">
 
                 <select class="form-control tooth_number" id="tooth_number" name="tooth_number">

@@ -233,7 +233,8 @@ public function fetchremprn(Request $request){
     $fixform->save();
 
     $data=FixForm::all();
-    return redirect()->back()->with('success', 'Saved successfully');
+   // return redirect()->back()->withInput()->with('success', 'Saved successfully');
+    return redirect()->route('create', ['p_rn' => $fixform->p_rn,'p_name' => $fixform->p_name,'student_number' => $fixform->student_number,'student_name' => $fixform->student_name])->with('success', 'Saved successfully');
 
 
   //  return view('fixed_form.create', compact('data'));
