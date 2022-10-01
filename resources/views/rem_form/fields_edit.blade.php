@@ -90,7 +90,7 @@
                 <option value="No Mand">No Mand</option>
 
                 @foreach($arr_rest_type1 as $item)
-                <option value="{{ $item }}" @if($record->arch_type == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
+                <option value="{{ $item }}" @if($record->arch_type1 == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
                 @endforeach
 
 
