@@ -39,11 +39,12 @@ class RemFormController extends Controller
 
 
         $arr_rest_type = ['MAX CD','MAX CONV RPD',
-        'MAX TD','MAX OD W/COPING','MAX OD NO/COPING','MAX ATTACHMENT','MAND CD',
+        'MAX TD','MAX OD W/COPING','MAX OD NO/COPING','MAX ATTACHMENT'];
+        $arr_rest_type1 = ['MAND CD',
         'MAND CONV RPD','MAND TD','MAND OD W/COPING','MAND OD NO/COPING','MAND ATTACHMENT'];
         $students_users=StudentUser::get();
          $data=RemForm::get();
-        return view('rem_form.create', compact('name','students_users','arr_rest_type','data'));
+        return view('rem_form.create', compact('name','students_users','arr_rest_type','arr_rest_type1','data'));
  }
  ///////////////////////////////Export///////////////////////////////////////////////
  public function export()
@@ -174,9 +175,10 @@ public function note(Request $request){
    // $arr = ['11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48'];
   //  $arr_rest_type = ['MaxCD','MaxConv RPD','MaxTD','MaxOD w coping','MaxOD withouth coping','MaxSurveyed crwon','MaxAttachment','ManCD','ManConv RPD','ManTD','ManOD w coping','ManOD withouth coping','ManSurveyed crwon','ManAttachment'];
 
-    $arr_rest_type = ['MAX CD','MAX CONV RPD',
-    'MAX TD','MAX OD W/COPING','MAX OD NO/COPING','MAX ATTACHMENT','MAND CD',
-    'MAND CONV RPD','MAND TD','MAND OD W/COPING','MAND OD NO/COPING','MAND ATTACHMENT'];
+  $arr_rest_type = ['MAX CD','MAX CONV RPD',
+  'MAX TD','MAX OD W/COPING','MAX OD NO/COPING','MAX ATTACHMENT'];
+  $arr_rest_type1 = ['MAND CD',
+  'MAND CONV RPD','MAND TD','MAND OD W/COPING','MAND OD NO/COPING','MAND ATTACHMENT'];
 
    $words = explode(" ",  Auth::user()->name);
    $name = "";
@@ -189,7 +191,7 @@ public function note(Request $request){
 
 
    }
-   return view('rem_form.edit', compact('name','students_users','record','recordall','arr_rest_type'));
+   return view('rem_form.edit', compact('name','students_users','record','recordall','arr_rest_type','arr_rest_type1'));
 }
 
 

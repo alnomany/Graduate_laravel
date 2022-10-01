@@ -93,13 +93,30 @@
 
     </div>
   --}}
-    <div class="col-md-12 col-12">
+    <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Arch Type</label>
             <select class="form-control" id="arch_type" name="arch_type">
-                <option value="">Treatment Plan</option>
+                <option value="No Max">No Max</option>
 
                 @foreach($arr_rest_type as $item)
+                <option value="{{ $item}}" > {{ strtoupper($item) }}</option>
+                @endforeach
+
+
+
+
+            </select>
+        </div>
+
+    </div>
+    <div class="col-md-6 col-6">
+        <div class="form-group">
+            <label for="Rest Type">Arch Type</label>
+            <select class="form-control" id="arch_type" name="arch_type">
+                <option value="No Mand">No Mand</option>
+
+                @foreach($arr_rest_type1 as $item)
                 <option value="{{ $item}}" > {{ strtoupper($item) }}</option>
                 @endforeach
 

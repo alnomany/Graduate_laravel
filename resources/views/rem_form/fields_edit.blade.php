@@ -66,13 +66,30 @@
 
 
 
-    <div class="col-md-12 col-12">
+    <div class="col-md-6 col-6">
         <div class="form-group">
             <label for="Rest Type">Arch Type</label>
             <select class="form-control" id="Rest Type" name="arch_type" @if(Auth::user()->type != "admin") disabled="true" @endif>
-                <option value="N.A.">Treatment</option>
+                <option value="No Max">No Max</option>
 
                 @foreach($arr_rest_type as $item)
+                <option value="{{ $item }}" @if($record->arch_type == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
+                @endforeach
+
+
+
+
+            </select>
+        </div>
+
+    </div>
+    <div class="col-md-6 col-6">
+        <div class="form-group">
+            <label for="Rest Type">Arch Type</label>
+            <select class="form-control" id="Rest Type" name="arch_type1" @if(Auth::user()->type != "admin") disabled="true" @endif>
+                <option value="No Mand">No Mand</option>
+
+                @foreach($arr_rest_type1 as $item)
                 <option value="{{ $item }}" @if($record->arch_type == $item) selected='selected' @endif> {{ strtoupper($item) }}</option>
                 @endforeach
 

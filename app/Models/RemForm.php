@@ -14,6 +14,7 @@ class RemForm extends Model
         'p_name',
         'p_rn',
         'arch_type',
+        'arch_type1',
 
 
         'rm1',
@@ -74,6 +75,8 @@ class RemForm extends Model
 
         'avg',
         'note',
+        'note_sign',
+
         'total_avg',
         'status',
 
