@@ -208,7 +208,7 @@
     <div class="col-md-4 col-4">
         <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">FM3 -FI or Resin Pattern Mark </label>
+            <label for="basicSelect">FM3 -Final Impression or Resin Pattern Mark </label>
             <input type="text" id="fm" class="form-control fm fm3" placeholder="N.A." value="{{ $record->fm3 }}" name="fm3" />
 
 

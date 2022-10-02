@@ -8,15 +8,11 @@
             $student_number_get =  $_GET['student_number'];
             ?>
 
-            <select id="student-number" class="select2 form-control form-control-lg" name="student_number" disabled="true">
-                <option value="">Select student number </option>
 
-                @foreach ($students_users as $student)
 
-                <option value="{{ $student->student_number }}" @if($student->student_number == $student_number_get) selected='selected' @endif>{{ $student->student_number }}</option>
-                @endforeach
+                <input type="text" id="student-number" class="form-control student_number" placeholder="" value="{{ $student_number_get }}" name="student_number" readonly/>
 
-            </select>
+
             @else
 
             <select id="student-number" class="select2 form-control form-control-lg" name="student_number">
@@ -30,7 +26,7 @@
             </select>
             @endif
         </div>
-        </div>
+</div>
 
 
 
@@ -43,7 +39,7 @@
             <?php
             $student_name_get =  $_GET['student_name'];
             ?>
-            <input type="text" name="student_name" id="student-name-edit" value="{{ $student_name_get}}" class="form-control" disabled="true">
+            <input type="text" name="student_name" id="student-name-edit" value="{{ $student_name_get}}" class="form-control" readonly>
 
 
             @else
@@ -261,7 +257,7 @@
     <div class="col-md-4 col-4">
         <!-- Basic Select -->
         <div class="form-group">
-            <label for="basicSelect">FM3 -FI or Resin Pattern Mark </label>
+            <label for="basicSelect">FM3 -Final Impression or Resin Pattern Mark </label>
             <input type="text" id="fm" class="form-control fm fm3" placeholder="N.A." value="" name="fm3" readonly/>
 
 

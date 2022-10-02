@@ -68,7 +68,7 @@
 
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="Rest Type">Arch Type</label>
+            <label for="Rest Type">MAXILLARY</label>
             <select class="form-control" id="Rest Type" name="arch_type" @if(Auth::user()->type != "admin") disabled="true" @endif>
                 <option value="No Max">No Max</option>
 
@@ -85,7 +85,7 @@
     </div>
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="Rest Type">Arch Type</label>
+            <label for="Rest Type">MANDIBULAR</label>
             <select class="form-control" id="Rest Type" name="arch_type1" @if(Auth::user()->type != "admin") disabled="true" @endif>
                 <option value="No Mand">No Mand</option>
 

@@ -102,14 +102,14 @@ class RemFormController extends Controller
 
     $data->save();
     $data=RemForm::all();
-    return redirect()->back()->with('success', 'Updated successfully');
+    return redirect()->back()->with('success', 'Updated Successfully');
 
     return redirect()->back();
    }
   public function delete($id){
 
     RemForm::where('id', $id)->delete();
-    return redirect('/remform/fill')->with('success', 'delete successfully');
+    return redirect('/remform/fill')->with('success', 'Deleted Successfully');
 
 
  }

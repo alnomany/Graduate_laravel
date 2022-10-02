@@ -129,6 +129,14 @@ $(document).ready(function () {
                 min:0,
                 max:10,
             }
+            ,
+            rest_type: {
+                required: {
+                depends: function(elem) {
+                return $("#tooth_number").val() > 11
+                }
+                },
+            }
 
         },
         errorElement: 'span',

@@ -5,7 +5,11 @@
 
             <th>Student</th>
             <th>Patient</th>
-            <th>procedure</th>
+            <th>MANDIBULAR</th>
+            <th>MAXILLARY</th>
+
+
+
 
             <th>RM1</th>
             <th>RM2</th>
@@ -56,7 +60,9 @@
                 <span class="font-weight-bold">{{ $value->student_name }}<br><br> {{  $value->student_number }}</span>
             </td>
             <td>{{ $value->p_name }}<br><br> {{  $value->p_rn }}</td>
+            <td>{{ $value->arch_type1 }}</td>
             <td>{{ $value->arch_type }}</td>
+
 
 
             <td>{{ $value->rm1 }}<br><br> {{  $value->rm1_sig }}</td>

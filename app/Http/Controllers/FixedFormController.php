@@ -244,14 +244,14 @@ public function fetchremprn(Request $request){
      $data->update($request->all());
      $data->save();
      $data=FixForm::all();
-     return redirect()->back()->with('success', 'Updated successfully');
+     return redirect()->back()->with('success', 'Updated Successfully');
 
      return redirect()->back();
     }
     public function delete($id){
 
         FixForm::where('id', $id)->delete();
-        return redirect('/fixedform/fill')->with('success', 'delete successfully');
+        return redirect('/fixedform/fill')->with('success', 'Deleted Successfully');
 
 
      }

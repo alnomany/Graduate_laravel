@@ -31,10 +31,10 @@ class StudentController extends Controller
        $Removable_Treatment_Data= DB::table('fix_forms')->select('rest_type')->where("student_number","01-437201130")->get();
       $consumers = collect($Removable_Treatment_Data);
 
-      return $attendance = $Removable_Treatment_Data->where('rest_type', 'Crwn')->count();
+       $attendance = $Removable_Treatment_Data->where('rest_type', 'Crwn')->count();
 
-return $attendance->count();
-     return $Removable_Treatment_Data= DB::table('fix_forms')->where("student_number","01-437201130")->get();
+   // $attendance->count();
+      $Removable_Treatment_Data= DB::table('fix_forms')->where("student_number","01-437201130")->get();
       $FTPM=$Fixed_Total_Procedures_Mark->toArray();
       $FTPM=$FTPM[0]->sumfm0+$FTPM[0]->sumfm1+$FTPM[0]->sumfm2+$FTPM[0]->sumfm3+$FTPM[0]->sumfm4+$FTPM[0]->sumfm5+$FTPM[0]->sumfm6;
      //sum(DB::raw('fm0+fm1+fm2+fm3+fm4+fm5+fm6'));

@@ -95,7 +95,7 @@
   --}}
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="Rest Type">Arch Type</label>
+            <label for="Rest Type"> MAXILLARY</label>
             <select class="form-control" id="arch_type" name="arch_type">
                 <option value="No Max">No Max</option>
 
@@ -112,7 +112,7 @@
     </div>
     <div class="col-md-6 col-6">
         <div class="form-group">
-            <label for="Rest Type">Arch Type</label>
+            <label for="Rest Type">MANDIBULAR</label>
             <select class="form-control" id="arch_type1" name="arch_type1">
                 <option value="No Mand">No Mand</option>
 
