@@ -3,11 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Models\FixForm;
+use App\Mail\GradeStudent;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 
-
-class GradeStudent extends Command
+class GradeStudentFixed extends Command
 {
     /**
      * The name and signature of the console command.
@@ -21,7 +21,7 @@ class GradeStudent extends Command
      *
      * @var string
      */
-    protected $description = 'send grade every student';
+    protected $description = 'Send Email To Student';
 
     /**
      * Create a new command instance.
@@ -42,6 +42,7 @@ class GradeStudent extends Command
     {
         $request=FixForm::get();
 
+        Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
 
     }
 }

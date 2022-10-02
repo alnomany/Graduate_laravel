@@ -7,6 +7,7 @@ use App\Models\FixForm;
 use App\Mail\GradeStudent;
 use App\Models\StudentUser;
 use Illuminate\Support\Facades\Mail;
+use App\Console\Commands\GradeStudentFixed;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
 {
 
     protected $commands = [
-        'App\Console\Commands\GradeStudentCommand'
+      //  'App\Console\Commands\GradeStudentCommand',
+      GradeStudentFixed::class,
     ];
     /**
      * Define the application's command schedule.
@@ -31,7 +33,7 @@ class Kernel extends ConsoleKernel
         */
       //  $schedule->command('GradeStudent:email')->weekly()->mondays()->at('18:00');
 
-     $schedule->command('GradeStudent:email')->daily();
+     $schedule->command('Student:email')->everyFiveMinutes();
 
     }
 

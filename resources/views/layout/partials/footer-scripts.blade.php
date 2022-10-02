@@ -39,7 +39,15 @@
             var tooth_number = this.value;
              //   $("input").attr('disabled','disabled');
             if (tooth_number != "N.A.") {
-                $("#rest_type").prop('disabled', false);
+                $(".fm0").val("");
+
+                $(".fm0_sig").val("");
+                $(".fm0_date").val("");
+
+
+
+                $("#rest_type").val($("#rest_type option:first").val());
+                 $("#rest_type").prop('disabled', false);
                 $('.fm0').attr('readonly', true);
 
                 $('.fm1').attr('readonly', false);
@@ -57,11 +65,43 @@
 
                                         }
                 else {
+                    $("#rest_type").val($("#rest_type option:first").val());
+
                 $("#rest_type").prop('disabled', true);
+
                 $('.fm0').attr('readonly', false);
 
 
+
                 //treatmeant
+                //null before
+                $(".fm1").val("");
+                $(".fm1_sig").val("");
+                $(".fm1_date").val("");
+
+                $(".fm2").val("");
+                $(".fm2_sig").val("");
+                $(".fm2_date").val("");
+
+                $(".fm3").val("");
+                $(".fm3_sig").val("");
+                $(".fm3_date").val("");
+
+                $(".fm4").val("");
+                $(".fm4_sig").val("");
+                $(".fm4_date").val("");
+
+                $(".fm5").val("");
+                $(".fm5_sig").val("");
+                $(".fm5_date").val("");
+
+                $(".fm6").val("");
+                $(".fm6_sig").val("");
+                $(".fm6_date").val("");
+
+                $(".Average").val("");
+
+                //
                 $('.fm1').attr('readonly', true);
                 $('.fm2').attr('readonly', true);
                 $('.fm3').attr('readonly', true);

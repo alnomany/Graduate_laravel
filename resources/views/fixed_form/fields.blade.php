@@ -176,7 +176,7 @@
         <div class="form-group">
                 <div class="custom-control demo-inline-spacin">
                     <label class="" for="date">Date entered yyyy-mm-dd hh(0-23):mm:ss  </label>
-                    <input type="text" style="margin-top: .5rem;" id="fm0_date" name="fm0_date" class="date-fm0" value="" min="2022-01-01" max="2025-12-31">
+                    <input type="text" style="margin-top: .5rem;" id="fm0_date" name="fm0_date" class="date-fm0 fm0_date" value="" min="2022-01-01" max="2025-12-31">
                 </div>
         </div>
     </div>

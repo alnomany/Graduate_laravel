@@ -32,6 +32,6 @@ class GradeStudent extends Mailable
      */
     public function build()
     {
-        return $this->subject('issue new one')->view('mails.student_grade');
+        return $this->subject('Student Grade')->view('mails.student_grade');
     }
 }
