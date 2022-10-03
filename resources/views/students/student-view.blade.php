@@ -335,6 +335,45 @@
                 </div>
                 <!-- /User  Ends-->
 
+                <!-- User  Starts-->
+                <div class="row invoice-list-wrapper">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-datatable table-responsive">
+                                <table class="invoice-list-table table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th><i data-feather=""></i>count</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($rest_types as $rest_type)
+
+                                        <tr>
+                                            <td>
+                                                     {{ $rest_type->rest_type }}
+                                            </td>
+                                            <td>
+                                                {{ $rest_type->count }}
+                                            </td>
+
+                                        </tr>
+
+                                        @endforeach
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fixed  Treatment Data  Ends-->
+
             </section>
 
         </div>

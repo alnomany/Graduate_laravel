@@ -5,7 +5,9 @@
         <th>StuName</th>
         <th>PRN</th>
         <th>Patient Name</th>
-        <th>Arch/Type</th>
+        <th>MANDIBULAR</th>
+        <th>MAXILLARY</th>
+
 
         <th>Dx  Tx Planning Mark</th>
         <th>Sign</th>
@@ -66,7 +68,9 @@
             <td>{{ $data->student_name }}</td>
             <td>{{ $data->p_rn }}</td>
             <td>{{ $data->p_name }}</td>
+            <td>{{ $data->arch_type1 }}</td>
             <td>{{ $data->arch_type }}</td>
+
 
             <td>{{ $data->rm1 }}</td>
             <td>{{ $data->rm1_sig }}</td>

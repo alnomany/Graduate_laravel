@@ -129,7 +129,7 @@ class RemFormController extends Controller
 
     }
     $data=[];
-     $students_users=RemForm::select('student_number')->distinct()->get();
+     $students_users=RemForm::select('student_number')->distinct()->orderBy('student_number', 'asc')->get();
 
 
 

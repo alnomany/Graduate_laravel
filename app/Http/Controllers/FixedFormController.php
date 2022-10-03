@@ -97,7 +97,7 @@ public function fill(){
 
     }
     $data=[];
-     $students_users=FixForm::select('student_number')->distinct()->get();
+     $students_users=FixForm::select('student_number')->distinct()->orderBy('student_number', 'asc')->get();
 
    // $students_users=StudentUser::get();
     return view('fixed_form.fill', compact('name','students_users','data'));
