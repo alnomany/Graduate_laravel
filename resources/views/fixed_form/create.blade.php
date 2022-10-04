@@ -133,7 +133,7 @@ $(document).ready(function () {
             rest_type: {
                 required: {
                 depends: function(elem) {
-                return $("#tooth_number").val() > 11
+                return $("#tooth_number").val() >= 11
                 }
                 },
             }

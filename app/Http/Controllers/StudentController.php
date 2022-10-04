@@ -87,9 +87,22 @@ class StudentController extends Controller
          )
        );
        $rest_types = DB::table('rem_forms')
-     ->selectRaw('count(*) as count, arch_type')
+     ->selectRaw('count(*) as count,arch_type')
      ->where('student_number', '=', "01-437201130")
      ->groupBy('arch_type')
+     ->orderByDesc('count')
+     ->get();
+     //,
+     return $doctors1 = DB::table('rem_forms')
+     ->selectRaw('count(*) as count ,SUM(rm1) as rm1,SUM(rm2) as rm2,SUM(rm3) as rm3,SUM(rm4) as rm4,SUM(rm5) as rm5,SUM(rm6) as rm6,SUM(rm7) as rm7,SUM(rm8) as rm8,SUM(rm9) as rm9,SUM(rm10) as rm10,SUM(rm11) as rm11 , round(AVG(rm1),0) as avg,rm1_sig')
+     ->where('student_number', '=', "01-437201130")
+     ->groupBy('rm1_sig')
+     ->orderByDesc('rm1_sig')
+     ->get();
+     return $doctors2 = DB::table('rem_forms')
+     ->selectRaw('SUM(rm1) as rm1,SUM(rm2) as rm2,SUM(rm3) as rm3,SUM(rm4) as rm4,SUM(rm5) as rm5,SUM(rm6) as rm6,SUM(rm7) as rm7,SUM(rm8) as rm8,SUM(rm9) as rm9,SUM(rm10) as rm10,SUM(rm11) as rm11 , round(AVG(rm1),0) as avg,rm1_sig')
+     ->where('student_number', '=', "01-437201130")
+     ->groupBy('rm2_sig')
      ->orderByDesc('count')
      ->get();
        $Removable_Treatment_Data= DB::table('rem_forms')->select('arch_type')->where("student_number","01-437201130")->get();

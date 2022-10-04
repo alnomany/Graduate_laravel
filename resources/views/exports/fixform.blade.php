@@ -22,7 +22,7 @@
         <th>Final impression/ resin pattern</th>
         <th>Sign</th>
 
-        <th>Prefab post cementation core build-up</th>
+        <th>Fiber post & core build up</th>
         <th>Sign</th>
 
         <th>Try-in</th>
