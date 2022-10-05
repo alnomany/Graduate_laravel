@@ -43,11 +43,14 @@ class GradeStudentFixed extends Command
     {
         $request=FixForm::get();
         $Students=StudentUser::get();
+        Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
+/*
         foreach($Students as $student){
             $request=FixForm::where('student_number',$student->student_number);
             Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
 
         }
+        */
 
     }
 }
