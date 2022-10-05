@@ -36,29 +36,32 @@
 
 
       </tr>
+      @foreach ($request as $req)
+
 
         <tr>
-            <td>{{ $request->student_number }}</td>
-            <td>{{ $request->student_name }}</td>
-            <td>{{ $request->p_rn }}</td>
-            <td>{{ $request->p_name }}</td>
-            <td>{{ $request->tooth_number }}</td>
-            <td>{{ $request->rest_type }}</td>
-            <td>{{ $request->note }}</td>
-            <td>{{ $request->note_sign }}</td>
+                <td>{{ $req->student_number }}</td>
+                <td>{{ $req->student_name }}</td>
+                <td>{{ $req->p_rn }}</td>
+                <td>{{ $req->p_name }}</td>
+                <td>{{ $req->tooth_number }}</td>
+                <td>{{ $req->rest_type }}</td>
+                <td>{{ $req->note }}</td>
+                <td>{{ $req->note_sign }}</td>
 
-            <td>{{ $request->fm0 }}</td>
-            <td>{{ $request->fm1 }}</td>
-            <td>{{ $request->fm2 }}</td>
-            <td>{{ $request->fm3 }}</td>
-            <td>{{ $request->fm4 }}</td>
-            <td>{{ $request->fm5 }}</td>
-            <td>{{ $request->fm6 }}</td>
-            <td>{{ $request->avg }}</td>
+                <td>{{ $req->fm0 }}</td>
+                <td>{{ $req->fm1 }}</td>
+                <td>{{ $req->fm2 }}</td>
+                <td>{{ $req->fm3 }}</td>
+                <td>{{ $req->fm4 }}</td>
+                <td>{{ $req->fm5 }}</td>
+                <td>{{ $req->fm6 }}</td>
+                <td>{{ $req->avg }}</td>
 
 
 
           </tr>
+          @endforeach
 
 
 
