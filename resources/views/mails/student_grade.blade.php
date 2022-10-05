@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h2>Student Grade</h2>
+    <h2>Student Grade New</h2>
 
     <table>
       <tr>
@@ -31,12 +31,16 @@
         <td>fm6 </td>
 
         <th>Note</th>
+        <th>Note Sign</th>
+
+
+        <th>avg</th>
+
 
 
 
 
       </tr>
-      /*
       @foreach ($request as $req)
 
 
@@ -47,8 +51,7 @@
                 <td>{{ $req->p_name }}</td>
                 <td>{{ $req->tooth_number }}</td>
                 <td>{{ $req->rest_type }}</td>
-                <td>{{ $req->note }}</td>
-                <td>{{ $req->note_sign }}</td>
+
 
                 <td>{{ $req->fm0 }}</td>
                 <td>{{ $req->fm1 }}</td>
@@ -57,13 +60,16 @@
                 <td>{{ $req->fm4 }}</td>
                 <td>{{ $req->fm5 }}</td>
                 <td>{{ $req->fm6 }}</td>
+
+                <td>{{ $req->note }}</td>
+                <td>{{ $req->note_sign }}</td>
+
                 <td>{{ $req->avg }}</td>
 
 
 
           </tr>
           @endforeach
-          */
 
 
 
