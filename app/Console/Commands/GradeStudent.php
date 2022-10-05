@@ -14,7 +14,7 @@ class GradeStudent extends Command
      *
      * @var string
      */
-    protected $signature = 'Student:email';
+    protected $signature = 'Student:email1';
 
     /**
      * The console command description.
