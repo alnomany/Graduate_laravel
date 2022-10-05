@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\FixForm;
 use App\Mail\GradeStudent;
+use App\Models\StudentUser;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 
@@ -41,8 +42,12 @@ class GradeStudentFixed extends Command
     public function handle()
     {
         $request=FixForm::get();
+        $Students=StudentUser::get();
+        foreach($Students as $student){
+            $request=FixForm::where('student_number',$student->student_number);
+            Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
 
-        Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
+        }
 
     }
 }
