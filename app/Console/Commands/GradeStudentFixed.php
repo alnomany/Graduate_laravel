@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\FixForm;
+use App\Models\RemForm;
 use App\Mail\GradeStudent;
 use App\Models\StudentUser;
 use Illuminate\Console\Command;
@@ -47,9 +48,16 @@ class GradeStudentFixed extends Command
 
         foreach($Students as $student){
             $request=FixForm::where('student_number',$student->student_number)->get();
-            Mail::to($student->email)->send(new GradeStudent($request));
+            $request1=RemForm::where('student_number',$student->student_number)->get();
 
+            Mail::to($student->email)->send(new GradeStudent($request,$request1));
         }
+        /*
+        foreach($Students as $student){
+            $request=RemForm::where('student_number',$student->student_number)->get();
+            Mail::to($student->email)->send(new GradeStudent($request));
+        }
+        */
 
 
     }

@@ -74,6 +74,23 @@
 
 
     </table>
+    <table>
+        <tr>
+          <th>student number removable</th>
+        </tr>
+        @foreach ($request1 as $req1)
+
+
+          <tr>
+                  <td>{{ $req1->student_number }}</td>
+
+
+            </tr>
+            @endforeach
+
+
+
+      </table>
     go to link <a href="http://sds493.co/fixedform/fill">Click here</a>
 
 </body>
