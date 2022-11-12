@@ -65,6 +65,8 @@ Route::post('forms',[FixedFormController::class, 'formPost'])->name('forms');
 
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudent'])->name('fill.export.student');
     Route::get('fixedform/export/student/excel', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student');
+    Route::get('fixedform/export/student/excel/mail', [FixedFormController::class, 'exportexcelstudent'])->name('fill.export.Excel.student.mail');
+
     Route::get('import/excel', [StudentController::class, 'ImportExcelStudent'])->name('import.excel.student');
     Route::get('student/view', [StudentController::class, 'view'])->name('student.view');
     Route::get('student/view/rem', [StudentController::class, 'rem'])->name('student.view.rem');
