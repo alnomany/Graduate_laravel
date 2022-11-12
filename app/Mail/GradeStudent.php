@@ -11,7 +11,6 @@ class GradeStudent extends Mailable
 {
     use Queueable, SerializesModels;
     public   $request;
-    public $request1;
 
 
     /**
@@ -19,11 +18,10 @@ class GradeStudent extends Mailable
      *
      * @return void
      */
-    public function __construct($request,$request1)
+    public function __construct($request)
     {
         //
         $this->request=$request;
-        $this->request1=$request1;
 
     }
 

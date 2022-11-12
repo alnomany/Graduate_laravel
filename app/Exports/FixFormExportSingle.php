@@ -19,7 +19,7 @@ class FixFormExportSingle  implements FromCollection,WithHeadings
     }
     public function collection()
     {
-        return FixForm::where('student_number',$this->student_number)->get();
+        return FixForm::select('id')->where('student_number',$this->student_number)->get('id');
     }
     public function headings(): array
     {
