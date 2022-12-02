@@ -85,6 +85,9 @@
                                         <a class="btn btn-link" href="{{ route('otp.login') }}">
                                             {{ __('Login By Phone Number') }}
                                         </a>
+                                               <a class="btn btn-link" href="{{ route('fill.export.Excel.student.email') }}">
+                                            {{ __('Login Student') }}
+                                        </a>
 
                                     </div>
                                 </div>

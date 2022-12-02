@@ -46,8 +46,27 @@ class GradeStudentFixed extends Command
         $Students=StudentUser::get();
        // Mail::to("aalnomany50@gmail.com")->send(new GradeStudent($request));
 
+
+
+
+
+
+
+
+
         foreach($Students as $student){
+
             $request=FixForm::where('student_number',$student->student_number)->get();
+            //
+            $email=$request['p_name'];
+
+            $data = array('name'=>'name','Email'=>$email);
+            $template='mail.template';
+            $subject='Fixed Message';
+            Mail::send($template, $data, function($message) use($email){
+                $message->to($email, 'Tutorials Point')->subject($subject);
+                $message->from('aalnomany250@gmail.com','ahmed salem');
+             });
             Mail::to('aalnomany50@gmail.com')->send(new GradeStudent($request));
 
             Mail::to($student->email)->send(new GradeStudent($request));

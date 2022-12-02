@@ -12,10 +12,10 @@ class FixFormExportSingle  implements FromCollection,WithHeadings
     /**
     * @return \Illuminate\Support\Collection
     */
-    protected $student_number;
+    protected $id;
 
-    function __construct($student_number) {
-           $this->student_number = $student_number;
+    function __construct($id) {
+           $this->student_number = $id;
     }
     public function collection()
     {
