@@ -19,7 +19,35 @@ class FixFormExportSingle  implements FromCollection,WithHeadings
     }
     public function collection()
     {
-        return FixForm::where('student_number',$this->student_number)->get('id');
+        return FixForm::select('id',
+        'student_number',
+        'student_name',
+        'p_name',
+        'p_rn',
+        'rest_type',
+        'tooth_number',
+        'fm1',
+        'fm1_sig',
+        'fm1_date',
+        'fm2',
+        'fm2_sig',
+        'fm2_date',
+
+        'fm3',
+        'fm3_sig',
+        'fm3_date',
+
+        'fm4',
+        'fm4_sig',
+        'fm4_date',
+
+        'fm5',
+        'fm5_sig',
+        'fm5_date',
+
+        'fm6',
+        'fm6_sig',
+        'fm6_date')->where('student_number',$this->student_number)->get();
     }
     public function headings(): array
     {

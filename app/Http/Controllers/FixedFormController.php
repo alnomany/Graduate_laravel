@@ -29,7 +29,11 @@ class FixedFormController extends Controller
         return view('fixed_form.form');
     }
     public function ExportExcelByEmail(Request $request){
-        $email= $request->Email;
+        $this->validate($request,[
+            'email'=>'required|exists:student_users,email',
+
+         ]);
+        $email= $request->email;
         $name=StudentUser::where('email',$email)->value('student_name');
         $id =StudentUser::where('email',$email)->value('student_number');
 

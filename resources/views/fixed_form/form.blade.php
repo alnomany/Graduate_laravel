@@ -16,13 +16,22 @@
                         <div class="card-header">
                             <h5 class="text-center">Login By Email</h5>
                         </div>
+                        @if (count($errors) > 0)
+                            <div class = "alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                </div>
+                        @endif
                         <form method="post" action="{{ route('ExportExcelByEmail')}}" id="form">
                             @csrf
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Email">Email:</label>
-                                    <input type="email" class="form-control" name="Email" placeholder="Enter Email" value="">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email" value="">
                                 </div>
                             </div>
 

@@ -25,10 +25,12 @@
                                                 <button type="button" class="btn btn-primary">Single Student Fixed Report</button>
 
                                         </a>
+                                        <!--
 
-                                        <a href="{{route('fill.remform.export.student')}}">
+                                        <a href="">
                                             <button type="button" class="btn  btn-primary pink">Single Student Removable Report</button>
                                         </a>
+                                    -->
                                     </div>
                                     <br>
 
