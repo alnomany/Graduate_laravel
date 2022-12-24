@@ -27,6 +27,8 @@ use App\Http\Controllers\StudentController;
 
     Route::get('fixedform/export/student/excel/{url}', [FixedFormController::class, 'exportexcelstudenturl'])->name('fill.export.Excel.student.url');
     Route::get('fixedform/export/student/excel/mail/{id}', [FixedFormController::class, 'exportexcelstudentbyemail'])->name('fill.export.Excel.student.mail.by');
+    Route::get('fixedform/export/student/excel/mail/{id}/rem', [FixedFormController::class, 'exportexcelstudentbyemailremovaliable'])->name('fill.export.Excel.student.mail.by.rem');
+
 
     //
     Route::get('fixedform/export/student', [FixedFormController::class, 'exportstudentbyemail'])->name('fill.export.student.email.by');

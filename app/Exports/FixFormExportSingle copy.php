@@ -50,7 +50,7 @@ class FixFormExportSingle  implements FromCollection,WithHeadings
 
         'fm6',
         'fm6_sig',
-        'fm6_date','avg','note')->where('student_number',$this->student_number)->get();
+        'fm6_date')->where('student_number',$this->student_number)->get();
     }
     public function headings(): array
     {
@@ -58,7 +58,7 @@ class FixFormExportSingle  implements FromCollection,WithHeadings
            // 'Id','StuNum','StuName','Patient Name','PRN',
             //'Treatment Plan Mark',	'Sign','Date','Restoration type',	'Tooth Num'	,'Tooth Preparation','Sign','Date',	'Provisional','Sign','Date','Final impression/ resin pattern','Sign','Date',
             //	Fiber post core build up Mark	Sign	Try-in	Sign	Cementation	Sign	Average
-            'Student Number','Student Name','Patient Name','PRN','Treatment Plan/Tooth Number','Restoration Type'	,'Treatment Plan Mark','Sign','Date','Tooth Preparation','Sign','Date','Provisional','Sign','Date','Final impression/ Resin pattern','Fiber Post & Core Build Up','Sign','Date','Try in','Sign','Date','Cementation','Sign','Date','Average','Notes'
+            'Student Number','Student Name','Patient Name','PRN','Treatment Plan/Tooth Number','Restoration Type'	,'Treatment Plan Mark','Sign','Date','Tooth Preparation','Sign','Date','Provisional','Sign','Date','Final impression/ Resin pattern','Fiber Post & Core Build Up','Sign','Date','Sign','Date','Try in','Sign','Date','Cementation','Sign','Date',
             //'arch_type1','rm1','rm1_sig','rm1_date','rm2','rm2_sig','rm2_date','rm3','rm3_sig','rm3_date','rm4','rm4_sig','rm4_date','rm5','rm5_sig','rm5_date','rm6','rm6_sig','rm6_date','rm7','rm7_sig','rm7_date','rm8','rm8_sig','rm8_date','rm9','rm9_sig','rm9_date','rm10','rm10_sig','rm10_date','rm11','rm11_sig','rm11_date','rm12','rm12_sig','rm12_date','rm13','rm13_sig','rm13_date','avg','total_avg','note','note_sign','status','email_verified_at'
         ];
     }

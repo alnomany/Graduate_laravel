@@ -36,7 +36,7 @@
                                         </a>
 
 
-                                        <a href="">
+                                        <a href="{{ route('fill.export.Excel.student.mail.by.rem',$id) }}">
                                             <button type="button" class="btn  btn-primary pink">Single Student Removable Report</button>
                                         </a>
 

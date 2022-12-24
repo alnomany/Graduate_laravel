@@ -16,6 +16,7 @@ use App\Exports\FixFormExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use App\Exports\FixFormExportSingle;
+use App\Exports\RemFormExportSingle;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -109,6 +110,14 @@ class FixedFormController extends Controller
     {
 
        return Excel::download(new FixFormExportSingle($id), $id.'Fixed_Report.xlsx');
+      // return Excel::download(new MttRegistrationsExport($request->id), 'MttRegistrations.xlsx');
+
+
+    }
+    public function exportexcelstudentbyemailremovaliable(Request $request,$id)
+    {
+
+       return Excel::download(new RemFormExportSingle($id), $id.'Rem_Report.xlsx');
       // return Excel::download(new MttRegistrationsExport($request->id), 'MttRegistrations.xlsx');
 
 
