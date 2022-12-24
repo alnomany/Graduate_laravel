@@ -10,7 +10,9 @@ use Illuminate\Queue\SerializesModels;
 class GradeStudent extends Mailable
 {
     use Queueable, SerializesModels;
-    public   $request;
+   // public   $request;
+   public $id;
+   public $code;
 
 
     /**
@@ -18,13 +20,21 @@ class GradeStudent extends Mailable
      *
      * @return void
      */
+    /*
     public function __construct($request)
     {
         //
         $this->request=$request;
 
     }
+*/
+public function __construct($id,$code)
+{
+    //
+    $this->id=$id;
+    $this->code= $code;
 
+}
     /**
      * Build the message.
      *
@@ -32,6 +42,8 @@ class GradeStudent extends Mailable
      */
     public function build()
     {
-        return $this->subject('Student Grade')->view('mails.student_grade');
+       // return $this->subject('Student Grade')->view('mails.student_grade');
+    return $this->subject('Verfication')->view('mails.verfication');
+
     }
 }

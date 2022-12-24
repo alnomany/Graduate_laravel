@@ -20,6 +20,9 @@ use App\Http\Controllers\StudentController;
 */
     //by email fixed form
     Route::get('fixedform/export/student/excel/email', [FixedFormController::class, 'loginbyemail'])->name('fill.export.Excel.student.email');
+    Route::post('fixedform/export/student/excel/email/verfication', [FixedFormController::class, 'loginbyemailverfication'])->name('fill.export.Excel.student.email.verfication');
+    Route::get('fixedform/export/student/excel/email/verfication/cheackcode', [FixedFormController::class, 'cheackcode'])->name('fill.export.Excel.student.email.verfication.cheackcode');
+
     Route::post('fixedform/export/student/excel/email', [FixedFormController::class, 'ExportExcelByEmail'])->name('ExportExcelByEmail');
 
     Route::get('fixedform/export/student/excel/{url}', [FixedFormController::class, 'exportexcelstudenturl'])->name('fill.export.Excel.student.url');

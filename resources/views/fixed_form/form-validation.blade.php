@@ -14,8 +14,14 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="text-center">Login By Email</h5>
+                            <h5 class="text-center">Login By Email Verfication</h5>
                         </div>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Hi {{$student_name}}!</strong> You should check Your Email To get Verfication Code
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
                         @if (count($errors) > 0)
                             <div class = "alert alert-danger">
                                         <ul>
@@ -25,21 +31,29 @@
                                         </ul>
                                 </div>
                         @endif
+                        @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>{{ $message }}</strong>
+                        </div>
+                        @endif
+
+
                         <form method="post" action="{{ route('fill.export.Excel.student.email.verfication')}}" id="form">
                             @csrf
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Email">Email:</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Enter Email" value="">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email" value="{{$email}}">
                                 </div>
                             </div>
-                            {{--<div class="col-md-12">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="Password">Password:</label>
-                                    <input type="Password" class="form-control" name="Password" placeholder="Enter Password" value="">
+                                    <label for="Verfication Code">Verfication Code</label>
+                                    <input type="Password" class="form-control" name="Code" placeholder="Enter Verfication Code" value="">
                                 </div>
-                            </div>--}}
+                            </div>
 
                             <div class="row">
                                 <div class="form-group text-center col-md-12">

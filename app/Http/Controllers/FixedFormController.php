@@ -9,6 +9,7 @@ use App\Mail\NoteMail;
 use App\Models\FixForm;
 use Carbon\Traits\Date;
 
+use App\Mail\GradeStudent;
 use App\Models\StudentUser;
 use Illuminate\Http\Request;
 use App\Exports\FixFormExport;
@@ -19,23 +20,87 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreFixFormRequest;
 
 class FixedFormController extends Controller
 {
 
+
+
     //send excel by email
     public function loginbyemail(){
         return view('fixed_form.form');
     }
+        //send email verfication
+        public function loginbyemailverfication(Request $request){
+            $this->validate($request,[
+                'email'=>'required|exists:student_users,email',
+
+             ]);
+             //                'code'=>'required|exists:student_users,password',
+
+             $email= $request->email;
+
+             $id =StudentUser::where('email',$email)->value('student_number');
+             $student_name =StudentUser::where('email',$email)->value('student_name');
+             $code=$this->generateUniqueCode();
+          $code_verification= DB::table('student_users')
+            ->where('student_number', $id)
+            ->update(['password' => $code]);
+
+
+             //send email
+
+             Mail::to($email)->send(new GradeStudent($id,$code));
+
+
+             return view('fixed_form.cheackcode',compact('id','email','student_name'))->with('success','Item created successfully!');
+        }
+        //step 3
+        public function cheackcode(Request $request){
+
+
+             $email= $request->email;
+             $code= $request->Code;
+
+
+             $id =StudentUser::where('email',$email)->value('student_number');
+             $student_name =StudentUser::where('email',$email)->value('student_name');
+             $password =StudentUser::where('email',$email)->value('password');
+
+            if ($code == $password){
+                return view('home1',compact('id','student_name'));
+
+            }else{
+                return "the code not correct please try again";
+            }
+
+        }
+        public function generateUniqueCode()
+        {
+            do {
+                $code = random_int(100000, 999999);
+            } while (StudentUser::where("password", "=", $code)->first());
+
+            return $code;
+        }
     public function ExportExcelByEmail(Request $request){
         $this->validate($request,[
             'email'=>'required|exists:student_users,email',
 
          ]);
         $email= $request->email;
+        $password= $request->Password;
+
         $name=StudentUser::where('email',$email)->value('student_name');
         $id =StudentUser::where('email',$email)->value('student_number');
+        //send email
+
+
+
+
+        Mail::to($email)->send(new GradeStudent($name,$id,$password));
 
         return view('home1',compact('name','id'));
 
